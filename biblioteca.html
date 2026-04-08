@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca Multi-Linguagens</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+
+    /* Estilo do Título Menu */
+    .menu-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      user-select: none;
+    }
+
+    h1::after {
+      content: '▼';
+      font-size: 18px;
+      color: #0055aa;
+    }
+
+    /* Lista suspensa de bibliotecas */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 250px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+
+    .dropdown-content div {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .dropdown-content div:hover {
+      background-color: #0055aa;
+      color: white;
+    }
+
+    .show {
+      display: block;
+    }
+
+    /* Estilos da Biblioteca */
+    .folder {
+      margin: 20px 0;
+      border: 2px solid #0055aa;
+      border-radius: 8px;
+      background: #e0f0ff;
+      overflow: hidden;
+    }
+
+    .folder-header {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 12px;
+      cursor: pointer;
+      background: #0055aa;
+      color: #fff;
+      user-select: none;
+    }
+
+    .folder-header:hover {
+      background: #003f7d;
+    }
+
+    .folder-content {
+      display: none;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .tag {
+      margin: 10px 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #0055aa;
+      cursor: pointer;
+      position: relative;
+      display: block;
+      padding: 6px 10px;
+      background: #f0f8ff;
+      border-radius: 6px;
+      width: fit-content;
+    }
+
+    .description {
+      display: none;
+      margin-top: 8px;
+      font-size: 18px;
+      color: #333;
+      background: #fafafa;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: normal;
+    }
+
+    .tag.active .description {
+      display: block;
+    }
+
+    .tag-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Alterar aqui para acrescentar [1/4]-->
+  <div class="menu-container">
+    <h1 id="mainTitle" onclick="toggleMenu()">Biblioteca CSS</h1>
+    <div id="myDropdown" class="dropdown-content">
+      <div onclick="selectLibrary('CSS')">Biblioteca CSS</div>
+      <div onclick="selectLibrary('HTML')">Biblioteca HTML</div>
+      <div onclick="selectLibrary('JS')">Exemplos JavaScript</div>
+      <div onclick="selectLibrary('Java')">Biblioteca Java</div>
+      <div onclick="selectLibrary('Cod')">Codigo</div>
+
+    </div>
+  </div>
+
+  <div id="library"></div>
+
+  <script>
+    // Alterar aqui para acrescentar [2/4]
+    // --- DATABASES ---
+
+    const dataCSS = [
+      {
+        category: "Todos",
+        tags: [
+          { "name": "backface-visibility", "description": "A propriedade CSS `backface-visibility` define se a parte de trás de um elemento fica visível quando ele está virado para o usuário. Essa propriedade não tem efeito em transformações 2D, que não possuem perspectiva." },
+          { "name": "backdrop-filter", "description": "?" },
+          { "name": "appearance", "description": "A appearance propriedade permite exibir elementos em seu estilo nativo do sistema operacional, com base no tema do sistema, bem como remover qualquer estilo nativo da plataforma com o nonevalor definido" },
+          { "name": "all", "description": "?" },
+          { "name": "align-self", "description": "?" },
+          { "name": "align-items", "description": "?" },
+          { "name": "align-content", "description": "?" },
+          { "name": "accent-color", "description": "?" },
+          { "name": "content", "description": "?" },
+          { "name": "content-visibility", "description": "?" },
+          { "name": "container-type", "description": "?" },
+          { "name": "container-name", "description": "?" },
+          { "name": "container", "description": "?" },
+          { "name": "contain", "description": "?" },
+          { "name": "contain-intrinsic-width", "description": "?" },
+          { "name": "contain-intrinsic-size", "description": "?" },
+          { "name": "contain-intrinsic-inline-size", "description": "?" },
+          { "name": "contain-intrinsic-height", "description": "?" },
+          { "name": "contain-intrinsic-block-size", "description": "?" },
+          { "name": "color-scheme", "description": "?" },
+          { "name": "color", "description": "?" },
+          { "name": "clip-path", "description": "?" },
+          { "name": "clear", "description": "?" },
+          { "name": "caret-color", "description": "?" },
+          { "name": "caption-side", "description": "?" },
+          { "name": "break-inside", "description": "?" },
+          { "name": "break-before", "description": "?" },
+          { "name": "break-after", "description": "?" },
+          { "name": "box-sizing", "description": "?" },
+          { "name": "box-shadow", "description": "?" },
+          { "name": "box-decoration-break", "description": "?" },
+          { "name": "bottom", "description": "?" },
+          { "name": "counter-increment", "description": "?" },
+          { "name": "counter-reset", "description": "?" },
+          { "name": "counter-set", "description": "?" },
+          { "name": "cursor", "description": "?" },
+          { "name": "display", "description": "?" },
+          { "name": "empty-cells", "description": "?" },
+          { "name": "filter", "description": "?" },
+          { "name": "float", "description": "?" },
+          { "name": "font", "description": "?" },
+          { "name": "font-family", "description": "?" },
+          { "name": "font-feature-settings", "description": "?" },
+          { "name": "font-optical-sizing", "description": "?" },
+          { "name": "font-size", "description": "?" },
+          { "name": "font-size-adjust", "description": "?" },
+          { "name": "font-stretch", "description": "?" },
+          { "name": "font-style", "description": "?" },
+          { "name": "font-synthesis", "description": "?" },
+          { "name": "font-synthesis-small-caps", "description": "?" },
+          { "name": "font-synthesis-style", "description": "?" },
+          { "name": "font-synthesis-weight", "description": "?" },
+          { "name": "font-variant", "description": "?" },
+          { "name": "font-variant-alternates", "description": "?" },
+          { "name": "font-variant-caps", "description": "?" },
+          { "name": "font-variant-east-asian", "description": "?" },
+          { "name": "font-variant-emoji", "description": "?" },
+          { "name": "font-variant-ligatures", "description": "?" },
+          { "name": "font-variant-numeric", "description": "?" },
+          { "name": "font-variant-position", "description": "?" },
+          { "name": "font-variation-settings", "description": "?" },
+          { "name": "font-weight", "description": "?" },
+          { "name": "forced-color-adjust", "description": "?" },
+          { "name": "gap", "description": "?" },
+          { "name": "hanging-punctuation", "description": "?" },
+          { "name": "height", "description": "?" },
+          { "name": "hyphenate-character", "description": "?" },
+          { "name": "hyphenate-limit-chars", "description": "?" },
+          { "name": "hyphens", "description": "?" },
+          { "name": "image-orientation", "description": "?" },
+          { "name": "image-rendering", "description": "?" },
+          { "name": "initial-letter", "description": "?" },
+          { "name": "inset-block", "description": "?" },
+          { "name": "inset-block-end", "description": "?" },
+          { "name": "inset-block-start", "description": "?" },
+          { "name": "inset-inline", "description": "?" },
+          { "name": "inset-inline-end", "description": "?" },
+          { "name": "inset-inline-start", "description": "?" },
+          { "name": "isolation", "description": "?" },
+          { "name": "justify-content", "description": "?" },
+          { "name": "justify-items", "description": "?" },
+          { "name": "justify-self", "description": "?" },
+          { "name": "kerning", "description": "?" },
+          { "name": "left", "description": "?" },
+          { "name": "letter-spacing", "description": "?" },
+          { "name": "line-break", "description": "?" },
+          { "name": "line-height", "description": "?" },
+          { "name": "list-style", "description": "?" },
+          { "name": "list-style-image", "description": "?" },
+          { "name": "list-style-position", "description": "?" },
+          { "name": "list-style-type", "description": "?" },
+          { "name": "margin", "description": "?" },
+          { "name": "margin-block", "description": "?" },
+          { "name": "margin-block-end", "description": "?" },
+          { "name": "margin-block-start", "description": "?" },
+          { "name": "margin-bottom", "description": "?" },
+          { "name": "margin-inline", "description": "?" },
+          { "name": "margin-inline-end", "description": "?" },
+          { "name": "margin-inline-start", "description": "?" },
+          { "name": "margin-left", "description": "?" },
+          { "name": "margin-right", "description": "?" },
+          { "name": "margin-top", "description": "?" },
+          { "name": "marker", "description": "?" },
+          { "name": "marker-start", "description": "?" },
+          { "name": "mask", "description": "?" },
+          { "name": "mask-border", "description": "?" },
+          { "name": "mask-border-mode", "description": "?" },
+          { "name": "mask-border-outset", "description": "?" },
+          { "name": "mask-border-repeat", "description": "?" },
+          { "name": "mask-border-source", "description": "?" },
+          { "name": "mask-border-width", "description": "?" },
+          { "name": "mask-clip", "description": "?" },
+          { "name": "mask-composite", "description": "?" },
+          { "name": "mask-depth", "description": "?" },
+          { "name": "mask-image", "description": "?" },
+          { "name": "mask-mode", "description": "?" },
+          { "name": "mask-origin", "description": "?" },
+          { "name": "mask-repeat", "description": "?" },
+          { "name": "mask-size", "description": "?" },
+          { "name": "mask-style", "description": "?" },
+          { "name": "mask-type", "description": "?" },
+          { "name": "max-block-size", "description": "?" },
+          { "name": "max-height", "description": "?" },
+          { "name": "max-inline-size", "description": "?" },
+          { "name": "max-width", "description": "?" },
+          { "name": "min-block-size", "description": "?" },
+          { "name": "min-height", "description": "?" },
+          { "name": "min-inline-size", "description": "?" },
+          { "name": "min-width", "description": "?" },
+          { "name": "mix-blend-mode", "description": "?" },
+          { "name": "object-fit", "description": "?" },
+          { "name": "object-position", "description": "?" },
+          { "name": "offset", "description": "?" },
+          { "name": "offset-anchor", "description": "?" },
+          { "name": "offset-distance", "description": "?" },
+          { "name": "offset-path", "description": "?" },
+          { "name": "offset-position", "description": "?" },
+          { "name": "offset-rotate", "description": "?" },
+          { "name": "opacity", "description": "?" },
+          { "name": "order", "description": "?" },
+          { "name": "orphans", "description": "?" },
+          { "name": "outline", "description": "?" },
+          { "name": "outline-color", "description": "?" },
+          { "name": "outline-offset", "description": "?" },
+          { "name": "outline-style", "description": "?" },
+          { "name": "outline-width", "description": "?" },
+          { "name": "overflow", "description": "?" },
+          { "name": "overflow-inline", "description": "?" },
+          { "name": "overflow-x", "description": "?" },
+          { "name": "overflow-y", "description": "?" },
+          { "name": "overscroll-behavior", "description": "?" },
+          { "name": "overscroll-behavior-block", "description": "?" },
+          { "name": "overscroll-behavior-inline", "description": "?" },
+          { "name": "overscroll-behavior-x", "description": "?" },
+          { "name": "overscroll-behavior-y", "description": "?" },
+          { "name": "padding", "description": "?" },
+          { "name": "padding-block", "description": "?" },
+          { "name": "padding-block-end", "description": "?" },
+          { "name": "padding-block-start", "description": "?" },
+          { "name": "padding-bottom", "description": "?" },
+          { "name": "padding-inline", "description": "?" },
+          { "name": "padding-inline-end", "description": "?" },
+          { "name": "padding-inline-start", "description": "?" },
+          { "name": "padding-left", "description": "?" },
+          { "name": "padding-right", "description": "?" },
+          { "name": "padding-top", "description": "?" },
+          { "name": "page", "description": "?" },
+          { "name": "paint-order", "description": "?" },
+          { "name": "palette", "description": "?" },
+          { "name": "perspective", "description": "?" },
+          { "name": "perspective-origin", "description": "?" },
+          { "name": "place-content", "description": "?" },
+          { "name": "place-items", "description": "?" },
+          { "name": "place-self", "description": "?" },
+          { "name": "pointer-events", "description": "?" },
+          { "name": "position", "description": "?" },
+          { "name": "print-color-adjust", "description": "?" },
+          { "name": "quotes", "description": "?" },
+          { "name": "resize", "description": "?" },
+          { "name": "right", "description": "?" },
+          { "name": "rotate", "description": "?" },
+          { "name": "row-gap", "description": "?" },
+          { "name": "ruby-align", "description": "?" },
+          { "name": "ruby-position", "description": "?" },
+          { "name": "rx", "description": "?" },
+          { "name": "ry", "description": "?" },
+          { "name": "scale", "description": "?" },
+          { "name": "scroll-behavior", "description": "?" },
+          { "name": "scroll-margin", "description": "?" },
+          { "name": "scroll-margin-block", "description": "?" },
+          { "name": "scroll-margin-block-end", "description": "?" },
+          { "name": "scroll-margin-block-start", "description": "?" },
+          { "name": "scroll-margin-bottom", "description": "?" },
+          { "name": "scroll-margin-inline", "description": "?" },
+          { "name": "scroll-margin-inline-end", "description": "?" },
+          { "name": "scroll-margin-inline-start", "description": "?" },
+          { "name": "scroll-margin-left", "description": "?" },
+          { "name": "scroll-margin-right", "description": "?" },
+          { "name": "scroll-margin-top", "description": "?" },
+          { "name": "scroll-padding", "description": "?" },
+          { "name": "scroll-padding-block", "description": "?" },
+          { "name": "scroll-padding-block-end", "description": "?" },
+          { "name": "scroll-padding-block-start", "description": "?" },
+          { "name": "scroll-padding-bottom", "description": "?" },
+          { "name": "scroll-padding-inline", "description": "?" },
+          { "name": "scroll-padding-inline-end", "description": "?" },
+          { "name": "scroll-padding-inline-start", "description": "?" },
+          { "name": "scroll-padding-left", "description": "?" },
+          { "name": "scroll-padding-right", "description": "?" },
+          { "name": "scroll-padding-top", "description": "?" },
+          { "name": "scroll-snap-align", "description": "?" },
+          { "name": "scroll-snap-stop", "description": "?" },
+          { "name": "scrollbar-color", "description": "?" },
+          { "name": "scrollbar-gutter", "description": "?" },
+          { "name": "scrollbar-width", "description": "?" },
+          { "name": "shape-image-threshold", "description": "?" },
+          { "name": "shape-margin", "description": "?" },
+          { "name": "shape-outside", "description": "?" },
+          { "name": "shape-rendering", "description": "?" },
+          { "name": "stop-color", "description": "?" },
+          { "name": "stop-opacity", "description": "?" },
+          { "name": "stroke", "description": "?" },
+          { "name": "stroke-dasharray", "description": "?" },
+          { "name": "stroke-dashoffset", "description": "?" },
+          { "name": "stroke-linecap", "description": "?" },
+          { "name": "stroke-linejoin", "description": "?" },
+          { "name": "stroke-miterlimit", "description": "?" },
+          { "name": "stroke-opacity", "description": "?" },
+          { "name": "stroke-width", "description": "?" },
+          { "name": "table-layout", "description": "?" },
+          { "name": "text-align", "description": "?" },
+          { "name": "text-align-last", "description": "?" },
+          { "name": "text-anchor", "description": "?" },
+          { "name": "text-combine-upright", "description": "?" },
+          { "name": "text-decoration", "description": "?" },
+          { "name": "text-decoration-color", "description": "?" },
+          { "name": "text-decoration-line", "description": "?" },
+          { "name": "text-decoration-skip-ink", "description": "?" },
+          { "name": "text-decoration-style", "description": "?" },
+          { "name": "text-decoration-thickness", "description": "?" },
+          { "name": "text-emphasis", "description": "?" },
+          { "name": "text-emphasis-color", "description": "?" },
+          { "name": "text-emphasis-position", "description": "?" },
+          { "name": "text-emphasis-style", "description": "?" },
+          { "name": "text-indent", "description": "?" },
+          { "name": "text-justify", "description": "?" },
+          { "name": "text-orientation", "description": "?" },
+          { "name": "text-overflow", "description": "?" },
+          { "name": "text-rendering", "description": "?" },
+          { "name": "text-shadow", "description": "?" },
+          { "name": "text-transform", "description": "?" },
+          { "name": "text-underline-offset", "description": "?" },
+          { "name": "text-underline-position", "description": "?" },
+          { "name": "text-wrap", "description": "?" },
+          { "name": "text-wrap-mode", "description": "?" },
+          { "name": "text-wrap-style", "description": "?" },
+          { "name": "top", "description": "?" },
+          { "name": "touch-action", "description": "?" },
+          { "name": "transform", "description": "?" },
+          { "name": "transform-box", "description": "?" },
+          { "name": "transform-origin", "description": "?" },
+          { "name": "transform-style", "description": "?" },
+          { "name": "translate", "description": "?" },
+          { "name": "user-select", "description": "?" },
+          { "name": "vertical-align", "description": "?" },
+          { "name": "view-transition-", "description": "?" },
+          { "name": "visibility", "description": "?" },
+          { "name": "white-space", "description": "?" },
+          { "name": "white-space-col", "description": "?" },
+          { "name": "widows", "description": "?" },
+          { "name": "width", "description": "?" },
+          { "name": "will-change", "description": "?" },
+          { "name": "word-break", "description": "?" },
+          { "name": "word-spacing", "description": "?" },
+          { "name": "writing-mode", "description": "?" },
+          { "name": "z-index", "description": "?" },
+          { "name": "zoom", "description": "?" }
+        ]
+      },
+      {
+        category: "Desnecessario",
+        tags: [
+          { "name": "border-block-color", "description": "?" },
+          { "name": "border-block-end", "description": "?" },
+          { "name": "border-block-end-style", "description": "?" },
+          { "name": "border-block-end-width", "description": "?" },
+          { "name": "border-block-start", "description": "?" },
+          { "name": "border-block-start-color", "description": "?" },
+          { "name": "border-block-start-style", "description": "?" },
+          { "name": "border-block-start-width", "description": "?" },
+          { "name": "border-block-style", "description": "?" },
+          { "name": "border-block-width", "description": "?" },
+          { "name": "border-end-end-radius", "description": "?" },
+          { "name": "border-end-start-radius", "description": "?" },
+          { "name": "border-inline", "description": "?" },
+          { "name": "border-inline-end", "description": "?" },
+          { "name": "border-inline-end-color", "description": "?" },
+          { "name": "border-inline-end-style", "description": "?" },
+          { "name": "border-inline-end-width", "description": "?" },
+          { "name": "border-inline-start", "description": "?" },
+          { "name": "border-inline-start-color", "description": "?" },
+          { "name": "border-inline-start-style", "description": "?" },
+          { "name": "border-inline-start-width", "description": "?" },
+          { "name": "border-inline-style", "description": "?" },
+          { "name": "border-inline-width", "description": "?" },
+          { "name": "border-start-end-radius", "description": "?" },
+          { "name": "border-start-start-radius", "description": "?" },
+          { "name": "unicode-bidi", "description": "?" },
+
+        ]
+      },
+      {
+        category: "Exemplos de Imagem",
+        tags: [
+          {
+            name: "background-image",
+            description: "",
+            image: "https://imgur.com/mowl1td.png"
+          }
+        ]
+      },
+      {
+        category: "Background",
+        tags: [
+          { "name": "background-size", "description": "especifica, o tamanho das imagens¹ existem quatro sintaxes diferentes que voce pode usar com essa propriedade²" },
+          { "name": "background-repeat", "description": "define se e como uma imagem de fundo, será repetida¹ por padrão uma imagem de fundo, é repetida tanto²" },
+          { "name": "background-position", "description": "?" },
+          { "name": "background-position-y", "description": "?" },
+          { "name": "background-position-x", "description": "?" },
+          { "name": "background-origin", "description": "?" },
+          { "name": "background-color", "description": "?" },
+          { "name": "background-clip", "description": "?" },
+          { "name": "background-blend-mode", "description": "?" },
+          { "name": "background-attachment", "description": "?" },
+          { "name": "background", "description": "?" },
+        ]
+      },
+      {
+        category: "Flexbox",
+        tags: [
+          { "name": "flex", "description": "?" },
+          { "name": "flex-basis", "description": "?" },
+          { "name": "flex-direction", "description": "?" },
+          { "name": "flex-flow", "description": "?" },
+          { "name": "flex-grow", "description": "?" },
+          { "name": "flex-shrink", "description": "?" },
+          { "name": "flex-wrap", "description": "?" },
+        ]
+      },
+      {
+        category: "Border",
+        tags: [
+          { "name": "border-bottom (shortand)", "description": "?" },
+          { "name": "border", "description": "?" },
+          { "name": "border-width", "description": "?" },
+          { "name": "border-top-style", "description": "?" },
+          { "name": "border-top-right-radius", "description": "?" },
+          { "name": "border-top-left-radius", "description": "?" },
+          { "name": "border-top-color", "description": "?" },
+          { "name": "border-top", "description": "?" },
+          { "name": "border-spacing", "description": "?" },
+          { "name": "border-right-width", "description": "?" },
+          { "name": "border-right-style", "description": "?" },
+          { "name": "border-right-color", "description": "?" },
+          { "name": "border-right", "description": "?" },
+          { "name": "border-radius", "description": "?" },
+          { "name": "border-left-width", "description": "?" },
+          { "name": "border-left-style", "description": "?" },
+          { "name": "border-left-color", "description": "?" },
+          { "name": "border-left", "description": "?" },
+          { "name": "border-image-width", "description": "?" },
+          { "name": "border-image-source", "description": "?" },
+          { "name": "border-image-slice", "description": "?" },
+          { "name": "border-image-repeat", "description": "?" },
+          { "name": "border-image-outset", "description": "?" },
+          { "name": "border-image", "description": "?" },
+          { "name": "border-color", "description": "?" },
+          { "name": "border-collapse", "description": "?" },
+          { "name": "border-bottom-width", "description": "?" },
+          { "name": "border-bottom-style", "description": "?" },
+          { "name": "border-bottom-right-radius", "description": "?" },
+          { "name": "border-bottom-color", "description": "?" },
+          { "name": "border-bottom-left-radius", "description": "?" },]
+      },
+      {
+        category: "Animation",
+        tags: [
+          { "name": "animation-timing-function", "description": "?" },
+          { "name": "animation-play-state", "description": "?" },
+          { "name": "animation-name", "description": "?" },
+          { "name": "animation-iteration-count", "description": "?" },
+          { "name": "animation-fill-mode", "description": "?" },
+          { "name": "animation-duration", "description": "?" },
+          { "name": "animation-direction", "description": "?" },
+          { "name": "animation-delay", "description": "?" },
+          { "name": "animation-composition", "description": "?" },
+          { "name": "animation", "description": "?" },]
+      },
+      {
+        category: "Grid",
+        tags: [
+          { "name": "grid", "description": "?" },
+          { "name": "grid-auto-columns", "description": "?" },
+          { "name": "grid-auto-flow", "description": "?" },
+          { "name": "grid-auto-rows", "description": "?" },
+          { "name": "grid-column", "description": "?" },
+          { "name": "grid-column-end", "description": "?" },
+          { "name": "grid-column-start", "description": "?" },
+          { "name": "grid-row-end", "description": "?" },
+          { "name": "grid-row-start", "description": "?" },
+          { "name": "grid-template-areas", "description": "?" },
+          { "name": "grid-template-columns", "description": "?" },
+          { "name": "grid-template-rows", "description": "?" },]
+      },
+      {
+        category: "Columns",
+        tags: [
+          { "name": "columns", "description": "?" },
+          { "name": "column-width", "description": "?" },
+          { "name": "column-rule-width", "description": "?" },
+          { "name": "column-rule-style", "description": "?" },
+          { "name": "column-rule-color", "description": "?" },
+          { "name": "column-rule", "description": "?" },
+          { "name": "column-gap", "description": "?" },
+          { "name": "column-fill", "description": "?" },]
+      },
+      {
+        category: "Transition",
+        tags: [
+          { "name": "transition", "description": "?" },
+          { "name": "transition-delay", "description": "?" },
+          { "name": "transition-duration", "description": "?" },
+          { "name": "transition-property", "description": "?" },
+          { "name": "transition-timing-function", "description": "?" },]
+      },
+      /*{
+        category: "?",
+        tags: [
+          // { "name": "background-size", "description": "especifica, o tamanho das imagens¹ existem quatro sintaxes diferentes que voce pode usar com essa propriedade²" },
+        ]
+      },*/
+    ];
+
+    const dataHTML = [
+      {
+        category: "Tags Básicas",
+        tags: [
+          { name: "<div>", description: "Define uma divisão ou seção." },
+          { name: "<a>", description: "Cria um link.", image: "https://i.imgur.com/J69y2v9.png" }
+        ]
+      }
+    ];
+
+    const dataJS = [
+      {
+        category: "Lógica",
+        tags: [
+          { name: "Array.map()", description: "Cria uma nova lista baseada na original." }
+        ]
+      }
+    ];
+
+    const dataJava = [
+      {
+        category: "Classes",
+        tags: [
+          { name: "String", description: "Sequência de caracteres." }
+        ]
+      }
+    ];
+
+    const Cod = [
+      {
+        category: "Javascript",
+        tags: [
+          { name: "Uso while", description: "" },
+          { name: "Uso var, let e const", description: "?" },
+          { name: "Uso throw", description: "?" },
+          { name: "Uso de get/set com propriedades privadas em classe", description: "?" },
+          { name: "Uso arguments", description: "?" },
+          { name: "use de then em promisse, com suas duas funções no Promise construtor", description: "?" },
+          { name: "usar async/await", description: "?" },
+          { name: "typeof", description: "?" },
+          { name: "try...catch", description: "?" },
+          { name: "tratamento de erro async/await", description: "?" },
+          { name: "template string", description: "?" },
+          { name: "switch", description: "?" },
+          { name: "super e this em classes", description: "?" },
+          { name: "substituir um membros static de uma classe, mas aprimorado com super", description: "?" },
+          { name: "parametro rest em contrutor de classe", description: "?" },
+          { name: "parametro padrão", description: "?" },
+          { name: "operador de coalescência nula (??)", description: "?" },
+          { name: "Objeto literal com prototipo, campo e metodo", description: "?" },
+          { name: "objeto literal", description: "?" },
+          { name: "Module.exports e require com desestruturação", description: "?" },
+          { name: "Module.exports e require", description: "?" },
+          { name: "Matriz de 2 dimensoes sendo com inicialiazação sendo criada e acessada", description: "?" },
+          { name: "Lançar uma exceção com um bloco de instrução", description: "?" },
+          { name: "Herança em classe e override metodos da classe pai", description: "?" },
+          { name: "Funções de seta", description: "?" },
+          { name: "Função hoisting", description: "?" },
+          { name: "Função geradora lidando com sequencias assincrona", description: "?" },
+          { name: "Função construtora com campo e metodo", description: "?" },
+          { name: "Função com um iterator e consumir ele", description: "?" },
+          { name: "Função auto invocado com void", description: "?" },
+          { name: "Função auto invocada com e sem argumento", description: "?" },
+          { name: "Função anônima como argumento de outra função", description: "?" },
+          { name: "for..in", description: "?" },
+          { name: "for...of", description: "?" },
+          { name: "Expressão de função", description: "?" },
+          { name: "Exportando todas as funções como um objeto padrão e import", description: "?" },
+          { name: "Export nomeado e import", description: "?" },
+          { name: "Export default e import", description: "?" },
+          { name: "encadeamento opcional", description: "?" },
+          { name: "do while", description: "?" },
+          { name: "destruturação em for..of", description: "?" },
+          { name: "Definir uma função com uma expressão de função condicionalmente", description: "?" },
+          { name: "definir um metodo normal e abreviado em um objeto literal", description: "?" },
+          { name: "definir um metodo em uma classe via this", description: "?" },
+          { name: "definir um get/set posteriomente em um objeto ja criado", description: "?" },
+          { name: "definir um get/set em um objeto literal", description: "?" },
+          { name: "Definir dinamicamente o nome de um campo em uma classe", description: "?" },
+          { name: "Definir dinamicamente o nome de um campo em um objeto literal", description: "?" },
+          { name: "definir dinamicamenfte o nome de um membro em uma função construtora", description: "?" },
+          { name: "definir campo/metodo em prototype", description: "?" },
+          { name: "declaração de função", description: "?" },
+          { name: "Criar uma função com 'function' construtor", description: "?" },
+          { name: "concatenar string com +", description: "?" },
+          { name: "closure", description: "?" },
+          { name: "Classe com construtor e um metodo, sendo construido com tres campos direto no construtor", description: "?" },
+          { name: "Classe com campos e metodos privados", description: "?" },
+          { name: "Chamar uma função", description: "?" },
+          { name: "campos static, metodo static e static block em uma class", description: "?" },
+          { name: "Callback", description: "?" },
+          { name: "Cadeia de promise com arrow function", description: "?" },
+          { name: "Arrow 'function' sem e com abreviações", description: "?" },
+          { name: "Acessando um objeto, criando e atribuindo valores as propriedades", description: "?" },
+
+        ]
+      }
+    ];
+
+    // Alterar aqui para acrescentar [3/4]
+    const db = {
+      'CSS': dataCSS,
+      'HTML': dataHTML,
+      'JS': dataJS,
+      'Java': dataJava,
+      'Cod': Cod,
+    };
+
+    // --- FUNÇÕES ---
+
+    function toggleMenu() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Fecha o menu se o usuário clicar fora dele
+    window.onclick = function (event) {
+      if (!event.target.matches('h1')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // Alterar aqui para acrescentar [4/4]
+    function selectLibrary(type) {
+      const titles = {
+        'CSS': 'Biblioteca CSS',
+        'HTML': 'Biblioteca HTML',
+        'JS': 'Exemplos JavaScript',
+        'Java': 'Biblioteca Java',
+        'Cod': 'Codigo'
+      };
+
+      document.getElementById("mainTitle").textContent = titles[type];
+      renderLibrary(db[type]);
+    }
+
+    function renderLibrary(activeData) {
+      const library = document.getElementById("library");
+      library.innerHTML = ""; // Limpa a lista atual
+
+      activeData.forEach(folder => {
+        const folderDiv = document.createElement("div");
+        folderDiv.className = "folder";
+
+        const header = document.createElement("div");
+        header.className = "folder-header";
+        header.textContent = "📂 " + folder.category;
+
+        const content = document.createElement("div");
+        content.className = "folder-content";
+
+        folder.tags.forEach(tag => {
+          const tagDiv = document.createElement("div");
+          tagDiv.className = "tag";
+          tagDiv.textContent = tag.name;
+
+          const desc = document.createElement("div");
+          desc.className = "description";
+
+          const textSpan = document.createElement("span");
+          textSpan.textContent = tag.description;
+          desc.appendChild(textSpan);
+
+          if (tag.image) {
+            const img = document.createElement("img");
+            img.src = tag.image;
+            img.className = "tag-image";
+            desc.appendChild(img);
+          }
+
+          tagDiv.appendChild(desc);
+          content.appendChild(tagDiv);
+
+          tagDiv.addEventListener("click", (e) => {
+            e.stopPropagation();
+            tagDiv.classList.toggle("active");
+          });
+        });
+
+        header.addEventListener("click", () => {
+          content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+
+        folderDiv.appendChild(header);
+        folderDiv.appendChild(content);
+        library.appendChild(folderDiv);
+      });
+    }
+
+    // Iniciar com CSS por padrão[cite: 2]
+    renderLibrary(dataCSS);
+  </script>
+</body>
+
+</html>
