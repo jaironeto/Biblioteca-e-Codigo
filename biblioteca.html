@@ -147,6 +147,7 @@
       <div onclick="selectLibrary('JS')">Exemplos JavaScript</div>
       <div onclick="selectLibrary('Java')">Biblioteca Java</div>
       <div onclick="selectLibrary('Cod')">Codigo</div>
+      <div onclick="selectLibrary('DidJS')">Didatica Javascript</div>
 
     </div>
   </div>
@@ -632,6 +633,18 @@
       }
     ];
 
+    const DidJS = [
+      {
+        category: "Geral",
+        tags: [
+          { name: "Construtor", description: "?" },
+          { name: "Promessa", description: "2 estados; await; async; tratamento de erro async; catch; encadeamento; " },
+          { name: "Variavel", description: "Nao sao; pode conter; nao confunda" },
+
+        ]
+      }
+    ];
+
     const Cod = [
       {
         category: "Javascript",
@@ -710,6 +723,7 @@
       'JS': dataJS,
       'Java': dataJava,
       'Cod': Cod,
+      "DidJS": DidJS,
     };
 
     // --- FUNÇÕES ---
@@ -738,7 +752,8 @@
         'HTML': 'Biblioteca HTML',
         'JS': 'Exemplos JavaScript',
         'Java': 'Biblioteca Java',
-        'Cod': 'Codigo'
+        'Cod': 'Codigo',
+        'DidJS': 'Didática JavaScript',
       };
 
       document.getElementById("mainTitle").textContent = titles[type];
