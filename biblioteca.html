@@ -96,18 +96,20 @@
       background: #fff;
     }
 
+    /* ALTERAÇÃO: Tags agora ficam lado a lado */
     .tag {
-      margin: 10px 0;
+      margin: 5px;
       font-size: 20px;
       font-weight: bold;
       color: #0055aa;
       cursor: pointer;
       position: relative;
-      display: block;
+      display: inline-block; /* Mudança de block para inline-block */
       padding: 6px 10px;
       background: #f0f8ff;
       border-radius: 6px;
       width: fit-content;
+      vertical-align: top; /* Alinha as tags pelo topo */
     }
 
     .description {
@@ -120,6 +122,8 @@
       padding: 10px;
       border-radius: 6px;
       font-weight: normal;
+      white-space: normal; /* Garante que o texto quebre dentro da caixa */
+      max-width: 300px;    /* Opcional: limita a largura da descrição */
     }
 
     .tag.active .description {
@@ -138,7 +142,6 @@
 </head>
 
 <body>
-  <!-- Alterar aqui para acrescentar [1/4]-->
   <div class="menu-container">
     <h1 id="mainTitle" onclick="toggleMenu()">Biblioteca CSS</h1>
     <div id="myDropdown" class="dropdown-content">
@@ -148,16 +151,13 @@
       <div onclick="selectLibrary('Java')">Biblioteca Java</div>
       <div onclick="selectLibrary('Cod')">Codigo</div>
       <div onclick="selectLibrary('Did')">Didatica</div>
-
     </div>
   </div>
 
   <div id="library"></div>
 
   <script>
-    // Alterar aqui para acrescentar [2/4]
     // --- DATABASES ---
-
     const dataCSS = [
       {
         category: "Todos",
@@ -470,7 +470,6 @@
           { "name": "border-start-end-radius", "description": "?" },
           { "name": "border-start-start-radius", "description": "?" },
           { "name": "unicode-bidi", "description": "?" },
-
         ]
       },
       {
@@ -597,12 +596,6 @@
           { "name": "transition-property", "description": "?" },
           { "name": "transition-timing-function", "description": "?" },]
       },
-      /*{
-        category: "?",
-        tags: [
-          // { "name": "background-size", "description": "especifica, o tamanho das imagens¹ existem quatro sintaxes diferentes que voce pode usar com essa propriedade²" },
-        ]
-      },*/
     ];
 
     const dataHTML = [
@@ -640,7 +633,6 @@
           { name: "Construtor", description: "?" },
           { name: "Promessa", description: "3 estados; await; async; tratamento de erro async; catch; encadeamento; " },
           { name: "Variavel", description: "Nao sao; pode conter; nao confunda" },
-
         ]
       }
     ];
@@ -711,12 +703,10 @@
           { name: "Cadeia de promise com arrow function", description: "?" },
           { name: "Arrow 'function' sem e com abreviações", description: "?" },
           { name: "Acessando um objeto, criando e atribuindo valores as propriedades", description: "?" },
-
         ]
       }
     ];
 
-    // Alterar aqui para acrescentar [3/4]
     const db = {
       'CSS': dataCSS,
       'HTML': dataHTML,
@@ -732,7 +722,6 @@
       document.getElementById("myDropdown").classList.toggle("show");
     }
 
-    // Fecha o menu se o usuário clicar fora dele
     window.onclick = function (event) {
       if (!event.target.matches('h1')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -745,7 +734,6 @@
       }
     }
 
-    // Alterar aqui para acrescentar [4/4]
     function selectLibrary(type) {
       const titles = {
         'CSS': 'Biblioteca CSS',
@@ -762,7 +750,7 @@
 
     function renderLibrary(activeData) {
       const library = document.getElementById("library");
-      library.innerHTML = ""; // Limpa a lista atual
+      library.innerHTML = ""; 
 
       activeData.forEach(folder => {
         const folderDiv = document.createElement("div");
@@ -813,7 +801,6 @@
       });
     }
 
-    // Iniciar com CSS por padrão[cite: 2]
     renderLibrary(dataCSS);
   </script>
 </body>
