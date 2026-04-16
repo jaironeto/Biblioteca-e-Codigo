@@ -104,12 +104,14 @@
       color: #0055aa;
       cursor: pointer;
       position: relative;
-      display: inline-block; /* Mudança de block para inline-block */
+      display: inline-block;
+      /* Mudança de block para inline-block */
       padding: 6px 10px;
       background: #f0f8ff;
       border-radius: 6px;
       width: fit-content;
-      vertical-align: top; /* Alinha as tags pelo topo */
+      vertical-align: top;
+      /* Alinha as tags pelo topo */
     }
 
     .description {
@@ -122,8 +124,10 @@
       padding: 10px;
       border-radius: 6px;
       font-weight: normal;
-      white-space: normal; /* Garante que o texto quebre dentro da caixa */
-      max-width: 300px;    /* Opcional: limita a largura da descrição */
+      white-space: normal;
+      /* Garante que o texto quebre dentro da caixa */
+      max-width: 300px;
+      /* Opcional: limita a largura da descrição */
     }
 
     .tag.active .description {
@@ -169,61 +173,28 @@
           { "name": "align-self", "description": "A propriedade CSS align-self alinha itens-flex da linha flex alvo, sobreescrevendo o valor align-items" },
           { "name": "align-items", "description": "A propriedade CSS align-items estabelece o valor align-self em todos filhos diretos como um grupo. A propriedade align-self estabelece o alinhamento de um certo item dentro do bloco que o contém. Em Flexbox ele controla o alinhamento dos itens em Cross Axis, enquanto que no Grid Layout, controla o alinhamento dos itens no Eixo de Bloco dentro de sua grid area." },
           { "name": "align-content", "description": "A propriedade CSS align-content define a distribuição entre e ao redor dos items do conteúdo do eixo transversal de uma flexbox ou do eixo de bloco de uma grid." },
-          { "name": "accent-color", "description": "?" },
-          { "name": "content", "description": "?" },
-          { "name": "content-visibility", "description": "?" },
-          { "name": "container-type", "description": "?" },
-          { "name": "container-name", "description": "?" },
-          { "name": "container", "description": "?" },
-          { "name": "contain", "description": "?" },
-          { "name": "contain-intrinsic-width", "description": "?" },
-          { "name": "contain-intrinsic-size", "description": "?" },
-          { "name": "contain-intrinsic-inline-size", "description": "?" },
-          { "name": "contain-intrinsic-height", "description": "?" },
-          { "name": "contain-intrinsic-block-size", "description": "?" },
-          { "name": "color-scheme", "description": "?" },
-          { "name": "color", "description": "?" },
-          { "name": "clip-path", "description": "?" },
-          { "name": "clear", "description": "?" },
-          { "name": "caret-color", "description": "?" },
-          { "name": "caption-side", "description": "?" },
-          { "name": "break-inside", "description": "?" },
-          { "name": "break-before", "description": "?" },
-          { "name": "break-after", "description": "?" },
-          { "name": "box-sizing", "description": "?" },
-          { "name": "box-shadow", "description": "?" },
-          { "name": "box-decoration-break", "description": "?" },
-          { "name": "bottom", "description": "?" },
-          { "name": "counter-increment", "description": "?" },
-          { "name": "counter-reset", "description": "?" },
-          { "name": "counter-set", "description": "?" },
-          { "name": "cursor", "description": "?" },
-          { "name": "display", "description": "?" },
-          { "name": "empty-cells", "description": "?" },
-          { "name": "filter", "description": "?" },
-          { "name": "float", "description": "?" },
-          { "name": "font", "description": "?" },
-          { "name": "font-family", "description": "?" },
-          { "name": "font-feature-settings", "description": "?" },
-          { "name": "font-optical-sizing", "description": "?" },
-          { "name": "font-size", "description": "?" },
-          { "name": "font-size-adjust", "description": "?" },
-          { "name": "font-stretch", "description": "?" },
-          { "name": "font-style", "description": "?" },
-          { "name": "font-synthesis", "description": "?" },
-          { "name": "font-synthesis-small-caps", "description": "?" },
-          { "name": "font-synthesis-style", "description": "?" },
-          { "name": "font-synthesis-weight", "description": "?" },
-          { "name": "font-variant", "description": "?" },
-          { "name": "font-variant-alternates", "description": "?" },
-          { "name": "font-variant-caps", "description": "?" },
-          { "name": "font-variant-east-asian", "description": "?" },
-          { "name": "font-variant-emoji", "description": "?" },
-          { "name": "font-variant-ligatures", "description": "?" },
-          { "name": "font-variant-numeric", "description": "?" },
-          { "name": "font-variant-position", "description": "?" },
-          { "name": "font-variation-settings", "description": "?" },
-          { "name": "font-weight", "description": "?" },
+          { "name": "accent-color", "description": "especifica a cor, interface, input¹" },
+          { "name": "content", "description": "usada com os pseudo-elementos ::before ::after para inserir conteúdo gerado" },
+          { "name": "content-visibility", "description": "controla se um elemento renderiza ou não seu conteúdo, além de impor um conjunto robusto de restrições, permitindo que os agentes do usuário omitam grandes partes do trabalho de layout e renderização até que seja necessário. Isso permite que o agente do usuário ignore o trabalho de renderização de um elemento (incluindo layout e pintura) até que seja necessário " },
+          { "name": "container-type", "description": "usada para definir o tipo de contexto de um container que pode ser consultado com container queries (@container)" },
+          { "name": "container-name", "description": "serve para atribuir um nome a um elemento que foi definido como “container”. esse nome permite que você faça consultas específicas com @container em vez de depender apenas do ancestral mais próximo com contençãoserve para atribuir um nome a um elemento que foi definido como “container”. esse nome permite que você faça con" },
+          { "name": "container", "description": "container-name, container-type" },
+          { "name": "contain", "description": "indica que um elemento e seu conteúdo são, tanto quanto possível, independentes do restante da árvore do documento" },
+          { "name": "color-scheme", "description": "indica qual esquema de cores do sistema operacional um elemento deve usar para ser renderizado" },
+          { "name": "color", "description": "define a cor" },
+          { "name": "clip-path", "description": "permite recortar um elemento em uma forma básica ou em uma fonte SVG" },
+          { "name": "clear", "description": "especifica se um elemento pode ter elementos flutuantes ao seu lado ou se devem ser movidos para abaixo dele (clear). Essa propriedade se aplica à elementos flutuantes ou não flutuantesespecifica se um elemento pode ter elementos flutuantes ao seu lado " },
+          { "name": "caret-color", "description": "A propriedade CSS define a cor do cursor de inserção , também conhecido como cursor de entrada de texto" },
+          { "name": "caption-side", "description": "especifica o posicionamento da legenda da tabela" },
+          { "name": "box-sizing", "description": "define como a largura e a altura de um elemento são calculadas: se devem incluir preenchimento e bordas, ou não" },
+          { "name": "box-shadow", "description": "atribui uma ou mais sombras a um elemento" },
+          { "name": "box-decoration-break", "description": "especifica como o plano de fundo, o preenchimento, a borda, a imagem da borda, a sombra da caixa, a margem e o caminho de recorte de um elemento são aplicados quando a caixa do elemento é fragmentada" },
+          { "name": "bottom", "description": "afeta a posição, vertical de um elemento posicionado¹ ela não tem efeito sobre, elementos não posicionados²" },
+          { "name": "cursor", "description": "especifica o cursor do mouse a ser exibido ao apontar para um elemento" },
+          { "name": "display", "description": "define se um elemento é tratado como um bloco ou uma caixa embutida e o layout usado para seus filhos, como layout de fluxo , grade ou flexível" },
+          { "name": "empty-cells", "description": "define se as bordas das células vazias em uma tabela devem ou não ser exibidas" },
+          { "name": "filter", "description": "define efeitos visuais (como desfoque e saturação) para um elemento (geralmente <img>)" },
+          { "name": "float", "description": "Essa floatpropriedade especifica se um elemento deve flutuar para a esquerda, para a direita ou não flutuar. Nota: Elementos com posicionamento absoluto ignoram a float propriedade! Observação: Elementos adjacentes a um elemento flutuante irão contorná-lo. Para evitar isso, use a propriedade `clear` ou o truque `clearfix`" },
           { "name": "forced-color-adjust", "description": "?" },
           { "name": "gap", "description": "?" },
           { "name": "hanging-punctuation", "description": "?" },
@@ -441,7 +412,7 @@
           { "name": "zoom", "description": "?" }
         ]
       },
-      {
+      /*{
         category: "Desnecessario",
         tags: [
           { "name": "border-block-color", "description": "?" },
@@ -471,8 +442,8 @@
           { "name": "border-start-start-radius", "description": "?" },
           { "name": "unicode-bidi", "description": "?" },
         ]
-      },
-      {
+      },*/
+      /*{
         category: "Exemplos de Imagem",
         tags: [
           {
@@ -481,7 +452,7 @@
             image: "https://imgur.com/mowl1td.png"
           }
         ]
-      },
+      },*/
       {
         category: "Background",
         tags: [
@@ -543,7 +514,8 @@
           { "name": "border-bottom-style", "description": "?" },
           { "name": "border-bottom-right-radius", "description": "?" },
           { "name": "border-bottom-color", "description": "?" },
-          { "name": "border-bottom-left-radius", "description": "?" },]
+          { "name": "border-bottom-left-radius", "description": "?" },
+        ]
       },
       {
         category: "Animation",
@@ -557,7 +529,8 @@
           { "name": "animation-direction", "description": "?" },
           { "name": "animation-delay", "description": "?" },
           { "name": "animation-composition", "description": "?" },
-          { "name": "animation", "description": "?" },]
+          { "name": "animation", "description": "?" },
+        ]
       },
       {
         category: "Grid",
@@ -573,7 +546,8 @@
           { "name": "grid-row-start", "description": "?" },
           { "name": "grid-template-areas", "description": "?" },
           { "name": "grid-template-columns", "description": "?" },
-          { "name": "grid-template-rows", "description": "?" },]
+          { "name": "grid-template-rows", "description": "?" },
+        ]
       },
       {
         category: "Columns",
@@ -585,7 +559,8 @@
           { "name": "column-rule-color", "description": "?" },
           { "name": "column-rule", "description": "?" },
           { "name": "column-gap", "description": "?" },
-          { "name": "column-fill", "description": "?" },]
+          { "name": "column-fill", "description": "?" },
+        ]
       },
       {
         category: "Transition",
@@ -594,7 +569,62 @@
           { "name": "transition-delay", "description": "?" },
           { "name": "transition-duration", "description": "?" },
           { "name": "transition-property", "description": "?" },
-          { "name": "transition-timing-function", "description": "?" },]
+          { "name": "transition-timing-function", "description": "?" },
+        ]
+      },
+      {
+        category: "Contain-intrinsic",
+        tags: [
+          { "name": "contain-intrinsic-width", "description": "define uma largura intrínseca de fallback que o navegador pode usar quando o conteúdo de um elemento não pode ser medido diretamente" },
+          { "name": "contain-intrinsic-size", "description": "contain-intrinsic-width; contain-intrinsic-height" },
+          { "name": "contain-intrinsic-inline-size", "description": "define um tamanho intrínseco de fallback no eixo inline" },
+          { "name": "contain-intrinsic-height", "description": "define uma altura intrínseca de fallback que o navegador pode usar para calcular o layout quando o elemento está sujeito a size containment (contenção de tamanho)¹ fornece ao navegador um valor de altura que será usado quando o conteúdo interno não puder ser medido (por exemplo, em elementos com content-visibility: auto ou contain: size)²" },
+          { "name": "contain-intrinsic-block-size", "description": "Isso é útil quando o navegador precisa calcular o layout de um elemento que está sujeito a size containment (contenção de tamanho), mas não consegue determinar sua dimensão a partir do conteúdo interno" },
+        ]
+      },
+      {
+        category: "Break",
+        tags: [
+          { "name": "break-inside", "description": "?" },
+          { "name": "break-before", "description": "?" },
+          { "name": "break-after", "description": "?" },
+        ]
+      },
+      {
+        category: "Counter",
+        tags: [
+          { "name": "counter-increment", "description": " aumenta ou diminui o valor de um ou mais contadores CSS" },
+          { "name": "counter-reset", "description": "cria ou redefine um ou mais contadores CSS" },
+          { "name": "counter-set", "description": " cria e define um contador CSS para um valor específico" },
+        ]
+      },
+
+      {
+        category: "Fonte",
+        tags: [
+          { "name": "font", "description": "font-style; font-variant; font-weight; font-stretch; font-size/line-height; font-family;" },
+          { "name": "font-family", "description": "A font-family propriedade especifica a fonte de um elemento. A font-familypropriedade pode armazenar vários nomes de fontes como um sistema de 'fallback'. Se o navegador não suportar a primeira fonte, ele tentará a próxima. Se o nome de uma fonte contiver espaços em branco, ele deverá ser colocado entre aspas" },
+          { "name": "font-feature-settings", "description": "controla recursos tipográficos avançados em fontes OpenType" },
+          { "name": "font-optical-sizing", "description": " define se a renderização do texto é otimizada para visualização em diferentes tamanhos" },
+          { "name": "font-size", "description": "define o tamanho da fonte" },
+          { "name": "font-size-adjust", "description": "Essa font-size-adjustpropriedade é usada para preservar a legibilidade e o tamanho do texto quando uma fonte alternativa é utilizada. Duas fontes (configuradas com o mesmo tamanho) podem ocupar espaços muito diferentes. Por exemplo, um texto em Verdana de 15px será maior do que o mesmo texto em uma fonte Times de 15px. Assim, quando uma fonte não está disponível, o navegador usa a segunda ou terceira fonte especificada. Isso pode resultar em uma grande alteração no tamanho da fonte. Essa font-size-adjustpropriedade permite ajustar a fonte alternativa para que ela corresponda melhor à fonte original, em termos de tamanho. Todas as fontes possuem um valor de proporção. O valor de proporção é a diferença de tamanho entre a letra minúscula 'x' e a letra maiúscula 'X'." },
+          { "name": "font-stretch", "description": "permite estreitar (condensar) ou alargar (expandir) o texto" },
+          { "name": "font-style", "description": "define se uma fonte deve ser estilizada com uma versão normal, itálica ou oblíqua da sua família de fontes." },
+          { "name": "font-synthesis", "description": "permite especificar se o navegador pode ou não sintetizar os estilos de letra negrito, itálico, versalete e/ou subscrito e sobrescrito quando estes estiverem ausentes na família de fontes especificada" },
+          { "name": "font-synthesis-small-caps", "description": "permite especificar se o navegador pode ou não sintetizar letras maiúsculas pequenas quando elas estiverem ausentes em uma família de fontes" },
+          { "name": "font-synthesis-style", "description": " permite especificar se o navegador pode ou não sintetizar a fonte oblíqua quando ela estiver ausente em uma família de fontes" },
+          { "name": "font-synthesis-weight", "description": " permite especificar se o navegador pode ou não sintetizar a fonte em negrito quando ela estiver ausente em uma família de fontes" },
+          { "name": "font-variant", "description": "font-variant-alternates; font-variant-caps; font-variant-east-asian; font-variant-emoji; font-variant-ligatures; font-variant-numeric; font-variant-position;" },
+          { "name": "font-variant-alternates", "description": "?" },
+          { "name": "font-variant-caps", "description": "?" },
+          { "name": "font-variant-east-asian", "description": "?" },
+          { "name": "font-variant-emoji", "description": "?" },
+          { "name": "font-variant-ligatures", "description": "?" },
+          { "name": "font-variant-numeric", "description": "?" },
+          { "name": "font-variant-position", "description": "?" },
+          { "name": "font-variation-settings", "description": "?" },
+          { "name": "font-weight", "description": "define a espessura (ou negrito) da fonte" },
+        ]
       },
     ];
 
@@ -750,7 +780,7 @@
 
     function renderLibrary(activeData) {
       const library = document.getElementById("library");
-      library.innerHTML = ""; 
+      library.innerHTML = "";
 
       activeData.forEach(folder => {
         const folderDiv = document.createElement("div");
