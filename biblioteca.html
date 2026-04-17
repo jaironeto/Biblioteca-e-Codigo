@@ -146,6 +146,7 @@
 </head>
 
 <body>
+  <!--1/4-->
   <div class="menu-container">
     <h1 id="mainTitle" onclick="toggleMenu()">Biblioteca CSS</h1>
     <div id="myDropdown" class="dropdown-content">
@@ -154,7 +155,6 @@
       <div onclick="selectLibrary('JS')">Exemplos JavaScript</div>
       <div onclick="selectLibrary('Java')">Biblioteca Java</div>
       <div onclick="selectLibrary('Cod')">Codigo</div>
-      <div onclick="selectLibrary('Did')">Didatica</div>
     </div>
   </div>
 
@@ -162,6 +162,7 @@
 
   <script>
     // --- DATABASES ---
+    // 2/4
     const dataCSS = [
       {
         category: "Todos",
@@ -170,9 +171,6 @@
           { "name": "backdrop-filter", "description": "permite aplicar efeitos gráficos, como desfoque ou mudança de cor, à área atrás de um elemento" },
           { "name": "appearance", "description": "A appearance propriedade permite exibir elementos em seu estilo nativo do sistema operacional, com base no tema do sistema, bem como remover qualquer estilo nativo da plataforma com o nonevalor definido" },
           { "name": "all", "description": "redefine todas¹ exceto, unicode-bidi, direction e custom properties²" },
-          { "name": "align-self", "description": "A propriedade CSS align-self alinha itens-flex da linha flex alvo, sobreescrevendo o valor align-items" },
-          { "name": "align-items", "description": "A propriedade CSS align-items estabelece o valor align-self em todos filhos diretos como um grupo. A propriedade align-self estabelece o alinhamento de um certo item dentro do bloco que o contém. Em Flexbox ele controla o alinhamento dos itens em Cross Axis, enquanto que no Grid Layout, controla o alinhamento dos itens no Eixo de Bloco dentro de sua grid area." },
-          { "name": "align-content", "description": "A propriedade CSS align-content define a distribuição entre e ao redor dos items do conteúdo do eixo transversal de uma flexbox ou do eixo de bloco de uma grid." },
           { "name": "accent-color", "description": "especifica a cor, interface, input¹" },
           { "name": "content", "description": "usada com os pseudo-elementos ::before ::after para inserir conteúdo gerado" },
           { "name": "content-visibility", "description": "controla se um elemento renderiza ou não seu conteúdo, além de impor um conjunto robusto de restrições, permitindo que os agentes do usuário omitam grandes partes do trabalho de layout e renderização até que seja necessário. Isso permite que o agente do usuário ignore o trabalho de renderização de um elemento (incluindo layout e pintura) até que seja necessário " },
@@ -195,120 +193,25 @@
           { "name": "empty-cells", "description": "define se as bordas das células vazias em uma tabela devem ou não ser exibidas" },
           { "name": "filter", "description": "define efeitos visuais (como desfoque e saturação) para um elemento (geralmente <img>)" },
           { "name": "float", "description": "Essa floatpropriedade especifica se um elemento deve flutuar para a esquerda, para a direita ou não flutuar. Nota: Elementos com posicionamento absoluto ignoram a float propriedade! Observação: Elementos adjacentes a um elemento flutuante irão contorná-lo. Para evitar isso, use a propriedade `clear` ou o truque `clearfix`" },
-          { "name": "forced-color-adjust", "description": "?" },
-          { "name": "gap", "description": "?" },
-          { "name": "hanging-punctuation", "description": "?" },
-          { "name": "height", "description": "?" },
-          { "name": "hyphenate-character", "description": "?" },
-          { "name": "hyphenate-limit-chars", "description": "?" },
-          { "name": "hyphens", "description": "?" },
-          { "name": "image-orientation", "description": "?" },
-          { "name": "image-rendering", "description": "?" },
-          { "name": "initial-letter", "description": "?" },
-          { "name": "inset-block", "description": "?" },
-          { "name": "inset-block-end", "description": "?" },
-          { "name": "inset-block-start", "description": "?" },
-          { "name": "inset-inline", "description": "?" },
-          { "name": "inset-inline-end", "description": "?" },
-          { "name": "inset-inline-start", "description": "?" },
-          { "name": "isolation", "description": "?" },
-          { "name": "justify-content", "description": "?" },
-          { "name": "justify-items", "description": "?" },
-          { "name": "justify-self", "description": "?" },
-          { "name": "kerning", "description": "?" },
-          { "name": "left", "description": "?" },
-          { "name": "letter-spacing", "description": "?" },
-          { "name": "line-break", "description": "?" },
-          { "name": "line-height", "description": "?" },
-          { "name": "list-style", "description": "?" },
-          { "name": "list-style-image", "description": "?" },
-          { "name": "list-style-position", "description": "?" },
-          { "name": "list-style-type", "description": "?" },
-          { "name": "margin", "description": "?" },
-          { "name": "margin-block", "description": "?" },
-          { "name": "margin-block-end", "description": "?" },
-          { "name": "margin-block-start", "description": "?" },
-          { "name": "margin-bottom", "description": "?" },
-          { "name": "margin-inline", "description": "?" },
-          { "name": "margin-inline-end", "description": "?" },
-          { "name": "margin-inline-start", "description": "?" },
-          { "name": "margin-left", "description": "?" },
-          { "name": "margin-right", "description": "?" },
-          { "name": "margin-top", "description": "?" },
-          { "name": "marker", "description": "?" },
-          { "name": "marker-start", "description": "?" },
-          { "name": "mask", "description": "?" },
-          { "name": "mask-border", "description": "?" },
-          { "name": "mask-border-mode", "description": "?" },
-          { "name": "mask-border-outset", "description": "?" },
-          { "name": "mask-border-repeat", "description": "?" },
-          { "name": "mask-border-source", "description": "?" },
-          { "name": "mask-border-width", "description": "?" },
-          { "name": "mask-clip", "description": "?" },
-          { "name": "mask-composite", "description": "?" },
-          { "name": "mask-depth", "description": "?" },
-          { "name": "mask-image", "description": "?" },
-          { "name": "mask-mode", "description": "?" },
-          { "name": "mask-origin", "description": "?" },
-          { "name": "mask-repeat", "description": "?" },
-          { "name": "mask-size", "description": "?" },
-          { "name": "mask-style", "description": "?" },
-          { "name": "mask-type", "description": "?" },
-          { "name": "max-block-size", "description": "?" },
-          { "name": "max-height", "description": "?" },
-          { "name": "max-inline-size", "description": "?" },
-          { "name": "max-width", "description": "?" },
-          { "name": "min-block-size", "description": "?" },
-          { "name": "min-height", "description": "?" },
-          { "name": "min-inline-size", "description": "?" },
-          { "name": "min-width", "description": "?" },
-          { "name": "mix-blend-mode", "description": "?" },
-          { "name": "object-fit", "description": "?" },
-          { "name": "object-position", "description": "?" },
-          { "name": "offset", "description": "?" },
-          { "name": "offset-anchor", "description": "?" },
-          { "name": "offset-distance", "description": "?" },
-          { "name": "offset-path", "description": "?" },
-          { "name": "offset-position", "description": "?" },
-          { "name": "offset-rotate", "description": "?" },
-          { "name": "opacity", "description": "?" },
-          { "name": "order", "description": "?" },
-          { "name": "orphans", "description": "?" },
-          { "name": "outline", "description": "?" },
-          { "name": "outline-color", "description": "?" },
-          { "name": "outline-offset", "description": "?" },
-          { "name": "outline-style", "description": "?" },
-          { "name": "outline-width", "description": "?" },
+          { "name": "forced-color-adjust", "description": "permite que os autores desativem o modo de cores forçadas para determinados elementos. Isso restaura o controle desses valores para o CSS" },
+          { "name": "height", "description": "Define a altura" },
+          { "name": "image-orientation", "description": "especifica uma correção independente do layout para a orientação de uma imagem." },
+          { "name": "image-rendering", "description": "Essa image-renderingpropriedade especifica o tipo de algoritmo a ser usado para o redimensionamento da imagem" },
+          { "name": "isolation", "description": "Essa isolationpropriedade define se um elemento deve criar um novo conteúdo de empilhamento. Nota: Essa isolationpropriedade é útil quando usada com background-blend-mode ou mix-blend-mode." },
+          { "name": "kerning", "description": "A propriedade CSS font-kerning controla o o uso da informação de kerning, que é, o controle de como as letras serão espaçadas. A informação de kerning é armazenada na fonte, e se a fonte é well-kerned, essa caracteristica permite que o espaçamento entre caracteres seja muito parecido, independente dos caracteres" },
+          { "name": "mix-blend-mode", "description": "Essa mix-blend-modepropriedade especifica como o conteúdo de um elemento deve se mesclar com o fundo do seu elemento pai direto." },
+          { "name": "opacity", "description": "Essa opacitypropriedade define o nível de opacidade de um elemento. O nível de opacidade descreve o nível de transparência, onde 1 é totalmente opaco, 0,5 é 50% transparente e 0 é completamente transparente. Observação: ao usar a opacitypropriedade para adicionar transparência ao fundo de um elemento, todos os seus elementos filhos também se tornam transparentes. Isso pode dificultar a leitura do texto dentro de um elemento totalmente transparente. Se você não quiser aplicar opacidade aos elementos filhos, use valores de cor RGBA " },
+          { "name": "order", "description": "Essa orderpropriedade especifica a ordem visual de um item flexível ou de um item de grade em um contêiner flexível ou de grade. Observação: Se o elemento não for um item flexível ou um item de grade, a orderpropriedade não terá efeito. Nota sobre acessibilidade: A order propriedade permite a reordenação visual, mas não altera a ordem lógica dos elementos no DOM. Isso afetará os usuários que navegam pelo site com tecnologias assistivas, como leitores de tela, pois o conteúdo será lido em uma ordem diferente da apresentada visualmente" },
+          { "name": "orphans", "description": "Essa orphanspropriedade especifica o número mínimo de linhas que devem ser deixadas na parte inferior de uma página ou coluna" },
           { "name": "overflow", "description": "?" },
-          { "name": "overflow-inline", "description": "?" },
           { "name": "overflow-x", "description": "?" },
           { "name": "overflow-y", "description": "?" },
-          { "name": "overscroll-behavior", "description": "?" },
-          { "name": "overscroll-behavior-block", "description": "?" },
-          { "name": "overscroll-behavior-inline", "description": "?" },
-          { "name": "overscroll-behavior-x", "description": "?" },
-          { "name": "overscroll-behavior-y", "description": "?" },
-          { "name": "padding", "description": "?" },
-          { "name": "padding-block", "description": "?" },
-          { "name": "padding-block-end", "description": "?" },
-          { "name": "padding-block-start", "description": "?" },
-          { "name": "padding-bottom", "description": "?" },
-          { "name": "padding-inline", "description": "?" },
-          { "name": "padding-inline-end", "description": "?" },
-          { "name": "padding-inline-start", "description": "?" },
-          { "name": "padding-left", "description": "?" },
-          { "name": "padding-right", "description": "?" },
-          { "name": "padding-top", "description": "?" },
-          { "name": "page", "description": "?" },
-          { "name": "paint-order", "description": "?" },
+          { "name": "page", "description": "A propriedade CSS `page` é usada para especificar a página nomeada, um tipo específico de página definido pela regra `@page`." },
+          { "name": "paint-order", "description": "A propriedade CSS paint-order permite controlar a ordem em que o preenchimento e o contorno (e os marcadores de pintura) do conteúdo de texto e das formas são desenhados." },
           { "name": "palette", "description": "?" },
-          { "name": "perspective", "description": "?" },
-          { "name": "perspective-origin", "description": "?" },
-          { "name": "place-content", "description": "?" },
-          { "name": "place-items", "description": "?" },
-          { "name": "place-self", "description": "?" },
+          { "name": "perspective", "description": "A propriedade CSS `perspective` determina a distância entre o plano z=0 e o usuário, a fim de dar perspectiva a um elemento posicionado em 3D." },
+          { "name": "perspective-origin", "description": "A propriedade CSS `perspective-origin` determina a posição para a qual o observador está olhando. Ela é usada como ponto de fuga pela propriedade `perspective`." },
           { "name": "pointer-events", "description": "?" },
-          { "name": "position", "description": "?" },
           { "name": "print-color-adjust", "description": "?" },
           { "name": "quotes", "description": "?" },
           { "name": "resize", "description": "?" },
@@ -441,6 +344,34 @@
           { "name": "border-start-end-radius", "description": "?" },
           { "name": "border-start-start-radius", "description": "?" },
           { "name": "unicode-bidi", "description": "?" },
+          { "name": "hanging-punctuation", "description": "?" },
+          { "name": "inset-block", "description": "?" },
+          { "name": "inset-block-end", "description": "?" },
+          { "name": "inset-block-start", "description": "?" },
+          { "name": "inset-inline", "description": "?" },
+          { "name": "inset-inline-end", "description": "?" },
+          { "name": "inset-inline-start", "description": "?" },
+          { "name": "line-break", "description": "?" },
+          { "name": "margin-inline", "description": "?" },
+          { "name": "margin-inline-end", "description": "?" },
+          { "name": "margin-inline-start", "description": "?" },
+          { "name": "margin-block", "description": "?" },
+          { "name": "margin-block-end", "description": "?" },
+          { "name": "margin-block-start", "description": "?" },
+          { "name": "marker", "description": "?" },
+          { "name": "marker-start", "description": "?" },
+          { "name": "max-inline-size", "description": "?" },
+          { "name": "max-block-size", "description": "?" },
+          { "name": "min-inline-size", "description": "?" },
+          { "name": "min-block-size", "description": "?" },
+          { "name": "overflow-inline", "description": "?" },
+          { "name": "padding-inline", "description": "?" },
+          { "name": "padding-inline-end", "description": "?" },
+          { "name": "padding-inline-start", "description": "?" },
+          { "name": "padding-block", "description": "?" },
+          { "name": "padding-block-end", "description": "?" },
+          { "name": "padding-block-start", "description": "?" },
+
         ]
       },*/
       /*{
@@ -454,8 +385,10 @@
         ]
       },*/
       {
-        category: "Background",
+        category: "Background e Imagem",
         tags: [
+          { name: "object-fit", description: "Essa object-fitpropriedade é usada para especificar como uma imagem (<img>) ou um vídeo (<video>) deve ser redimensionado para se ajustar ao seu contêiner. Essa propriedade instrui o conteúdo a preencher o contêiner de diversas maneiras, como 'preservar a proporção' ou 'esticar-se verticalmente e ocupar o máximo de espaço possível'." },
+          { name: "object-position", description: "Essa object-positionpropriedade é usada em conjunto com object-fit para especificar como uma <img> ou <video> deve ser posicionada com coordenadas x/y dentro de sua 'própria caixa de conteúdo'." },
           { name: "background-size", description: "especifica o tamanho das imagens¹ existem quatro sintaxes diferentes que voce pode usar com essa propriedade²" },
           { name: "background-repeat", description: "define se e como uma imagem de fundo será repetida¹ por padrão uma imagem de fundo é repetida tanto²" },
           { name: "background-position", description: "define a posição inicial de uma imagem de fundo¹ podendo usar coordenadas, porcentagens ou palavras-chave²" },
@@ -482,7 +415,7 @@
         ]
       },
       {
-        category: "Border",
+        category: "Border e Outline",
         tags: [
           { "name": "border-bottom (shortand)", "description": "?" },
           { "name": "border", "description": "?" },
@@ -515,6 +448,11 @@
           { "name": "border-bottom-right-radius", "description": "?" },
           { "name": "border-bottom-color", "description": "?" },
           { "name": "border-bottom-left-radius", "description": "?" },
+          { "name": "outline", "description": "?" },
+          { "name": "outline-color", "description": "?" },
+          { "name": "outline-offset", "description": "?" },
+          { "name": "outline-style", "description": "?" },
+          { "name": "outline-width", "description": "?" },
         ]
       },
       {
@@ -600,8 +538,11 @@
       },
 
       {
-        category: "Fonte",
+        category: "Fonte e Texto",
         tags: [
+          { "name": "letter-spacing", "description": "A propriedade CSS define o espaçamento entre os caracteres do texto. Esse valor é adicionado ao espaçamento natural entre os caracteres durante a renderização do texto. Valores positivos aumentam o espaçamento entre os caracteres, enquanto valores negativos os aproximam." },
+          { "name": "line-height", "description": "A propriedade CSS define a altura de uma caixa de linha em modos de escrita horizontal . Em modos de escrita vertical, define a largura de uma caixa de linha. É comumente usada para definir a distância entre linhas de texto. Em elementos de bloco em modos de escrita horizontal, especifica a altura preferencial das caixas de linha dentro do elemento e, em elementos inline não substituídos , especifica a altura usada para calcular a altura da caixa de linha" },
+          { "name": "initial-letter", "description": "Essa initial-letterpropriedade especifica o tamanho da letra inicial e, opcionalmente, o número de linhas que a letra inicial deve ocupar (descer no texto)." },
           { "name": "font", "description": "font-style; font-variant; font-weight; font-stretch; font-size/line-height; font-family;" },
           { "name": "font-family", "description": "A font-family propriedade especifica a fonte de um elemento. A font-familypropriedade pode armazenar vários nomes de fontes como um sistema de 'fallback'. Se o navegador não suportar a primeira fonte, ele tentará a próxima. Se o nome de uma fonte contiver espaços em branco, ele deverá ser colocado entre aspas" },
           { "name": "font-feature-settings", "description": "controla recursos tipográficos avançados em fontes OpenType" },
@@ -624,8 +565,114 @@
           { "name": "font-variant-position", "description": "?" },
           { "name": "font-variation-settings", "description": "?" },
           { "name": "font-weight", "description": "define a espessura (ou negrito) da fonte" },
+
         ]
       },
+      {
+        category: "Hifenização",
+        tags: [
+          { "name": "hyphenate-character", "description": "define o caractere (ou string) usado no final de uma linha antes de uma quebra de hifenização." },
+          { "name": "hyphenate-limit-chars", "description": "especifica o comprimento mínimo da palavra para permitir a hifenização, bem como o número mínimo de caracteres antes e depois do hífen.hyphenate-limit-chars. Essa propriedade oferece controle preciso sobre a hifenização no texto. Esse controle permite evitar hifenizações inadequadas e definir a hifenização apropriada para diferentes idiomas, o que, por sua vez, possibilita uma melhor tipografia." },
+          { "name": "hyphens", "description": " especifica como as palavras devem ser hifenizadas quando o texto se estende por várias linhas. Ela pode impedir completamente a hifenização, hifenizar em pontos especificados manualmente dentro do texto ou permitir que o navegador insira hífenes automaticamente onde for apropriado." },
+        ]
+      },
+      {
+        category: "Posicionamento e Alinhamento",
+        tags: [
+          { "name": "align-self", "description": "A propriedade CSS align-self alinha itens-flex da linha flex alvo, sobreescrevendo o valor align-items" },
+          { "name": "align-items", "description": "A propriedade CSS align-items estabelece o valor align-self em todos filhos diretos como um grupo. A propriedade align-self estabelece o alinhamento de um certo item dentro do bloco que o contém. Em Flexbox ele controla o alinhamento dos itens em Cross Axis, enquanto que no Grid Layout, controla o alinhamento dos itens no Eixo de Bloco dentro de sua grid area." },
+          { "name": "align-content", "description": "A propriedade CSS align-content define a distribuição entre e ao redor dos items do conteúdo do eixo transversal de uma flexbox ou do eixo de bloco de uma grid." },
+          { "name": "justify-content", "description": "?" },
+          { "name": "justify-items", "description": "?" },
+          { "name": "justify-self", "description": "?" },
+          { "name": "gap", "description": "row-gap; column-gap" },
+          { "name": "left", "description": "Essa leftpropriedade afeta a posição horizontal de um elemento posicionado. Ela não tem efeito sobre elementos não posicionados." },
+          { "name": "margin", "description": "?" },
+          { "name": "margin-bottom", "description": "?" },
+          { "name": "margin-left", "description": "?" },
+          { "name": "margin-right", "description": "?" },
+          { "name": "margin-top", "description": "?" },
+          { "name": "padding", "description": "?" },
+          { "name": "padding-bottom", "description": "?" },
+          { "name": "padding-left", "description": "?" },
+          { "name": "padding-right", "description": "?" },
+          { "name": "padding-top", "description": "?" },
+          { "name": "place-content", "description": "?" },
+          { "name": "place-items", "description": "?" },
+          { "name": "place-self", "description": "?" },
+          { "name": "position", "description": "A position propriedade especifica o tipo de método de posicionamento usado para um elemento (estático, relativo, absoluto, fixo ou aderente)" },
+        ]
+      },
+      {
+        category: "List",
+        tags: [
+          { "name": "list-style", "description": "list-style-type; list-style-position; list-style-image" },
+          { "name": "list-style-image", "description": "A list-style-image propriedade substitui o marcador do item da lista por uma imagem. Observação: sempre especifique também a propriedade list-style-type . Essa propriedade é usada caso a imagem esteja indisponível por algum motivo" },
+          { "name": "list-style-position", "description": "A list-style-position propriedade especifica a posição dos marcadores dos itens da lista (marcadores com marcadores)." },
+          { "name": "list-style-type", "description": "Especifica list-style-typeo tipo de marcador de item de lista em uma lista." },
+
+        ]
+      },
+
+      {
+        category: "Mask",
+        tags: [
+          { "name": "mask", "description": "?" },
+          { "name": "mask-border", "description": "?" },
+          { "name": "mask-border-mode", "description": "?" },
+          { "name": "mask-border-outset", "description": "?" },
+          { "name": "mask-border-repeat", "description": "?" },
+          { "name": "mask-border-source", "description": "?" },
+          { "name": "mask-border-width", "description": "?" },
+          { "name": "mask-clip", "description": "?" },
+          { "name": "mask-composite", "description": "?" },
+          { "name": "mask-depth", "description": "?" },
+          { "name": "mask-image", "description": "?" },
+          { "name": "mask-mode", "description": "?" },
+          { "name": "mask-origin", "description": "?" },
+          { "name": "mask-repeat", "description": "?" },
+          { "name": "mask-size", "description": "?" },
+          { "name": "mask-style", "description": "?" },
+          { "name": "mask-type", "description": "?" },
+
+        ]
+      },
+
+      {
+        category: "Tamanho",
+        tags: [
+          { "name": "max-height", "description": "?" },
+          { "name": "max-width", "description": "?" },
+          { "name": "min-height", "description": "?" },
+          { "name": "min-width", "description": "?" },
+
+        ]
+      },
+      {
+        category: "Offeset",
+        tags: [
+          { "name": "offset", "description": "?" },
+          { "name": "offset-anchor", "description": "?" },
+          { "name": "offset-distance", "description": "?" },
+          { "name": "offset-path", "description": "?" },
+          { "name": "offset-position", "description": "?" },
+          { "name": "offset-rotate", "description": "?" },
+
+        ]
+      },
+      {
+        category: "Rolagem",
+        tags: [
+          { "name": "overscroll-behavior", "description": "?" },
+          { "name": "overscroll-behavior-block", "description": "?" },
+          { "name": "overscroll-behavior-inline", "description": "?" },
+          { "name": "overscroll-behavior-x", "description": "?" },
+          { "name": "overscroll-behavior-y", "description": "?" },
+        ]
+      },
+
+
+
     ];
 
     const dataHTML = [
@@ -652,17 +699,6 @@
         category: "Classes",
         tags: [
           { name: "String", description: "Sequência de caracteres." }
-        ]
-      }
-    ];
-
-    const Did = [
-      {
-        category: "Javascript",
-        tags: [
-          { name: "Construtor", description: "?" },
-          { name: "Promessa", description: "3 estados; await; async; tratamento de erro async; catch; encadeamento; " },
-          { name: "Variavel", description: "Nao sao; pode conter; nao confunda" },
         ]
       }
     ];
@@ -737,13 +773,13 @@
       }
     ];
 
+    // 3/4
     const db = {
       'CSS': dataCSS,
       'HTML': dataHTML,
       'JS': dataJS,
       'Java': dataJava,
       'Cod': Cod,
-      "Did": Did,
     };
 
     // --- FUNÇÕES ---
@@ -764,6 +800,7 @@
       }
     }
 
+    // 4/4
     function selectLibrary(type) {
       const titles = {
         'CSS': 'Biblioteca CSS',
@@ -771,7 +808,6 @@
         'JS': 'Exemplos JavaScript',
         'Java': 'Biblioteca Java',
         'Cod': 'Codigo',
-        'Did': 'Didática JavaScript',
       };
 
       document.getElementById("mainTitle").textContent = titles[type];
