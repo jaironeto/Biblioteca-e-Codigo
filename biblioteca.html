@@ -675,11 +675,37 @@
     ];
 
     const dataHTML = [
+      /*{
+        category: "Desnecessario",
+        tags: [
+          { "name": "<xmp>", "description": "Gerado por IA. (Obsoleto) Renderizava texto entre as tags sem interpretar o HTML." },
+          { "name": "<tt>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para texto de teletipo (monoespaçado)." },
+          { "name": "<strike>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para texto riscado." },
+          { "name": "<selectedcontent>", "description": "Gerado por IA. (Experimental) Parte de novos padrões de personalização de controles de formulário." },
+          { "name": "<rtc>", "description": "Gerado por IA. (Obsoleto) Contêiner para anotações de texto ruby." },
+          { "name": "<rb>", "description": "Gerado por IA. (Obsoleto) Usado para delimitar o componente base de uma anotação ruby." },
+          { "name": "<plaintext>", "description": "Gerado por IA. (Obsoleto) Exibe o texto exatamente como digitado, ignorando tags." },
+          { "name": "<param>", "description": "Gerado por IA. (Obsoleto) Usado para definir parâmetros para o elemento <object>." },
+          { "name": "<nobr>", "description": "Gerado por IA. (Obsoleto) Impede a quebra automática de linha no texto." },
+          { "name": "<noembed>", "description": "Gerado por IA. (Obsoleto) Fornece conteúdo alternativo para navegadores que não suportam <embed>." },
+          { "name": "<noframes>", "description": "Gerado por IA. (Obsoleto) Fornece conteúdo alternativo para navegadores que não suportam frames." },
+          { "name": "<marquee>", "description": "Gerado por IA. (Obsoleto) Usado para criar texto rolante." },
+          { "name": "<frame>", "description": "Gerado por IA. (Obsoleto) Definia uma janela específica dentro de um frameset." },
+          { "name": "<frameset>", "description": "Gerado por IA. (Obsoleto) Usado para organizar janelas de frames." },
+          { "name": "<geolocation>", "description": "Gerado por IA. (Experimental) Relacionado a APIs de localização do navegador." },
+          { "name": "<font>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para definir fonte, cor e tamanho do texto." },
+          { "name": "<fencedframe>", "description": "Gerado por IA. (Experimental) Usado para incorporar conteúdo de forma segura e isolada." },
+          { "name": "<dir>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para criar uma lista de diretórios." },
+          { "name": "<center>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para centralizar texto e elementos." },
+          { "name": "<big>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para aumentar o tamanho da fonte." },
+          { "name": "<acronym>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para definir acrônimos." },
+
+        ]
+      },*/
       {
         category: "Todos",
         tags: [
-          [
-            { "name": "<a>", "description": "Gerado por IA. Define um hiperlink para conectar páginas ou recursos." },
+                    { name: "<a>", description: "Gerado por IA. Define um hiperlink para conectar páginas ou recursos." },
             { "name": "<abbr>", "description": "Gerado por IA. Define uma abreviação ou um acrônimo." },
             { "name": "<address>", "description": "Gerado por IA. Fornece informações de contato para o autor/proprietário de um documento ou artigo." },
             { "name": "<area>", "description": "Gerado por IA. Define uma área dentro de um mapa de imagem." },
@@ -786,37 +812,9 @@
             { "name": "<var>", "description": "Gerado por IA. Representa o nome de uma variável em uma expressão matemática ou código." },
             { "name": "<video>", "description": "Gerado por IA. Usado para incorporar conteúdo de vídeo em documentos." },
             { "name": "<wbr>", "description": "Gerado por IA. Sugere uma oportunidade de quebra de linha no texto." },
-          ]
 
         ]
       },
-      /*{
-        category: "Desnecessario",
-        tags: [
-          { "name": "<xmp>", "description": "Gerado por IA. (Obsoleto) Renderizava texto entre as tags sem interpretar o HTML." },
-          { "name": "<tt>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para texto de teletipo (monoespaçado)." },
-          { "name": "<strike>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para texto riscado." },
-          { "name": "<selectedcontent>", "description": "Gerado por IA. (Experimental) Parte de novos padrões de personalização de controles de formulário." },
-          { "name": "<rtc>", "description": "Gerado por IA. (Obsoleto) Contêiner para anotações de texto ruby." },
-          { "name": "<rb>", "description": "Gerado por IA. (Obsoleto) Usado para delimitar o componente base de uma anotação ruby." },
-          { "name": "<plaintext>", "description": "Gerado por IA. (Obsoleto) Exibe o texto exatamente como digitado, ignorando tags." },
-          { "name": "<param>", "description": "Gerado por IA. (Obsoleto) Usado para definir parâmetros para o elemento <object>." },
-          { "name": "<nobr>", "description": "Gerado por IA. (Obsoleto) Impede a quebra automática de linha no texto." },
-          { "name": "<noembed>", "description": "Gerado por IA. (Obsoleto) Fornece conteúdo alternativo para navegadores que não suportam <embed>." },
-          { "name": "<noframes>", "description": "Gerado por IA. (Obsoleto) Fornece conteúdo alternativo para navegadores que não suportam frames." },
-          { "name": "<marquee>", "description": "Gerado por IA. (Obsoleto) Usado para criar texto rolante." },
-          { "name": "<frame>", "description": "Gerado por IA. (Obsoleto) Definia uma janela específica dentro de um frameset." },
-          { "name": "<frameset>", "description": "Gerado por IA. (Obsoleto) Usado para organizar janelas de frames." },
-          { "name": "<geolocation>", "description": "Gerado por IA. (Experimental) Relacionado a APIs de localização do navegador." },
-          { "name": "<font>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para definir fonte, cor e tamanho do texto." },
-          { "name": "<fencedframe>", "description": "Gerado por IA. (Experimental) Usado para incorporar conteúdo de forma segura e isolada." },
-          { "name": "<dir>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para criar uma lista de diretórios." },
-          { "name": "<center>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para centralizar texto e elementos." },
-          { "name": "<big>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para aumentar o tamanho da fonte." },
-          { "name": "<acronym>", "description": "Gerado por IA. (Obsoleto) Anteriormente usado para definir acrônimos." },
-
-        ]
-      }*/
 
     ];
 
