@@ -155,7 +155,6 @@
       <div onclick="selectLibrary('Java')">Biblioteca Java</div>
       <div onclick="selectLibrary('JS')">Exemplo</div>
       <div onclick="selectLibrary('Cod')">Codigo</div>
-      <div onclick="selectLibrary('Did')">Didatica</div>
     </div>
   </div>
 
@@ -907,18 +906,32 @@
       }
     ];
 
-    const Did = [
+    /*const Did = [
       {
         category: "Javascript",
         tags: [
+          { name: "Todos", description: "?" },
           { name: "Promessa", description: "3 estados" },
           { name: "Construtor", description: "?" },
-          { name: "Assincrono", description: "async, await, tratamento de erro async" },
+          { name: "Assincrono", description: "async ⎯ await ⎯ tratamento de erro async" },
+          { name: "Função", description: "só os usa" },
 
 
         ]
-      }
-    ];
+      },
+      {
+        category: "Java",
+        tags: [
+          { name: "Todos", description: "encapsulamento ⎯ armazena seu estado em e expoe seus estado por ⎯ duas caracteristicas ⎯ os metodos operam ⎯ pode existir milhares ⎯ uma classe e o projeto o qual ⎯ a responsabilidade de criar ⎯ cada classe pode ter e cada super classe" },
+          { name: "Interface", description: "interface estabelecem ⎯ se uma classe afirma ⎯ essencialmente, com corpos" },
+          { name: "Variaveis", description: "variaveis de instancia ⎯ variaveis de classe, isso informa, independente ⎯ variaveis locais, vem inteiramente, que e entre, visiveis apenas ⎯ parametros, classificados ⎯ membros ⎯ variaveis diferenciam ⎯ constante ⎯ espaço em branco" },
+          { name: "Tipagem", description: "Estaticamente tipada ⎯ o tipo de dado de uma variavel determina ⎯ tipo primitivo, nomeia, predefinido ⎯ suporte especial ⎯ colocar entre aspas ⎯ imutaveis ⎯ campos declarados mas nao inicializados ⎯ as variaveis sao ligeiramente diferentes, acessar sem inicializar ⎯ sublinhado em numeros" },
+          { name: "Array", description: "array e um container ⎯ o tamanho do array e definido, apos a criação ⎯ cada item do array e chamado, e é acessado ⎯ assim como campos a declaração do array tem duas coisas ⎯ o tipo do array e escrito ⎯ o tamanho nao faz parte ⎯ assim como variaveis de outro tipo a declaração do array ⎯ tambem pode colocar colchetes ⎯ a maneira de criar um array ⎯ sintaxe abreviada ⎯  matriz multidicional" },
+
+
+        ]
+      },
+    ];*/
 
     // 3/4
     const db = {
@@ -927,7 +940,6 @@
       'JS': dataJS,
       'Java': dataJava,
       'Cod': Cod,
-      'Did': Did,
     };
 
     // --- FUNÇÕES ---
@@ -953,10 +965,9 @@
       const titles = {
         'CSS': 'Biblioteca CSS',
         'HTML': 'Biblioteca HTML',
-        'JS': 'Exemplos JavaScript',
         'Java': 'Biblioteca Java',
+        'JS': 'Exemplo',
         'Cod': 'Codigo',
-        'Did': 'Didatica',
       };
 
       document.getElementById("mainTitle").textContent = titles[type];
