@@ -155,7 +155,7 @@
       <div onclick="selectLibrary('Java')">Biblioteca Java</div>
       <div onclick="selectLibrary('JS')">Exemplo</div>
       <div onclick="selectLibrary('Cod')">Codigo</div>
-
+      <div onclick="selectLibrary('Did')">Didatica</div>
     </div>
   </div>
 
@@ -907,19 +907,36 @@
       }
     ];
 
-    /*const Did = [
+    const Did = [
       {
         category: "Javascript",
         tags: [
-          { name: "Todos", description: "?" },
-          { name: "Promessa", description: "3 estados" },
-          { name: "Construtor", description: "?" },
-          { name: "Assincrono", description: "async ⎯ await ⎯ tratamento de erro async" },
-          { name: "Função", description: "só os usa" },
-
-
+          { name: "O que é Javascript", description: "O que são APIs? conjunto de que, que permite o que ― API de terceiros ― API do navegador ― ao carregar uma pagina da web, executando ― cada aba possui ― quando o navegador encontra ― interpretada e leve ― compilação just-in-time ― e uma ma pratica ― existem alguma estrategias" },
+          { name: "Passo a passo do javascript", description: "template literals" },
+          { name: "Variaveis", description: "uma caracteristica especial das variaveis ― tambem podem conter ― nao sao ― nao confunda ― içamento ― tipagem dinamica" },
+          { name: "Numeros e operadores", description: "isso significa que independente do tipo de numero ― as vezes voce pode acabar com um numero ― [+] ― [-] ― [*] ― [/] ― [%] ― [**] ― precendencia ― se voce tentar inserir alguns desses valores no console" },
+          { name: "Cordas", description: "dentro de um template literal voce pode envolver ― para obter o mesmo resultado ― barra invertida ― o que acontece quando tentamos concatenar" },
+          { name: "Métodos de string", description: "voce pode retornar qualquer" },
+          { name: "Matrizes", description: "descobrir o comprimento do array" },
+          { name: "Condicionais", description: "―" },
+          { name: "Crie sua própria função", description: "―" },
+          { name: "Eventos", description: "―" },
+          { name: "Objetos", description: "―" },
+          { name: "Script DOM", description: "―" },
+          { name: "Solicitações de rede", description: "―" },
+          { name: "Guia - Introdução", description: "―" },
+          { name: "Fluxo de controle e tratamento de erros", description: "―" },
+          { name: "Usando classes", description: "―" },
+          { name: "Usando promessas", description: "―" },
+          { name: "Assincrono - introdução", description: "―" },
+          { name: "Usando promessas", description: "―" },
+          { name: "Implementando APIs baseadas em promessas", description: "―" },
+          { name: "Prototipos de objetos", description: "―" },
+          { name: "Programação orientada a objetos", description: "―" },
+          { name: "Classes de javascript", description: "―" },
         ]
       },
+
       {
         category: "Java",
         tags: [
@@ -932,7 +949,7 @@
 
         ]
       },
-    ];*/
+    ];
 
     // 3/4
     const db = {
@@ -941,6 +958,7 @@
       'JS': dataJS,
       'Java': dataJava,
       'Cod': Cod,
+      'Did': Did,
     };
 
     // --- FUNÇÕES ---
@@ -969,6 +987,8 @@
         'Java': 'Biblioteca Java',
         'JS': 'Exemplo',
         'Cod': 'Codigo',
+        'Did': 'Didatica',
+
       };
 
       document.getElementById("mainTitle").textContent = titles[type];
