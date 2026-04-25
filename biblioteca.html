@@ -156,6 +156,8 @@
       <div onclick="selectLibrary('JS')">Exemplo</div>
       <div onclick="selectLibrary('Cod')">Codigo</div>
       <div onclick="selectLibrary('DidJs')">Didatica Javascript</div>
+      <div onclick="selectLibrary('DidJv')">Didatica Java</div>
+
     </div>
   </div>
 
@@ -931,12 +933,55 @@
           { name: "Assincrono - introdução", description: "A programação assíncrona é uma técnica que permite ― A razão para isso é que este programa JavaScript ― Uma thread é uma ― Como o programa consiste em uma única thread, ele só pode ― manipuladores de eventos são, na verdade, uma forma de programação assíncrona: você fornece ― e você é notificado sobre o progresso e a eventual conclusão de uma requisição ao adicionar ― Um manipulador de eventos é um tipo específico ― Uma função de retorno de chamada é simplesmente uma função ― Isso às vezes é chamado de 'inferno de funções de retorno de chamada' ou 'pirâmide da perdição' ― Por esses motivos, a maioria das APIs assíncronas modernas não usa ― Em vez disso, a base da programação assíncrona em JavaScript" },
           { name: "Usando promessas", description: "Uma promessa é um objeto ― que representa ― No momento em que a promessa é retornada para quem a chamou, a operação geralmente ― mas o objeto promessa fornece ― Com uma API baseada em promessas, a função assíncrona inicia ― Você pode então associar manipuladores a esse objeto de promessa, e esses manipuladores serão executados ― Isso é chamado de encadeamento de promessas ― Para dar suporte ao tratamento de erros, Promiseos objetos fornecem ― Se você adicionar um ` catch()wait()` ao final de uma cadeia de promessas, ele será chamado quando ― Primeiro, uma promessa pode estar em um de três estados ― mas a promessa é cumprida se o servidor enviou uma resposta, mesmo que a resposta ― A asyncpalavra-chave `async` oferece uma maneira ― Adicioná-la asyncno início de uma função a torna ― Dentro de uma função assíncrona, você pode usar a awaitpalavra-chave `await` antes de uma chamada para uma função que retorna uma promessa. Isso faz com que o código espere ― Isso permite escrever código que usa funções assíncronas, mas que se parece ― Podemos até usar um try...catch ― Observe também que você só pode usar `this` await ― Lembre-se de que, assim como uma cadeia de promessas, awaito `asyncio` força a conclusão" },
           { name: "Implementando APIs baseadas em promessas", description: "O Promise()construtor recebe uma única ― Chamaremos essa função ― Ao criar uma nova promessa, você fornece ― Essa função executora recebe dois ― ambos também ― Se a função assíncrona for bem-sucedida ― Se a função executora lançar um erro ― Você pode passar um único parâmetro de qualquer tipo para" },
-          { name: "Prototipos de objetos", description: "Os protótipos são o mecanismo ― Se você digitar o nome do objeto seguido de um ponto no console, como myObject.`object`, o console exibirá ― A cadeia termina quando ― A propriedade de um objeto que aponta para seu protótipo não é chamada ― A maneira padrão de acessar o protótipo de um objeto ― Ao tentar acessar uma propriedade de um objeto: se a propriedade não for encontrada no próprio objeto ― Se a propriedade ainda não for encontrada ― Isso se chama 'sombreamento' da propriedade ― Existem várias maneiras de definir o protótipo de um objeto em JavaScript, e aqui descreveremos duas ― Em JavaScript, todas as funções possuem uma propriedade ― Quando você chama uma função como construtor"},
+          { name: "Prototipos de objetos", description: "Os protótipos são o mecanismo ― Se você digitar o nome do objeto seguido de um ponto no console, como myObject.`object`, o console exibirá ― A cadeia termina quando ― A propriedade de um objeto que aponta para seu protótipo não é chamada ― A maneira padrão de acessar o protótipo de um objeto ― Ao tentar acessar uma propriedade de um objeto: se a propriedade não for encontrada no próprio objeto ― Se a propriedade ainda não for encontrada ― Isso se chama 'sombreamento' da propriedade ― Existem várias maneiras de definir o protótipo de um objeto em JavaScript, e aqui descreveremos duas ― Em JavaScript, todas as funções possuem uma propriedade ― Quando você chama uma função como construtor" },
           { name: "Programação orientada a objetos", description: "Um objeto fornece uma interface pública para ― mas mantém seu próprio ― Por si só, uma classe não faz nada ― O processo de criação de uma instância é realizado ― Passamos valores para o construtor para qualquer ― ela cria uma espécie de firewall entre esse objeto e o restante do sistema ― Em JavaScript, podemos, e frequentemente ― Isso pode tornar o trabalho com objetos muito mais leve do que ― Quando uma subclasse é instanciada, um único objeto é criado, combinando propriedades ― Com a prototipagem, cada nível da hierarquia é representado ― e eles são vinculados ― O comportamento da cadeia de protótipos se assemelha" },
           { name: "Classes de javascript", description: "O construtor é definido usando ― Assim como um construtor fora da definição de uma classe , ele irá: ― Se você não precisar realizar nenhuma inicialização especial ― e um construtor padrão ― Usamos a extendspalavra-chave para indicar ― Se uma subclasse tiver alguma inicialização própria a fazer, ela deve primeiro ― Os campos privados devem ser declarados ― e seus nomes" },
         ]
       },
     ];
+
+   const DidJv = [
+      {
+        category: "Todos",
+        tags: [
+          { name: "O que é um objeto", description: "Os objetos do mundo real compartilham duas características ― Um objeto armazena seu estado ― e expõe seu comportamento por meio ― Os métodos operam ― encapsulamento de dados"},
+          { name: "O que é uma classe", description: "Podem existir milhares de outras bicicletas, todas ― Cada bicicleta foi construída a partir ― Em termos de programação orientada a objetos, dizemos que sua bicicleta ― Uma classe é o projeto a partir ― A responsabilidade de criar e usar novos Bicycleobjetos"},
+          { name: "O que e herança", description: "Na linguagem de programação Java, cada classe pode ter ― e cada superclasse ― A sintaxe para criar uma subclasse é simples. No início da declaração da classe ― seguida pelo ― Isso fornece MountainBike os mesmos ― mas permite que seu código se concentre exclusivamente"},
+          { name: "O que e uma interface", description: "Em sua forma mais comum, uma interface é um grupo ― com corpos ― Interfaces estabelecem um contrato entre ― Se sua classe afirma implementar uma interface, todos os métodos definidos por essa interface devem"},
+          { name: "O que e um pacote", description: "Um pacote é um ― Conceitualmente, você pode pensar em pacotes ― A plataforma Java oferece uma enorme ― Essa biblioteca é conhecida como ― Isso permite que você, o programador, se concentre ― em vez da "},
+          { name: "Variáveis java", description: "Variáveis de Instância (Campos Não Estáticos) ― Variáveis de Classe (Campos Estáticos) ― isso informa ao compilador que existe exatamente ― independentemente ― Variáveis locais : Assim como um objeto armazena seu estado em campos, um método geralmente armazena ― Não existe uma palavra-chave específica que designe ― essa determinação vem inteiramente ― que é entre as chaves ― Dessa forma, as variáveis locais são visíveis apenas ― Parâmetros ― O importante é lembrar que os parâmetros são sempre classificados ― Os campos, métodos e tipos aninhados de um tipo são chamados ― Os nomes de variáveis diferenciam ― Espaços em branco ― Se a sua variável armazenar um valor constante"},
+          { name: "Tipos de dados primitivos", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+          { name: "?", description: "―"},
+        ]
+      },
+    ];
+
 
     // 3/4
     const db = {
@@ -946,6 +991,7 @@
       'Java': dataJava,
       'Cod': Cod,
       'DidJs': DidJs,
+      'DidJv': DidJv,
     };
 
     // --- FUNÇÕES ---
@@ -975,6 +1021,7 @@
         'JS': 'Exemplo',
         'Cod': 'Codigo',
         'DidJs': 'Didatica Javascript',
+        'DidJv': 'Didatica Java',
 
       };
 
