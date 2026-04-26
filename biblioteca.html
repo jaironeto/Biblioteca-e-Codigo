@@ -142,6 +142,13 @@
       border-radius: 4px;
       border: 1px solid #ddd;
     }
+
+    .tag-link {
+      color: #0066ff;
+      text-decoration: underline;
+      font-weight: bold;
+      margin-left: 6px;
+    }
   </style>
 </head>
 
@@ -170,8 +177,8 @@
       {
         category: "Todos",
         tags: [
-          { "name": "backface-visibility", "description": "A propriedade CSS `backface-visibility` define se a parte de trás de um elemento fica visível quando ele está virado para o usuário. Essa propriedade não tem efeito em transformações 2D, que não possuem perspectiva." },
-          { "name": "backdrop-filter", "description": "permite aplicar efeitos gráficos, como desfoque ou mudança de cor, à área atrás de um elemento" },
+          { "name": "backface-visibility", "description": "A propriedade CSS `backface-visibility` define se a parte de trás de um elemento fica visível quando ele está virado para o usuário. Essa propriedade não tem efeito em transformações 2D, que não possuem perspectiva.", "url": "https://developer.mozilla.org/pt-BR/docs/Web/CSS/backface-visibility" },
+          { "name": "backdrop-filter", "description": "permite aplicar efeitos gráficos, como desfoque ou mudança de cor, à área atrás de um elemento", "url": "https://developer.mozilla.org/pt-BR/docs/Web/CSS/backdrop-filter", "image": "https://via.placeholder.com/250x100.png?text=Exemplo" },
           { "name": "appearance", "description": "A appearance propriedade permite exibir elementos em seu estilo nativo do sistema operacional, com base no tema do sistema, bem como remover qualquer estilo nativo da plataforma com o nonevalor definido" },
           { "name": "all", "description": "redefine todas¹ exceto, unicode-bidi, direction e custom properties²" },
           { "name": "accent-color", "description": "especifica a cor, interface, input¹" },
@@ -913,7 +920,7 @@
       {
         category: "Todos",
         tags: [
-          { name: "O que é Javascript", description: "O que são APIs? conjunto de que, que permite o que ― API de terceiros ― API do navegador ― ao carregar uma pagina da web, executando ― cada aba possui ― quando o navegador encontra ― interpretada e leve ― compilação just-in-time ― e uma ma pratica ― existem alguma estrategias" },
+          { name: "O que é Javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript", description: "O que são APIs? conjunto de que, que permite o que ― API de terceiros ― API do navegador ― ao carregar uma pagina da web, executando ― cada aba possui ― quando o navegador encontra ― interpretada e leve ― compilação just-in-time ― e uma ma pratica ― existem alguma estrategias" },
           { name: "Passo a passo do javascript", description: "template literals" },
           { name: "Variaveis", description: "uma caracteristica especial das variaveis ― tambem podem conter ― nao sao ― nao confunda ― içamento ― tipagem dinamica" },
           { name: "Numeros e operadores", description: "isso significa que independente do tipo de numero ― as vezes voce pode acabar com um numero ― [+] ― [-] ― [*] ― [/] ― [%] ― [**] ― precendencia ― se voce tentar inserir alguns desses valores no console" },
@@ -1055,6 +1062,16 @@
           const textSpan = document.createElement("span");
           textSpan.textContent = tag.description;
           desc.appendChild(textSpan);
+
+          if (tag.url) {
+            const link = document.createElement("a");
+            link.href = tag.url;
+            link.textContent = "url";
+            link.target = "_blank";
+            link.className = "tag-link";
+            desc.appendChild(document.createTextNode(" "));
+            desc.appendChild(link);
+          }
 
           if (tag.image) {
             const img = document.createElement("img");
