@@ -128,6 +128,7 @@
       /* Garante que o texto quebre dentro da caixa */
       max-width: 300px;
       /* Opcional: limita a largura da descrição */
+      white-space: pre-wrap;
     }
 
     .tag.active .description {
@@ -847,24 +848,290 @@
       {
         category: "Javascript",
         tags: [
-          { name: "Uso while", description: "" },
-          { name: "Uso var, let e const", description: "?" },
-          { name: "Uso throw", description: "?" },
-          { name: "Uso de get/set com propriedades privadas em classe", description: "?" },
-          { name: "Uso arguments", description: "?" },
-          { name: "use de then em promisse, com suas duas funções no Promise construtor", description: "?" },
-          { name: "usar async/await", description: "?" },
-          { name: "typeof", description: "?" },
-          { name: "try...catch", description: "?" },
-          { name: "tratamento de erro async/await", description: "?" },
-          { name: "template string", description: "?" },
-          { name: "switch", description: "?" },
-          { name: "super e this em classes", description: "?" },
-          { name: "substituir um membros static de uma classe, mas aprimorado com super", description: "?" },
-          { name: "parametro rest em contrutor de classe", description: "?" },
-          { name: "parametro padrão", description: "?" },
-          { name: "operador de coalescência nula (??)", description: "?" },
-          { name: "Objeto literal com prototipo, campo e metodo", description: "?" },
+          {
+            name: "Uso while", description: `let i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}` },
+          { name: "Uso var, let e const", description: `// var tem escopo de função e sofre hoisting
+var a = 1
+if (true) {
+  var a = 2 // mesma variável do escopo externo
+}
+console.log(a) // 2
+
+// let tem escopo de bloco
+let b = 1
+if (true) {
+  let b = 2 // nova variável só dentro do bloco
+  console.log(b) // 2
+}
+console.log(b) // 1
+
+// const tem escopo de bloco e não pode ser reatribuído
+const c = 1
+if (true) {
+  const c = 2 // nova constante no bloco
+  console.log(c) // 2
+}
+console.log(c) // 1
+
+// const com objeto: a referência é fixa, mas propriedades podem mudar
+const obj = { nome: "Ana" }
+obj.nome = "Bia" // permitido
+// obj = {} // erro: reatribuição não permitida
+
+// exemplo em função
+function teste() {
+  var x = "var"
+  let y = "let"
+  const z = "const"
+  if (true) {
+    var x = "var interno" // sobrescreve
+    let y = "let interno" // novo
+    const z = "const interno" // novo
+  }
+  console.log(x) // "var interno"
+  console.log(y) // "let"
+  console.log(z) // "const"
+}
+teste()` },
+          {
+            name: "Uso throw", description: `function testar(valor) {
+  if (valor < 0) {
+    throw new Error("Valor não pode ser negativo");
+  }
+  if (valor === 0) {
+    throw "Valor não pode ser zero";
+  }
+  return valor;
+}
+
+try {
+  testar(-1);
+} catch (e) {
+  console.log(e);
+}`},
+          {
+            name: "Uso de get/set com propriedades privadas em classe", description: `class Conta {
+  #saldo = 0
+
+  get saldo() {
+    return this.#saldo
+  }
+
+  set saldo(valor) {
+    if (valor < 0) {
+      throw new Error("Saldo não pode ser negativo")
+    }
+    this.#saldo = valor
+  }
+}
+
+const c = new Conta()
+c.saldo = 100
+console.log(c.saldo)` },
+          {
+            name: "Uso arguments", description: `function somar() {
+  let total = 0
+  for (let i = 0; i < arguments.length; i++) {
+    total += arguments[i]
+  }
+  return total
+}
+
+console.log(somar(1, 2, 3, 4))` },
+          {
+            name: "use de then em promisse, com suas duas funções no Promise construtor", description: `const promessa = new Promise((resolve, reject) => {
+  let sucesso = true
+  if (sucesso) {
+    resolve("Deu certo")
+  } else {
+    reject("Deu erro")
+  }
+})
+
+promessa.then(
+  valor => console.log(valor),
+  erro => console.log(erro)
+)` },
+          {
+            name: "usar async/await", description: `function esperar(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function executar() {
+  console.log("Início")
+  await esperar(1000)
+  console.log("Fim")
+}
+
+executar()` },
+          { name: "typeof", description: `console.log(typeof "texto")        // "string"
+console.log(typeof 123)            // "number"
+console.log(typeof true)           // "boolean"
+console.log(typeof undefined)      // "undefined"
+console.log(typeof null)           // "object"
+console.log(typeof {})             // "object"
+console.log(typeof [])             // "object"
+console.log(typeof function(){})   // "function"` },
+          { name: "try...catch", description: `try {
+  let x = y + 1
+  console.log(x)
+} catch (e) {
+  console.log(e.message) // y is not defined
+}` },
+          { name: "tratamento de erro async/await", description: `async function buscaDados() {
+  return Promise.reject("falhou")
+}
+
+async function executar() {
+  try {
+    let dados = await buscaDados()
+    console.log(dados)
+  } catch (e) {
+    console.log("erro capturado:", e) // erro capturado: falhou
+  }
+}
+
+executar()` },
+          { name: "template string", description: "const mensagem = `Olá, meu nome é ${nome} e tenho ${idade} anos.`" },
+          { name: "switch", description: `const dia = 3
+let nomeDia
+
+switch (dia) {
+  case 1:
+    nomeDia = "Segunda"
+    break
+  case 2:
+    nomeDia = "Terça"
+    break
+  case 3:
+    nomeDia = "Quarta"
+    break
+  case 4:
+    nomeDia = "Quinta"
+    break
+  case 5:
+    nomeDia = "Sexta"
+    break
+  default:
+    nomeDia = "Fim de semana"
+}
+
+console.log(nomeDia) // Quarta` },
+          { name: "super e this em classes", description: `class Animal {
+  constructor(nome) {
+    this.nome = nome
+  }
+  falar() {
+    return this.nome + " faz um som"
+  }
+}
+
+class Cachorro extends Animal {
+  constructor(nome, raca) {
+    super(nome)
+    this.raca = raca
+  }
+  falar() {
+    return super.falar() + " - au au!"
+  }
+}
+
+const dog = new Cachorro("Rex", "Labrador")
+console.log(dog.nome)   // Rex
+console.log(dog.raca)   // Labrador
+console.log(dog.falar()) // Rex faz um som - au au!` },
+          { name: "substituir um membros static de uma classe, mas aprimorado com super", description: `class Base {
+  static info() {
+    return "base"
+  }
+}
+
+class Derivada extends Base {
+  static info() {
+    return super.info() + " + derivada"
+  }
+}
+
+console.log(Base.info())      // base
+console.log(Derivada.info())  // base + derivada` },
+          { name: "parametro rest em contrutor de classe", description: `class Turma {
+  constructor(nome, ...alunos) {
+    this.nome = nome
+    this.alunos = alunos // rest junta todos os argumentos restantes em array
+  }
+
+  listar() {
+    return this.nome + ": " + this.alunos.join(", ")
+  }
+}
+
+const t1 = new Turma("JS101", "Ana", "Bruno", "Carlos")
+const t2 = new Turma("Python", "Diana")
+
+console.log(t1.nome)          // JS101
+console.log(t1.alunos)        // ["Ana", "Bruno", "Carlos"]
+console.log(t1.listar())      // JS101: Ana, Bruno, Carlos
+
+console.log(t2.alunos.length) // 1` },
+          { name: "parametro padrão", description: `// função com parâmetro padrão
+function saudar(nome = "visitante", saudacao = "Olá") {
+  return saudacao + ", " + nome + "!"
+}
+
+console.log(saudar())                    // Olá, visitante!
+console.log(saudar("Maria"))             // Olá, Maria!
+console.log(saudar("João", "Bem-vindo"))  // Bem-vindo, João!
+
+// em construtor de classe
+class Produto {
+  constructor(nome, preco = 0, estoque = 1) {
+    this.nome = nome
+    this.preco = preco
+    this.estoque = estoque
+  }
+}
+
+const p1 = new Produto("Caneta")
+const p2 = new Produto("Caderno", 12.5)
+const p3 = new Produto("Mochila", 89.9, 5)
+
+console.log(p1.preco)    // 0
+console.log(p2.estoque)  // 1
+console.log(p3.preco)    // 89.9` },
+          { name: "operador de coalescência nula (??)", description: `const a = null ?? "padrão"
+const b = undefined ?? "padrão"
+const c = 0 ?? 10
+const d = "" ?? "texto"
+const e = false ?? true
+const f = "valor" ?? "outro"
+
+console.log(a) // "padrão"
+console.log(b) // "padrão"
+console.log(c) // 0
+console.log(d) // ""
+console.log(e) // false
+console.log(f) // "valor"` },
+          { name: "Objeto literal com prototipo, campo e metodo", description: `// protótipo
+const animalProto = {
+  falar: function() {
+    return this.nome + " faz um som"
+  }
+}
+
+// objeto literal com protótipo, campos e métodos
+const gato = {
+  __proto__: animalProto, // protótipo
+  nome: "Mimi",            // campo
+  idade: 2,                // campo
+  miar: function() {       // método
+    return this.nome + " mia"
+  }
+}` },
           { name: "objeto literal", description: "?" },
           { name: "Module.exports e require com desestruturação", description: "?" },
           { name: "Module.exports e require", description: "?" },
@@ -943,43 +1210,43 @@
         ]
       },
 
-            {
+      {
         category: "Java",
         tags: [
-          { name: "O que é um objeto", description: "Os objetos do mundo real compartilham duas características ― Um objeto armazena seu estado ― e expõe seu comportamento por meio ― Os métodos operam ― encapsulamento de dados"},
-          { name: "O que é uma classe", description: "Podem existir milhares de outras bicicletas, todas ― Cada bicicleta foi construída a partir ― Em termos de programação orientada a objetos, dizemos que sua bicicleta ― Uma classe é o projeto a partir ― A responsabilidade de criar e usar novos Bicycleobjetos"},
-          { name: "O que e herança", description: "Na linguagem de programação Java, cada classe pode ter ― e cada superclasse ― A sintaxe para criar uma subclasse é simples. No início da declaração da classe ― seguida pelo ― Isso fornece MountainBike os mesmos ― mas permite que seu código se concentre exclusivamente"},
-          { name: "O que e uma interface", description: "Em sua forma mais comum, uma interface é um grupo ― com corpos ― Interfaces estabelecem um contrato entre ― Se sua classe afirma implementar uma interface, todos os métodos definidos por essa interface devem"},
-          { name: "O que e um pacote", description: "Um pacote é um ― Conceitualmente, você pode pensar em pacotes ― A plataforma Java oferece uma enorme ― Essa biblioteca é conhecida como ― Isso permite que você, o programador, se concentre ― em vez da "},
-          { name: "Variáveis java", description: "Variáveis de Instância (Campos Não Estáticos) ― Variáveis de Classe (Campos Estáticos) ― isso informa ao compilador que existe exatamente ― independentemente ― Variáveis locais : Assim como um objeto armazena seu estado em campos, um método geralmente armazena ― Não existe uma palavra-chave específica que designe ― essa determinação vem inteiramente ― que é entre as chaves ― Dessa forma, as variáveis locais são visíveis apenas ― Parâmetros ― O importante é lembrar que os parâmetros são sempre classificados ― Os campos, métodos e tipos aninhados de um tipo são chamados ― Os nomes de variáveis diferenciam ― Espaços em branco ― Se a sua variável armazenar um valor constante"},
-          { name: "Tipos de dados primitivos", description: "A linguagem de programação Java é tipada estaticamente, o que significa ― O tipo de dados de uma variável determina ― Além de `int` int, a linguagem de programação Java suporta outros ― Um tipo primitivo é predefinido pela linguagem e nomeado ― Valores primitivos não compartilham ― Os oito tipos de dados primitivos suportados pela linguagem de programação Java são ― Além dos oito tipos de dados primitivos listados acima, a linguagem de programação Java também oferece suporte especial ― Colocar sua string de caracteres entre aspas duplas ― são imutáveis , o que significa ― A Stringclasse `String` não é tecnicamente ― mas considerando o suporte especial que a linguagem lhe oferece ― Campos declarados, mas não inicializados, receberão um ― De modo geral, esse valor padrão será ― As variáveis ​​locais são ligeiramente diferentes ― Se você não puder inicializar sua variável local onde ela foi declarada, certifique-se ― Acessar uma variável local não inicializada ― Você deve ter notado que a newpalavra-chave `new` não é usada ao inicializar ― Tipos primitivos são tipos de dados especiais, inerentes à linguagem; eles não são ― Um literal é a representação ― Um literal inteiro é do tipo longse termina ― caso contrário ― Literais inteiros podem ser expressos pelos seguintes sistemas numéricos ― Um literal de ponto flutuante é do tipo float ― caso contrário ― Os tipos de ponto flutuante ( floate double) também podem ser expressos usando ― A linguagem de programação Java também suporta algumas sequências de escape especiais ― Existe também um nullliteral especial que pode ser usado como valor para qualquer ― nullEle pode ser atribuído a qualquer variável, exceto ― Há pouco que se possa fazer com um nullvalor além ― Finalmente, existe também um tipo especial de literal chamado literal de classe , formado ― No Java SE 7 e versões posteriores, qualquer número de caracteres de sublinhado (_ _) pode aparecer ― Esse recurso permite ― Você só pode usar sublinhados entre dígitos; não é possível usar sublinhados nos seguintes locais"},
-          { name: "Matrizes Java", description: "Um array é um objeto contêiner que armazena ― O tamanho de um array é definido ― Após a criação, seu tamanho ― Cada item em um array é chamado ― e cada elemento é acessado ― anArray ― Assim como as declarações de variáveis de outros tipos, a declaração de um array possui dois componentes ― O tipo de um array é escrito ― O tamanho do array não faz parte ― Assim como com variáveis de outros tipos, a declaração ― Você também pode colocar os colchetes ― Uma maneira de criar um array é com ― Cada elemento da matriz é acessado ― Alternativamente, você pode usar a sintaxe abreviada para ― Aqui, o comprimento da matriz é determinado ― Você também pode declarar uma matriz de matrizes (também conhecida como matriz multidimensional) usando ― Na linguagem de programação Java, um array multidimensional é um array cujos componentes ― Por fim, você pode usar a propriedade integrada lengthpara determinar"},
-          { name: "Operadores", description: "Operadores são símbolos especiais que executam ― Operadores com maior precedência são avaliados ― Quando operadores de mesma precedência aparecem na mesma expressão ― E lógico ― OU lógico"},
-          { name: "Operadores de atribuição, aritméticos e unários", description: "Um dos operadores mais comuns que você encontrará é o operador de atribuição simples ''=''. Você viu esse operador na classe Bicycle; ele atribui o valor ― [+] ― [-] ― [*] ― [/] ― [%] ― O +operador também pode ser usado ― [!]"},
-          { name: "Operadores de igualdade, relacionais e condicionais", description: "Os operadores de igualdade e relacionais determinam se um operando ― Esses operadores exibem comportamento de 'curto-circuito, o que significa ― Este operador também é conhecido como operador ternário ― O instanceof operador compara"},
-          { name: "Expressões, instruções e blocos", description: "Uma expressão é uma construção composta ― O tipo de dados do valor retornado por uma expressão depende ― A expressão cadence = 0 retorna ― porque o operador de atribuição retorna um valor do mesmo ― A linguagem de programação Java permite construir expressões compostas a partir ― Você pode especificar exatamente como uma expressão será avaliada usando ― Se você não indicar explicitamente a ordem das operações a serem executadas, a ordem será determinada ― Os operadores com maior precedência ― Um bloco é um grupo ― e pode ser usado em qualquer lugar"},
-          { name: "Instruções de fluxo de controle", description: "As instruções dentro dos seus arquivos de código-fonte geralmente são executadas ― As instruções de controle de fluxo ― permitindo que seu programa execute ― instruções de tomada de decisão ― as instruções de repetição ― instruções de ramificação"},
-          { name: "As intruções if-then", description: "No entanto, uma vez que uma condição é satisfeita, as instruções apropriadas"},
-          { name: "A declaração switch", description: "até que uma breakdeclaração seja encontrada"},
-          { name: "As instruções while e do-while", description: "A diferença entre do-whilee whileé que do-whileavalia"},
-          { name: "A declaração for", description: "A expressão de inicialização ― ela é executada ― Quando a expressão de término― A expressão de incremento é invocada ― O escopo dessa variável se estende ― As três expressões do for loop são opcionais ― Essa forma é às vezes chamada de instrução 'for' aprimorada e pode ser usada para tornar seus loops mais compactos e fáceis de ler"},
-          { name: "Instruções de ramificação", description: "A break instrução possui duas formas ― Você também pode usar uma instrução sem rótulo break para encerrar ― O fluxo de controle é transferido para a instrução imediatamente ― A return instrução possui duas formas ― O tipo de dados do valor retornado deve corresponder ao tipo do valor de retorno"},
-          { name: "Declarando Classes", description: "O corpo da classe (a área entre as chaves) contém ― Você também pode adicionar ― Em geral, as declarações de classe podem incluir estes componentes, nesta ordem"},
-          { name: "Declarando variáveis membro", description: "campos ― variáveis locais ― parâmetros ― As declarações de campo são compostas por três componentes, nesta ordem ― A public plavra-chave identifica esses campos como membros públicos, acessíveis por qualquer ― private modificador ― Todas as variáveis devem ter ― Você pode usar tipos primitivos ― Ou pode usar tipos de referência ― A primeira letra do nome de uma classe"},
-          { name: "Definindo Métodos", description: "Os únicos elementos obrigatórios de uma declaração de método são ― De forma mais geral, as declarações de métodos têm seis componentes, nesta ordem ― Dois dos componentes de uma declaração de método constituem a assinatura do método ― A linguagem de programação Java suporta sobrecarga de métodos e consegue distinguir entre métodos com ― Isso significa que métodos dentro de uma classe podem ter o mesmo nome se possuírem ― Na linguagem de programação Java, você pode usar o mesmo nome para todos os métodos de desenho, mas passar ― Métodos sobrecarregados são diferenciados ― Não é possível declarar mais de um método com o mesmo ― O compilador não considera o tipo de retorno"},
-          { name: "Fornecendo construtores para suas classes", description: "Uma classe contém construtores que são invocados para criar objetos a partir ― As declarações de construtores são semelhantes às declarações de métodos, exceto ― Assim como ocorre com os métodos, a plataforma Java diferencia os construtores com base ― Você não precisa fornecer nenhum ― O compilador fornece automaticamente ― Esse construtor padrão chamará ― Nessa situação, o compilador reclamará se a superclasse ― Se sua classe não tiver uma superclasse explícita ― Você pode usar modificadores de acesso na declaração de um construtor para controlar ― Se outra classe não puder chamar um MyClass construtor"},
-          { name: "Passando informações para um método ou construtor", description: "Os parâmetros são usados no corpo do método e, em tempo de execução, assumirão os valores ― Argumentos são os valores ― Ao invocar um método, os argumentos usados devem ― Para usar varargs ― um espaço ― O método pode então ser chamado com qualquer ― O nome de um parâmetro deve ser ― e não pode ser o nome de uma variável ― Um parâmetro pode ter o mesmo nome ― Nesse caso, diz-se que o parâmetro ― Argumentos primitivos, como um int ou um double, são passados para os métodos ― Isso significa que quaisquer alterações nos valores dos parâmetros existem ― Quando o método retorna ― Parâmetros de tipo de dados de referência, como objetos, também são passados ― No entanto, os valores dos campos do objeto podem ser ― Essas alterações persistirão"},
-          { name: "Objetos java", description: "Um programa Java típico cria muitos objetos que, como você sabe, interagem ― Através dessas interações entre objetos, um programa pode executar diversas tarefas, como "},
-          { name: "Criando objetos", description: "Como você sabe, uma classe fornece o modelo para objetos; ― Simplesmente declarar uma variável de referência não ― Para isso, você precisa usar ― Você deve atribuir um objeto à variável originOne antes ― Caso contrário, você receberá ― O operador 'new' instancia uma classe alocando ― e retornando uma ― O operador 'new' também invoca ― A expressão 'instanciar uma classe' significa o mesmo ― O novo operador requer um único argumento pós-fixado: uma chamada ― O operador 'new' retorna ― Essa referência geralmente é atribuída ― A referência retornada pelo operador 'new' não precisa ser atribuída a uma variável. Ela também pode ser usada ― Você pode reconhecer um construtor porque sua declaração usa o mesmo ― O compilador Java diferencia os construtores com base ― um objeto pode ter múltiplas"},
-          { name: "Usando objetos", description: "Os campos de um objeto são acessados ― O código que estiver fora da classe do objeto deve usar ― seguida pelo operador ― seguido por um nome ― esses campos existem apenas dentro de um objeto ― Objetos do mesmo tipo têm sua própria ― Quando você acessa um campo de instância por meio de uma referência de objeto ― Lembre-se de que o operador 'new' retorna ― Portanto, você pode usar o valor retornado por 'new' para ― Observe que, após a execução desta instrução, o programa não possui mais uma referência ao Rectangle criado ― Você também usa uma referência de objeto para invocar ― Além disso, você fornece, entre parênteses, quaisquer ― Se o método não exigir nenhum ― argumento ― Para métodos que retornam um valor, você pode usar a invocação do método em ― A plataforma Java permite que você crie quantos ― sem precisar se preocupar em destruí-los. O ambiente de execução Java ― Um objeto torna-se elegível para coleta de lixo quando ― Alternativamente, você pode descartar explicitamente uma referência a um objeto atribuindo"},
-          { name: "Retornando um valor de um método", description: "Um método retorna ao código que o invocou quando ele ― Você declara o tipo de retorno de um método ― Dentro do corpo do método, você usa a return instrução ― Qualquer método declarado void não ― não precisa conter ― Se você tentar retornar um valor de um método que foi declarado como void, você receberá ― Qualquer método que não seja declarado void deve conter ― Um método também pode retornar ― Quando um método usa um nome de classe como seu tipo de retorno, como whosFastest faz o método get, a classe do tipo do objeto retornado deve ser uma ― você também pode usar nomes de interface como tipos de retorno. Nesse caso, o objeto retornado deve"},
-          { name: "Usando a palavra-chave this", description: "Dentro de um método de instância ou construtor, this é uma referência ― Você pode se referir a qualquer membro do objeto atual de dentro de um método de instância ou construtor usando ― O motivo mais comum para usar a this palavra-chave é porque um campo está ― Dentro de um construtor, você também pode usar a this palavra-chave para chamar outro ― Isso é chamado de invocação explícita de construtor ― Caso esteja presente, a invocação de outro construtor deve"},
-          { name: "Controlando o acesso aos membros de uma classe", description: "Os modificadores de nível de acesso determinam se outras classes podem ― Existem dois níveis de controle de acesso ― Se uma classe não tiver nenhum modificador (o padrão, também conhecido como 'package-private'), ela será visível apenas ― Para membros, existem dois modificadores de acesso adicionais ― public ― protected ― sem modificador ― private"},
-          { name: "Compreendendo os membros da classe", description: "Quando vários objetos são criados a partir do mesmo modelo de classe, cada um deles possui suas próprias ― Às vezes, você deseja ter variáveis que sejam comuns a todos os objetos. Isso é conseguido com ― Campos que possuem o static modificador 'static' em sua declaração são chamados ― estão associados ― Qualquer objeto pode alterar o valor de uma variável de classe, mas as variáveis de classe também podem ser manipuladas ― As variáveis de classe são referenciadas pelo ― você também pode se referir a campos estáticos com uma ― A linguagem de programação Java suporta métodos estáticos, bem como ― Métodos estáticos, que possuem o static modificador 'static' em suas declarações, devem ser invocados ― sem a necessidade ― Você também pode se referir a métodos estáticos com uma ― Métodos de classe não podem acessar ― devem usar ― Além disso, métodos de classe não podem usar ― O static modificador, em combinação com o final modificador, também é usado ― O final modificador indica que o valor deste campo ― os nomes dos valores constantes são escritos ― Se o nome for composto por mais de uma palavra"},
-          { name: "Inicializando campos", description: "Se a inicialização exigir alguma lógica ― Variáveis de instância podem ser inicializadas ― onde o tratamento de erros ou outras lógicas ― Para fornecer a mesma capacidade para variáveis de classe, a linguagem de programação Java inclui ― Não é necessário declarar os campos ― Basta que sejam declarados e inicializados ― Uma classe pode ter qualquer número ― e eles podem aparecer ― O sistema de tempo de execução garante que os blocos de inicialização estática ― Os blocos de inicialização para variáveis de instância são idênticos aos blocos de inicialização estáticos, mas sem"},
-          { name: "Classe aninhadas", description: "Classes aninhadas são divididas em duas categorias ― Uma classe aninhada é um ― Classes aninhadas não estáticas (classes internas) têm acesso ― mesmo ― que sejam declaradas ― Classes aninhadas estáticas não têm ― Como membro de uma classe externa OuterClass, uma classe aninhada pode ser declarada ― Lembre-se de que classes externas só podem ser declaradas como ― Assim como os métodos e variáveis de instância, uma classe interna está associada ― e tem acesso direto ― Além disso, como uma classe interna está associada a uma instância, ela não pode definir ― Para instanciar uma classe interna, primeiro ― Existem dois tipos especiais de classes internas ― Assim como os métodos e variáveis de classe, uma classe estática aninhada está associada ― e assim como os métodos estáticos de classe, uma classe estática aninhada não pode ― ela só pode usá-los por meio ― Se uma declaração de um tipo (como uma variável membro ou o nome de um parâmetro) em um escopo específico (como uma classe interna ou a definição de um método) tiver o mesmo nome que outra declaração no escopo que a contém, então"},
-          { name: "Exemplo de classe Interna", description: "Existem dois tipos adicionais de classes internas ― classes locais ― classes anônimas ― Você pode usar os mesmos modificadores para classes internas que usa para outros"},
-          { name: "Classes locais", description: "Classes locais são classes definidas ― que é um grupo de zero ou mais instruções ― Normalmente, você encontra classes locais definidas ― Você pode definir uma classe local dentro de qualquer bloco ― Uma classe local tem acesso aos membros ― Além disso, uma classe local tem acesso ― No entanto, uma classe local só pode acessar ― Quando uma classe local acessa uma variável local ou um parâmetro do bloco que a contém ― No entanto, a partir do Java SE 8, uma classe local pode acessar variáveis e parâmetros locais do bloco que a contém que sejam ― Uma variável ou parâmetro cujo valor nunca é alterado ― A partir do Java SE 8, se você declarar uma classe local dentro de um método, ela poderá acessar ― Declarações de um tipo (como uma variável) em uma classe local ocultam ― Classes locais são semelhantes a classes internas porque não podem ― Classes locais em métodos estáticos, como a classe 'LocalPhoneNumber', que é definida no método estático 'get validatePhoneNumber', só podem se referir ― Classes locais não são estáticas porque têm acesso ― Consequentemente, elas não podem conter ― Não é possível declarar uma interface dentro de um bloco; interfaces são ― Não é possível declarar inicializadores estáticos ou interfaces de membros em uma ― Uma classe local pode ter membros estáticos, desde que sejam"},
+          { name: "O que é um objeto", description: "Os objetos do mundo real compartilham duas características ― Um objeto armazena seu estado ― e expõe seu comportamento por meio ― Os métodos operam ― encapsulamento de dados" },
+          { name: "O que é uma classe", description: "Podem existir milhares de outras bicicletas, todas ― Cada bicicleta foi construída a partir ― Em termos de programação orientada a objetos, dizemos que sua bicicleta ― Uma classe é o projeto a partir ― A responsabilidade de criar e usar novos Bicycleobjetos" },
+          { name: "O que e herança", description: "Na linguagem de programação Java, cada classe pode ter ― e cada superclasse ― A sintaxe para criar uma subclasse é simples. No início da declaração da classe ― seguida pelo ― Isso fornece MountainBike os mesmos ― mas permite que seu código se concentre exclusivamente" },
+          { name: "O que e uma interface", description: "Em sua forma mais comum, uma interface é um grupo ― com corpos ― Interfaces estabelecem um contrato entre ― Se sua classe afirma implementar uma interface, todos os métodos definidos por essa interface devem" },
+          { name: "O que e um pacote", description: "Um pacote é um ― Conceitualmente, você pode pensar em pacotes ― A plataforma Java oferece uma enorme ― Essa biblioteca é conhecida como ― Isso permite que você, o programador, se concentre ― em vez da " },
+          { name: "Variáveis java", description: "Variáveis de Instância (Campos Não Estáticos) ― Variáveis de Classe (Campos Estáticos) ― isso informa ao compilador que existe exatamente ― independentemente ― Variáveis locais : Assim como um objeto armazena seu estado em campos, um método geralmente armazena ― Não existe uma palavra-chave específica que designe ― essa determinação vem inteiramente ― que é entre as chaves ― Dessa forma, as variáveis locais são visíveis apenas ― Parâmetros ― O importante é lembrar que os parâmetros são sempre classificados ― Os campos, métodos e tipos aninhados de um tipo são chamados ― Os nomes de variáveis diferenciam ― Espaços em branco ― Se a sua variável armazenar um valor constante" },
+          { name: "Tipos de dados primitivos", description: "A linguagem de programação Java é tipada estaticamente, o que significa ― O tipo de dados de uma variável determina ― Além de `int` int, a linguagem de programação Java suporta outros ― Um tipo primitivo é predefinido pela linguagem e nomeado ― Valores primitivos não compartilham ― Os oito tipos de dados primitivos suportados pela linguagem de programação Java são ― Além dos oito tipos de dados primitivos listados acima, a linguagem de programação Java também oferece suporte especial ― Colocar sua string de caracteres entre aspas duplas ― são imutáveis , o que significa ― A Stringclasse `String` não é tecnicamente ― mas considerando o suporte especial que a linguagem lhe oferece ― Campos declarados, mas não inicializados, receberão um ― De modo geral, esse valor padrão será ― As variáveis ​​locais são ligeiramente diferentes ― Se você não puder inicializar sua variável local onde ela foi declarada, certifique-se ― Acessar uma variável local não inicializada ― Você deve ter notado que a newpalavra-chave `new` não é usada ao inicializar ― Tipos primitivos são tipos de dados especiais, inerentes à linguagem; eles não são ― Um literal é a representação ― Um literal inteiro é do tipo longse termina ― caso contrário ― Literais inteiros podem ser expressos pelos seguintes sistemas numéricos ― Um literal de ponto flutuante é do tipo float ― caso contrário ― Os tipos de ponto flutuante ( floate double) também podem ser expressos usando ― A linguagem de programação Java também suporta algumas sequências de escape especiais ― Existe também um nullliteral especial que pode ser usado como valor para qualquer ― nullEle pode ser atribuído a qualquer variável, exceto ― Há pouco que se possa fazer com um nullvalor além ― Finalmente, existe também um tipo especial de literal chamado literal de classe , formado ― No Java SE 7 e versões posteriores, qualquer número de caracteres de sublinhado (_ _) pode aparecer ― Esse recurso permite ― Você só pode usar sublinhados entre dígitos; não é possível usar sublinhados nos seguintes locais" },
+          { name: "Matrizes Java", description: "Um array é um objeto contêiner que armazena ― O tamanho de um array é definido ― Após a criação, seu tamanho ― Cada item em um array é chamado ― e cada elemento é acessado ― anArray ― Assim como as declarações de variáveis de outros tipos, a declaração de um array possui dois componentes ― O tipo de um array é escrito ― O tamanho do array não faz parte ― Assim como com variáveis de outros tipos, a declaração ― Você também pode colocar os colchetes ― Uma maneira de criar um array é com ― Cada elemento da matriz é acessado ― Alternativamente, você pode usar a sintaxe abreviada para ― Aqui, o comprimento da matriz é determinado ― Você também pode declarar uma matriz de matrizes (também conhecida como matriz multidimensional) usando ― Na linguagem de programação Java, um array multidimensional é um array cujos componentes ― Por fim, você pode usar a propriedade integrada lengthpara determinar" },
+          { name: "Operadores", description: "Operadores são símbolos especiais que executam ― Operadores com maior precedência são avaliados ― Quando operadores de mesma precedência aparecem na mesma expressão ― E lógico ― OU lógico" },
+          { name: "Operadores de atribuição, aritméticos e unários", description: "Um dos operadores mais comuns que você encontrará é o operador de atribuição simples ''=''. Você viu esse operador na classe Bicycle; ele atribui o valor ― [+] ― [-] ― [*] ― [/] ― [%] ― O +operador também pode ser usado ― [!]" },
+          { name: "Operadores de igualdade, relacionais e condicionais", description: "Os operadores de igualdade e relacionais determinam se um operando ― Esses operadores exibem comportamento de 'curto-circuito, o que significa ― Este operador também é conhecido como operador ternário ― O instanceof operador compara" },
+          { name: "Expressões, instruções e blocos", description: "Uma expressão é uma construção composta ― O tipo de dados do valor retornado por uma expressão depende ― A expressão cadence = 0 retorna ― porque o operador de atribuição retorna um valor do mesmo ― A linguagem de programação Java permite construir expressões compostas a partir ― Você pode especificar exatamente como uma expressão será avaliada usando ― Se você não indicar explicitamente a ordem das operações a serem executadas, a ordem será determinada ― Os operadores com maior precedência ― Um bloco é um grupo ― e pode ser usado em qualquer lugar" },
+          { name: "Instruções de fluxo de controle", description: "As instruções dentro dos seus arquivos de código-fonte geralmente são executadas ― As instruções de controle de fluxo ― permitindo que seu programa execute ― instruções de tomada de decisão ― as instruções de repetição ― instruções de ramificação" },
+          { name: "As intruções if-then", description: "No entanto, uma vez que uma condição é satisfeita, as instruções apropriadas" },
+          { name: "A declaração switch", description: "até que uma breakdeclaração seja encontrada" },
+          { name: "As instruções while e do-while", description: "A diferença entre do-whilee whileé que do-whileavalia" },
+          { name: "A declaração for", description: "A expressão de inicialização ― ela é executada ― Quando a expressão de término― A expressão de incremento é invocada ― O escopo dessa variável se estende ― As três expressões do for loop são opcionais ― Essa forma é às vezes chamada de instrução 'for' aprimorada e pode ser usada para tornar seus loops mais compactos e fáceis de ler" },
+          { name: "Instruções de ramificação", description: "A break instrução possui duas formas ― Você também pode usar uma instrução sem rótulo break para encerrar ― O fluxo de controle é transferido para a instrução imediatamente ― A return instrução possui duas formas ― O tipo de dados do valor retornado deve corresponder ao tipo do valor de retorno" },
+          { name: "Declarando Classes", description: "O corpo da classe (a área entre as chaves) contém ― Você também pode adicionar ― Em geral, as declarações de classe podem incluir estes componentes, nesta ordem" },
+          { name: "Declarando variáveis membro", description: "campos ― variáveis locais ― parâmetros ― As declarações de campo são compostas por três componentes, nesta ordem ― A public plavra-chave identifica esses campos como membros públicos, acessíveis por qualquer ― private modificador ― Todas as variáveis devem ter ― Você pode usar tipos primitivos ― Ou pode usar tipos de referência ― A primeira letra do nome de uma classe" },
+          { name: "Definindo Métodos", description: "Os únicos elementos obrigatórios de uma declaração de método são ― De forma mais geral, as declarações de métodos têm seis componentes, nesta ordem ― Dois dos componentes de uma declaração de método constituem a assinatura do método ― A linguagem de programação Java suporta sobrecarga de métodos e consegue distinguir entre métodos com ― Isso significa que métodos dentro de uma classe podem ter o mesmo nome se possuírem ― Na linguagem de programação Java, você pode usar o mesmo nome para todos os métodos de desenho, mas passar ― Métodos sobrecarregados são diferenciados ― Não é possível declarar mais de um método com o mesmo ― O compilador não considera o tipo de retorno" },
+          { name: "Fornecendo construtores para suas classes", description: "Uma classe contém construtores que são invocados para criar objetos a partir ― As declarações de construtores são semelhantes às declarações de métodos, exceto ― Assim como ocorre com os métodos, a plataforma Java diferencia os construtores com base ― Você não precisa fornecer nenhum ― O compilador fornece automaticamente ― Esse construtor padrão chamará ― Nessa situação, o compilador reclamará se a superclasse ― Se sua classe não tiver uma superclasse explícita ― Você pode usar modificadores de acesso na declaração de um construtor para controlar ― Se outra classe não puder chamar um MyClass construtor" },
+          { name: "Passando informações para um método ou construtor", description: "Os parâmetros são usados no corpo do método e, em tempo de execução, assumirão os valores ― Argumentos são os valores ― Ao invocar um método, os argumentos usados devem ― Para usar varargs ― um espaço ― O método pode então ser chamado com qualquer ― O nome de um parâmetro deve ser ― e não pode ser o nome de uma variável ― Um parâmetro pode ter o mesmo nome ― Nesse caso, diz-se que o parâmetro ― Argumentos primitivos, como um int ou um double, são passados para os métodos ― Isso significa que quaisquer alterações nos valores dos parâmetros existem ― Quando o método retorna ― Parâmetros de tipo de dados de referência, como objetos, também são passados ― No entanto, os valores dos campos do objeto podem ser ― Essas alterações persistirão" },
+          { name: "Objetos java", description: "Um programa Java típico cria muitos objetos que, como você sabe, interagem ― Através dessas interações entre objetos, um programa pode executar diversas tarefas, como " },
+          { name: "Criando objetos", description: "Como você sabe, uma classe fornece o modelo para objetos; ― Simplesmente declarar uma variável de referência não ― Para isso, você precisa usar ― Você deve atribuir um objeto à variável originOne antes ― Caso contrário, você receberá ― O operador 'new' instancia uma classe alocando ― e retornando uma ― O operador 'new' também invoca ― A expressão 'instanciar uma classe' significa o mesmo ― O novo operador requer um único argumento pós-fixado: uma chamada ― O operador 'new' retorna ― Essa referência geralmente é atribuída ― A referência retornada pelo operador 'new' não precisa ser atribuída a uma variável. Ela também pode ser usada ― Você pode reconhecer um construtor porque sua declaração usa o mesmo ― O compilador Java diferencia os construtores com base ― um objeto pode ter múltiplas" },
+          { name: "Usando objetos", description: "Os campos de um objeto são acessados ― O código que estiver fora da classe do objeto deve usar ― seguida pelo operador ― seguido por um nome ― esses campos existem apenas dentro de um objeto ― Objetos do mesmo tipo têm sua própria ― Quando você acessa um campo de instância por meio de uma referência de objeto ― Lembre-se de que o operador 'new' retorna ― Portanto, você pode usar o valor retornado por 'new' para ― Observe que, após a execução desta instrução, o programa não possui mais uma referência ao Rectangle criado ― Você também usa uma referência de objeto para invocar ― Além disso, você fornece, entre parênteses, quaisquer ― Se o método não exigir nenhum ― argumento ― Para métodos que retornam um valor, você pode usar a invocação do método em ― A plataforma Java permite que você crie quantos ― sem precisar se preocupar em destruí-los. O ambiente de execução Java ― Um objeto torna-se elegível para coleta de lixo quando ― Alternativamente, você pode descartar explicitamente uma referência a um objeto atribuindo" },
+          { name: "Retornando um valor de um método", description: "Um método retorna ao código que o invocou quando ele ― Você declara o tipo de retorno de um método ― Dentro do corpo do método, você usa a return instrução ― Qualquer método declarado void não ― não precisa conter ― Se você tentar retornar um valor de um método que foi declarado como void, você receberá ― Qualquer método que não seja declarado void deve conter ― Um método também pode retornar ― Quando um método usa um nome de classe como seu tipo de retorno, como whosFastest faz o método get, a classe do tipo do objeto retornado deve ser uma ― você também pode usar nomes de interface como tipos de retorno. Nesse caso, o objeto retornado deve" },
+          { name: "Usando a palavra-chave this", description: "Dentro de um método de instância ou construtor, this é uma referência ― Você pode se referir a qualquer membro do objeto atual de dentro de um método de instância ou construtor usando ― O motivo mais comum para usar a this palavra-chave é porque um campo está ― Dentro de um construtor, você também pode usar a this palavra-chave para chamar outro ― Isso é chamado de invocação explícita de construtor ― Caso esteja presente, a invocação de outro construtor deve" },
+          { name: "Controlando o acesso aos membros de uma classe", description: "Os modificadores de nível de acesso determinam se outras classes podem ― Existem dois níveis de controle de acesso ― Se uma classe não tiver nenhum modificador (o padrão, também conhecido como 'package-private'), ela será visível apenas ― Para membros, existem dois modificadores de acesso adicionais ― public ― protected ― sem modificador ― private" },
+          { name: "Compreendendo os membros da classe", description: "Quando vários objetos são criados a partir do mesmo modelo de classe, cada um deles possui suas próprias ― Às vezes, você deseja ter variáveis que sejam comuns a todos os objetos. Isso é conseguido com ― Campos que possuem o static modificador 'static' em sua declaração são chamados ― estão associados ― Qualquer objeto pode alterar o valor de uma variável de classe, mas as variáveis de classe também podem ser manipuladas ― As variáveis de classe são referenciadas pelo ― você também pode se referir a campos estáticos com uma ― A linguagem de programação Java suporta métodos estáticos, bem como ― Métodos estáticos, que possuem o static modificador 'static' em suas declarações, devem ser invocados ― sem a necessidade ― Você também pode se referir a métodos estáticos com uma ― Métodos de classe não podem acessar ― devem usar ― Além disso, métodos de classe não podem usar ― O static modificador, em combinação com o final modificador, também é usado ― O final modificador indica que o valor deste campo ― os nomes dos valores constantes são escritos ― Se o nome for composto por mais de uma palavra" },
+          { name: "Inicializando campos", description: "Se a inicialização exigir alguma lógica ― Variáveis de instância podem ser inicializadas ― onde o tratamento de erros ou outras lógicas ― Para fornecer a mesma capacidade para variáveis de classe, a linguagem de programação Java inclui ― Não é necessário declarar os campos ― Basta que sejam declarados e inicializados ― Uma classe pode ter qualquer número ― e eles podem aparecer ― O sistema de tempo de execução garante que os blocos de inicialização estática ― Os blocos de inicialização para variáveis de instância são idênticos aos blocos de inicialização estáticos, mas sem" },
+          { name: "Classe aninhadas", description: "Classes aninhadas são divididas em duas categorias ― Uma classe aninhada é um ― Classes aninhadas não estáticas (classes internas) têm acesso ― mesmo ― que sejam declaradas ― Classes aninhadas estáticas não têm ― Como membro de uma classe externa OuterClass, uma classe aninhada pode ser declarada ― Lembre-se de que classes externas só podem ser declaradas como ― Assim como os métodos e variáveis de instância, uma classe interna está associada ― e tem acesso direto ― Além disso, como uma classe interna está associada a uma instância, ela não pode definir ― Para instanciar uma classe interna, primeiro ― Existem dois tipos especiais de classes internas ― Assim como os métodos e variáveis de classe, uma classe estática aninhada está associada ― e assim como os métodos estáticos de classe, uma classe estática aninhada não pode ― ela só pode usá-los por meio ― Se uma declaração de um tipo (como uma variável membro ou o nome de um parâmetro) em um escopo específico (como uma classe interna ou a definição de um método) tiver o mesmo nome que outra declaração no escopo que a contém, então" },
+          { name: "Exemplo de classe Interna", description: "Existem dois tipos adicionais de classes internas ― classes locais ― classes anônimas ― Você pode usar os mesmos modificadores para classes internas que usa para outros" },
+          { name: "Classes locais", description: "Classes locais são classes definidas ― que é um grupo de zero ou mais instruções ― Normalmente, você encontra classes locais definidas ― Você pode definir uma classe local dentro de qualquer bloco ― Uma classe local tem acesso aos membros ― Além disso, uma classe local tem acesso ― No entanto, uma classe local só pode acessar ― Quando uma classe local acessa uma variável local ou um parâmetro do bloco que a contém ― No entanto, a partir do Java SE 8, uma classe local pode acessar variáveis e parâmetros locais do bloco que a contém que sejam ― Uma variável ou parâmetro cujo valor nunca é alterado ― A partir do Java SE 8, se você declarar uma classe local dentro de um método, ela poderá acessar ― Declarações de um tipo (como uma variável) em uma classe local ocultam ― Classes locais são semelhantes a classes internas porque não podem ― Classes locais em métodos estáticos, como a classe 'LocalPhoneNumber', que é definida no método estático 'get validatePhoneNumber', só podem se referir ― Classes locais não são estáticas porque têm acesso ― Consequentemente, elas não podem conter ― Não é possível declarar uma interface dentro de um bloco; interfaces são ― Não é possível declarar inicializadores estáticos ou interfaces de membros em uma ― Uma classe local pode ter membros estáticos, desde que sejam" },
         ]
       },
     ];
