@@ -161,9 +161,7 @@
       <div onclick="selectLibrary('HTML')">Biblioteca HTML</div>
       <div onclick="selectLibrary('Java')">Biblioteca Java</div>
       <div onclick="selectLibrary('Cod')">Codigo</div>
-      <div onclick="selectLibrary('DidJs')">Didatica Javascript</div>
-      <div onclick="selectLibrary('DidJv')">Didatica Java</div>
-
+      <div onclick="selectLibrary('Did')">Didatica</div>
     </div>
   </div>
 
@@ -915,9 +913,9 @@
       }
     ];
 
-    const DidJs = [
+    const Did = [
       {
-        category: "Todos",
+        category: "Javascript",
         tags: [
           { name: "O que é Javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript", description: "O que são APIs? conjunto de que, que permite o que ― API de terceiros ― API do navegador ― ao carregar uma pagina da web, executando ― cada aba possui ― quando o navegador encontra ― interpretada e leve ― compilação just-in-time ― e uma ma pratica ― existem alguma estrategias" },
           { name: "Passo a passo do javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/A_first_splash", description: "template literals" },
@@ -944,11 +942,9 @@
           { name: "Classes de javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript", description: "O construtor é definido usando ― Assim como um construtor fora da definição de uma classe , ele irá: ― Se você não precisar realizar nenhuma inicialização especial ― e um construtor padrão ― Usamos a extendspalavra-chave para indicar ― Se uma subclasse tiver alguma inicialização própria a fazer, ela deve primeiro ― Os campos privados devem ser declarados ― e seus nomes" },
         ]
       },
-    ];
 
-   const DidJv = [
-      {
-        category: "Todos",
+            {
+        category: "Java",
         tags: [
           { name: "O que é um objeto", description: "Os objetos do mundo real compartilham duas características ― Um objeto armazena seu estado ― e expõe seu comportamento por meio ― Os métodos operam ― encapsulamento de dados"},
           { name: "O que é uma classe", description: "Podem existir milhares de outras bicicletas, todas ― Cada bicicleta foi construída a partir ― Em termos de programação orientada a objetos, dizemos que sua bicicleta ― Uma classe é o projeto a partir ― A responsabilidade de criar e usar novos Bicycleobjetos"},
@@ -988,7 +984,6 @@
       },
     ];
 
-
     // 3/4
     const db = {
       'CSS': dataCSS,
@@ -996,8 +991,7 @@
       'JS': dataJS,
       'Java': dataJava,
       'Cod': Cod,
-      'DidJs': DidJs,
-      'DidJv': DidJv,
+      'Did': Did,
     };
 
     // --- FUNÇÕES ---
@@ -1025,9 +1019,7 @@
         'HTML': 'Biblioteca HTML',
         'Java': 'Biblioteca Java',
         'Cod': 'Codigo',
-        'DidJs': 'Didatica Javascript',
-        'DidJv': 'Didatica Java',
-
+        'Did': 'Didatica',
       };
 
       document.getElementById("mainTitle").textContent = titles[type];
