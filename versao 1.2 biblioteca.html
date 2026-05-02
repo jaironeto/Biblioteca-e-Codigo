@@ -150,43 +150,6 @@
       font-weight: bold;
       margin-left: 6px;
     }
-
-    /* TEMA DRACULA PARA CÓDIGO */
-    .description.code-mode {
-      background: transparent;
-      border: none;
-      padding: 0;
-      max-width: none;
-      width: auto;
-    }
-    .tag.active .description.code-mode {
-      min-width: unset;
-      max-width: 90vw;
-      width: 100%;
-    }
-    pre.code-dracula {
-      background: #282a36;
-      color: #f8f8f2;
-      padding: 14px;
-      border-radius: 8px;
-      font-family: 'Fira Code', Consolas, 'Courier New', monospace;
-      font-size: 15px;
-      line-height: 1.5;
-      margin: 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      white-space: pre-wrap;
-      word-break: break-word;
-      overflow-wrap: anywhere;
-      max-width: 100%;
-    }
-    pre.code-dracula code { background: transparent; color: inherit; padding: 0; font-family: inherit; }
-    .hljs { color: #f8f8f2; }
-    .hljs-comment { color: #6272a4; font-style: italic; }
-    .hljs-keyword { color: #ff79c6; font-weight: bold; }
-    .hljs-string { color: #f1fa8c; }
-    .hljs-number,.hljs-literal { color: #bd93f9; }
-    .hljs-title { color: #50fa7b; }
-    .hljs-params { color: #ffb86c; }
   </style>
 </head>
 
@@ -1327,10 +1290,10 @@ const gato = {
       };
 
       document.getElementById("mainTitle").textContent = titles[type];
-      renderLibrary(db[type], type);
+      renderLibrary(db[type]);
     }
 
-    function renderLibrary(activeData, type) {
+    function renderLibrary(activeData) {
       const library = document.getElementById("library");
       library.innerHTML = "";
 
@@ -1353,36 +1316,9 @@ const gato = {
           const desc = document.createElement("div");
           desc.className = "description";
 
-          // SE FOR CÓDIGO, USA TEMA DRACULA (só Cod)
-          if (type === 'Cod') {
-            desc.classList.add('code-mode');
-            const pre = document.createElement('pre');
-            pre.className = 'code-dracula';
-            const code = document.createElement('code');
-            code.className = 'hljs';
-            function draculaHighlight(str) {
-              str = str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-              // strings primeiro para não quebrar tags
-              str = str.replace(/(['"`])(?:\\.|(?!\1).)*?\1/g, m => `<span class="hljs-string">${m}</span>`);
-              // comentários
-              str = str.replace(/\/\*[\s\S]*?\*\//g, m => `<span class="hljs-comment">${m}</span>`);
-              str = str.replace(/\/\/.*$/gm, m => `<span class="hljs-comment">${m}</span>`);
-              // palavras-chave
-              str = str.replace(/\b(var|let|const|function|if|else|while|for|return|class|new|try|catch|throw|await|async|import|export|default|extends|super|this|typeof|instanceof|in|of|switch|case|break|continue|do|yield)\b/g, '<span class="hljs-keyword">$1</span>');
-              str = str.replace(/\b(true|false|null|undefined|NaN|Infinity)\b/g, '<span class="hljs-literal">$1</span>');
-              str = str.replace(/\b(\d+\.?\d*)\b/g, '<span class="hljs-number">$1</span>');
-              str = str.replace(/\b([a-zA-Z_$][\w$]*)\s*(?=\()/g, '<span class="hljs-title">$1</span>');
-              str = str.replace(/\.([a-zA-Z_$][\w$]*)/g, '.<span class="hljs-params">$1</span>');
-              return str;
-            }
-            code.innerHTML = draculaHighlight(tag.description);
-            pre.appendChild(code);
-            desc.appendChild(pre);
-          } else {
-            const textSpan = document.createElement("span");
-            textSpan.textContent = tag.description;
-            desc.appendChild(textSpan);
-          }
+          const textSpan = document.createElement("span");
+          textSpan.textContent = tag.description;
+          desc.appendChild(textSpan);
 
           if (tag.url) {
             const link = document.createElement("a");
@@ -1420,7 +1356,7 @@ const gato = {
       });
     }
 
-    renderLibrary(dataCSS, 'CSS');
+    renderLibrary(dataCSS);
   </script>
 </body>
 
