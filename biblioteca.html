@@ -183,7 +183,7 @@
     .hljs { color: #f8f8f2; }
     .hljs-comment { color: #6272a4; font-style: italic; }
     .hljs-keyword { color: #ff79c6; font-weight: bold; }
-    .hljs-string { color: #f1fa8c; }
+    .hljs-string { color: #50fa7b; }
     .hljs-number,.hljs-literal { color: #bd93f9; }
     .hljs-title { color: #50fa7b; }
     .hljs-params { color: #ffb86c; }
@@ -1362,17 +1362,20 @@ const gato = {
             code.className = 'hljs';
             function draculaHighlight(str) {
               str = str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-              // strings primeiro para não quebrar tags
-              str = str.replace(/(['"`])(?:\\.|(?!\1).)*?\1/g, m => `<span class="hljs-string">${m}</span>`);
-              // comentários
-              str = str.replace(/\/\*[\s\S]*?\*\//g, m => `<span class="hljs-comment">${m}</span>`);
-              str = str.replace(/\/\/.*$/gm, m => `<span class="hljs-comment">${m}</span>`);
-              // palavras-chave
-              str = str.replace(/\b(var|let|const|function|if|else|while|for|return|class|new|try|catch|throw|await|async|import|export|default|extends|super|this|typeof|instanceof|in|of|switch|case|break|continue|do|yield)\b/g, '<span class="hljs-keyword">$1</span>');
-              str = str.replace(/\b(true|false|null|undefined|NaN|Infinity)\b/g, '<span class="hljs-literal">$1</span>');
-              str = str.replace(/\b(\d+\.?\d*)\b/g, '<span class="hljs-number">$1</span>');
-              str = str.replace(/\b([a-zA-Z_$][\w$]*)\s*(?=\()/g, '<span class="hljs-title">$1</span>');
-              str = str.replace(/\.([a-zA-Z_$][\w$]*)/g, '.<span class="hljs-params">$1</span>');
+              // 1) comentários /* */ /** */ e //
+              var C = [];
+              str = str.replace(/\/\*[\s\S]*?\*\//g, function(m){ C.push(m); return '__C'+(C.length-1)+'__'; });
+              str = str.replace(/\/\/.*$/gm, function(m){ C.push(m); return '__C'+(C.length-1)+'__'; });
+              // 2) strings
+              var S = [];
+              str = str.replace(/"([^"\\]|\\.)*"/g, function(m){ S.push(m); return '__S'+(S.length-1)+'__'; });
+              str = str.replace(/'([^'\\]|\\.)*'/g, function(m){ S.push(m); return '__S'+(S.length-1)+'__'; });
+              str = str.replace(/`([^`\\]|\\.)*`/g, function(m){ S.push(m); return '__S'+(S.length-1)+'__'; });
+              // 3) palavras-chave multilinguagem
+              str = str.replace(/\b(abstract|as|async|await|auto|base|bool|boolean|break|byte|case|catch|char|checked|class|clone|const|continue|decimal|def|default|defer|del|delegate|delete|do|double|elif|else|elseif|elsif|end|enum|event|except|explicit|extends|extern|False|final|finally|float|fn|for|foreach|from|function|global|goto|if|implements|import|in|inline|instanceof|int|interface|internal|is|lambda|let|lock|long|match|module|namespace|new|None|nonlocal|not|null|object|or|override|package|pass|private|protected|public|raise|readonly|ref|register|require|return|sealed|short|signed|sizeof|static|struct|super|switch|synchronized|template|this|throw|throws|trait|True|try|typedef|type|typeof|uint|ulong|union|unsigned|unsafe|ushort|using|var|virtual|void|volatile|while|with|xor|yield)\b/g, '<span class="hljs-keyword">$1</span>');
+              // restaura
+              str = str.replace(/__S(\d+)__/g, function(a,i){ return '<span class="hljs-string">'+S[i]+'</span>'; });
+              str = str.replace(/__C(\d+)__/g, function(a,i){ return '<span class="hljs-comment">'+C[i]+'</span>'; });
               return str;
             }
             code.innerHTML = draculaHighlight(tag.description);
@@ -1425,5 +1428,3 @@ const gato = {
 </body>
 
 </html>
-
-// versao 1.3
