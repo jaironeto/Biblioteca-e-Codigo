@@ -159,11 +159,13 @@
       max-width: none;
       width: auto;
     }
+
     .tag.active .description.code-mode {
       min-width: unset;
       max-width: 90vw;
       width: 100%;
     }
+
     pre.code-dracula {
       background: #282a36;
       color: #f8f8f2;
@@ -173,20 +175,50 @@
       font-size: 15px;
       line-height: 1.5;
       margin: 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       white-space: pre-wrap;
       word-break: break-word;
       overflow-wrap: anywhere;
       max-width: 100%;
     }
-    pre.code-dracula code { background: transparent; color: inherit; padding: 0; font-family: inherit; }
-    .hljs { color: #f8f8f2; }
-    .hljs-comment { color: #6272a4; font-style: italic; }
-    .hljs-keyword { color: #ff79c6; font-weight: bold; }
-    .hljs-string { color: #50fa7b; }
-    .hljs-number,.hljs-literal { color: #bd93f9; }
-    .hljs-title { color: #50fa7b; }
-    .hljs-params { color: #ffb86c; }
+
+    pre.code-dracula code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      font-family: inherit;
+    }
+
+    .hljs {
+      color: #f8f8f2;
+    }
+
+    .hljs-comment {
+      color: #6272a4;
+      font-style: italic;
+    }
+
+    .hljs-keyword {
+      color: #ff79c6;
+      font-weight: bold;
+    }
+
+    .hljs-string {
+      color: #50fa7b;
+    }
+
+    .hljs-number,
+    .hljs-literal {
+      color: #bd93f9;
+    }
+
+    .hljs-title {
+      color: #50fa7b;
+    }
+
+    .hljs-params {
+      color: #ffb86c;
+    }
   </style>
 </head>
 
@@ -198,8 +230,9 @@
       <div onclick="selectLibrary('CSS')">Biblioteca CSS</div>
       <div onclick="selectLibrary('HTML')">Biblioteca HTML</div>
       <div onclick="selectLibrary('Java')">Biblioteca Java</div>
-      <div onclick="selectLibrary('Cod')">Codigo</div>
       <div onclick="selectLibrary('Did')">Didatica</div>
+      <div onclick="selectLibrary('Cod')">Codigo</div>
+
     </div>
   </div>
 
@@ -881,6 +914,77 @@
       }
     ];
 
+    const Did = [
+      {
+        category: "Javascript",
+        tags: [
+          { name: "O que é Javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript", description: "O que são APIs? conjunto de que, que permite o que ― API de terceiros ― API do navegador ― ao carregar uma pagina da web, executando ― cada aba possui ― quando o navegador encontra ― interpretada e leve ― compilação just-in-time ― e uma ma pratica ― existem alguma estrategias" },
+          { name: "Passo a passo do javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/A_first_splash", description: "template literals" },
+          { name: "Variaveis", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Variables", description: "uma caracteristica especial das variaveis ― tambem podem conter ― nao sao ― nao confunda ― içamento ― tipagem dinamica" },
+          { name: "Numeros e operadores", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Math", description: "isso significa que independente do tipo de numero ― as vezes voce pode acabar com um numero ― [+] ― [-] ― [*] ― [/] ― [%] ― [**] ― precendencia ― se voce tentar inserir alguns desses valores no console" },
+          { name: "Cordas", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Strings", description: "dentro de um template literal voce pode envolver ― para obter o mesmo resultado ― barra invertida ― o que acontece quando tentamos concatenar" },
+          { name: "Métodos de string", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Useful_string_methods", description: "voce pode retornar qualquer" },
+          { name: "Matrizes", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays", description: "descobrir o comprimento do array" },
+          { name: "Condicionais", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Conditionals", description: "Embora nao seja recomendado if..else ― um erro comum ao usar OR" },
+          { name: "Crie sua própria função", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Build_your_own_function", description: "só o usa quando deseja executar" },
+          { name: "Eventos", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events", description: "para reagir a um evento ― quando um bloco de codigo desse tipo e configurado, dizemos que estamos ― se voce adicionou um ouvinte de eventos usando ― ao fazer mais de uma chamada para addEventListener() fornecendo diferentes, voce pode ter varias ― no entanto existem outras duas maneiras ― objetos (como botoes), tambem possuem propriedades ― eventos embutidos ― nao e uma boa ideia misturar ― event, evt ― isso e chamado de objeto de evento e e passada ― preventDefault()" },
+          { name: "Objetos", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics", description: "um objeto e uma coleção ― geralmente consiste em diversas ― um objeto e composto por multiplos membros, cada um com ― cada par nome/valor deve ser separado ― e o nome e o valor em cada caso sao separados ― o que sao metodos? ― objeto literal ― o nome do objeto (pessoa) funciona ― a notação de colchetes oferece uma maneira alternativa ― nao e a toa que os objetos as vezes sao chamados ― a definição de membros nao se limita apenas ― this geralmente se refere ― no contexto de um metodo de objeto, this refere-se ― mas sera essencial quando começarmos a usar construtores ― gostariamos de uma maneira de definir a 'forma' de um objeto ― quando voce chama um construtor, ele ira" },
+          { name: "Script DOM", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting", description: "window ― Navigator ― Document ― o documento carregado em cada uma das suas aba do navegador e representado, trata-se de uma representação em 'estrutura de arvores, que permite ― cada entrada na arvore e chamado ― o nos tambem sao referidos pela sua posição ― HTMLElement.style" },
+          { name: "Solicitações de rede", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Network_requests", description: "Outra tarefa muito comum em sites e aplicativos modernos ― O modelo básico de carregamento de páginas na Web é o seguinte: ― A principal API aqui é a Fetch API . Ela permite que o JavaScript em execução em uma página faça ― Os dados solicitados costumam ― No início, essa técnica geral era conhecida como ― Para agilizar ainda mais o processo, alguns sites também armazenam ― No entanto, os servidores web tendem a diferenciar ― Os navegadores modernos não executarão solicitações HTTP se você executar ― Às vezes, especialmente em códigos mais antigos, você verá outra API chamada XMLHttpRequest" },
+          { name: "Guia - Introdução", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction", description: "JavaScript é uma linguagem de script ― usada para tornar ― Existem também versões mais avançadas de JavaScript para o lado do servidor, como o Node.js, que permitem ― JavaScript contém uma biblioteca padrão ― e um conjunto central de elementos da linguagem, como ― Isso significa que, no navegador, o JavaScript pode ― Da mesma forma, o JavaScript do Node.js no servidor pode ― O JavaScript possui um modelo de objetos baseado ― em vez do modelo ― O modelo baseado em protótipos permite herança dinâmica ― O JavaScript também suporta funções sem quaisquer" },
+          { name: "Fluxo de controle e tratamento de erros", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling", description: "A instrução mais básica ― O JavaScript suporta dois tipos de instruções condicionais: ― para testar várias condições em sequência ― Em geral, é uma boa prática não usar ― Os seguintes valores são avaliados como false ― Todos os outros valores, incluindo todos os objetos, são avaliados ― Não confunda os valores booleanos primitivos ` true` e `fase` ― Uma switch instrução permite que um programa ― Se uma correspondência for encontrada ― Por convenção, odefaulta cláusula está escrita ― Se break é omitido ― Embora seja comum lançar números ou strings como erros, frequentemente é mais eficaz usar ― Use a throw instrução para ― Um throw declaração específica ― Você pode lançar qualquer ― A try...catch instrução ― Se uma exceção for lançada ― Se nenhuma exceção for lançada no try bloco ― finally bloco é executado ― Também é importante notar que ofinally O bloco será executado ― Se uma exceção for lançada, no entanto, as instruções no finally bloco serão executadas mesmo que nenhum ― Se finally O bloco retorna um valor, esse valor se torna" },
+          { name: "Usando classes", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes", description: "JavaScript é uma linguagem baseada ― os comportamentos de um objeto são especificados ― No entanto, com a adição de classes ― Em muitas outras linguagens, classes , ou construtores, são claramente distinguidas de objetos , ou instâncias. Em JavaScript, as classes são principalmente ― As próprias classes também ― As classes criam objetos através ― A classe armazena algumas propriedades (dados ou métodos) em si, que geralmente são usadas ― Construtores de funções típicos podem ser construídos ― No entanto, tentar 'chamar' uma classe ― Diferentemente das declarações de funções, as declarações de classes não são ― Expressões de classe também podem ter nomes. O nome da expressão só é visível ― A sintaxe do construtor é exatamente a mesma de uma função normal — o que significa que você pode usar ― O this valor será retornado automaticamente como ― É aconselhável não retornar ― Um campo privado é um identificador prefixado ― é parte integrante do nome do campo, o que significa ― os campos privados são estritamente privados : se a classe não implementar métodos que exponham ― Isso significa que você pode refatorar os campos privados da sua classe ― Um método de classe pode ler os campos privados de outras instâncias, desde que ― Acessar um elemento privado inexistente gera ― Existem algumas limitações no uso de elementos privados: ― Métodos, getters e setters também podem ― Blocos de inicialização estática são quase equivalentes à execução ― A única diferença é que eles têm acesso ― Ao usar extends, os métodos estáticos também" },
+          { name: "Usando promessas", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises", description: "Uma promessa Promise ― Essencialmente, uma promessa ― Promessas flutuantes ― Portanto, como regra geral ― Em Node.js , o tratamento de rejeições de promessas é um pouco diferente ― Por outro lado, as promises são uma forma de inversão de controle ― As funções de retorno adicionadas com ` then() ― É possível adicionar várias funções de retorno de chamada (callbacks) fazendo-as then()diversas vezes. Elas serão invocadas ― Para evitar surpresas, as funções passadas para then()`will` nunca serão chamadas ― Em vez de ser executada imediatamente, a função passada como parâmetro é colocada em uma fila de microtarefas, o que significa que ela será executada ― As funções de retorno de promessas são tratadas como microtarefas, enquanto setTimeout()as funções de retorno de chamada são tratadas ― Se você se deparar com situações em que tem promessas e tarefas (como eventos ou callbacks) que são disparadas em ordens imprevisíveis, pode ser vantajoso" },
+          { name: "Assincrono - introdução", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing", description: "A programação assíncrona é uma técnica que permite ― A razão para isso é que este programa JavaScript ― Uma thread é uma ― Como o programa consiste em uma única thread, ele só pode ― manipuladores de eventos são, na verdade, uma forma de programação assíncrona: você fornece ― e você é notificado sobre o progresso e a eventual conclusão de uma requisição ao adicionar ― Um manipulador de eventos é um tipo específico ― Uma função de retorno de chamada é simplesmente uma função ― Isso às vezes é chamado de 'inferno de funções de retorno de chamada' ou 'pirâmide da perdição' ― Por esses motivos, a maioria das APIs assíncronas modernas não usa ― Em vez disso, a base da programação assíncrona em JavaScript" },
+          { name: "Usando promessas", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises", description: "Uma promessa é um objeto ― que representa ― No momento em que a promessa é retornada para quem a chamou, a operação geralmente ― mas o objeto promessa fornece ― Com uma API baseada em promessas, a função assíncrona inicia ― Você pode então associar manipuladores a esse objeto de promessa, e esses manipuladores serão executados ― Isso é chamado de encadeamento de promessas ― Para dar suporte ao tratamento de erros, Promiseos objetos fornecem ― Se você adicionar um ` catch()wait()` ao final de uma cadeia de promessas, ele será chamado quando ― Primeiro, uma promessa pode estar em um de três estados ― mas a promessa é cumprida se o servidor enviou uma resposta, mesmo que a resposta ― A asyncpalavra-chave `async` oferece uma maneira ― Adicioná-la asyncno início de uma função a torna ― Dentro de uma função assíncrona, você pode usar a awaitpalavra-chave `await` antes de uma chamada para uma função que retorna uma promessa. Isso faz com que o código espere ― Isso permite escrever código que usa funções assíncronas, mas que se parece ― Podemos até usar um try...catch ― Observe também que você só pode usar `this` await ― Lembre-se de que, assim como uma cadeia de promessas, awaito `asyncio` força a conclusão" },
+          { name: "Implementando APIs baseadas em promessas", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Implementing_a_promise-based_API", description: "O Promise()construtor recebe uma única ― Chamaremos essa função ― Ao criar uma nova promessa, você fornece ― Essa função executora recebe dois ― ambos também ― Se a função assíncrona for bem-sucedida ― Se a função executora lançar um erro ― Você pode passar um único parâmetro de qualquer tipo para" },
+          { name: "Prototipos de objetos", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object_prototypes", description: "Os protótipos são o mecanismo ― Se você digitar o nome do objeto seguido de um ponto no console, como myObject.`object`, o console exibirá ― A cadeia termina quando ― A propriedade de um objeto que aponta para seu protótipo não é chamada ― A maneira padrão de acessar o protótipo de um objeto ― Ao tentar acessar uma propriedade de um objeto: se a propriedade não for encontrada no próprio objeto ― Se a propriedade ainda não for encontrada ― Isso se chama 'sombreamento' da propriedade ― Existem várias maneiras de definir o protótipo de um objeto em JavaScript, e aqui descreveremos duas ― Em JavaScript, todas as funções possuem uma propriedade ― Quando você chama uma função como construtor" },
+          { name: "Programação orientada a objetos", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming", description: "Um objeto fornece uma interface pública para ― mas mantém seu próprio ― Por si só, uma classe não faz nada ― O processo de criação de uma instância é realizado ― Passamos valores para o construtor para qualquer ― ela cria uma espécie de firewall entre esse objeto e o restante do sistema ― Em JavaScript, podemos, e frequentemente ― Isso pode tornar o trabalho com objetos muito mais leve do que ― Quando uma subclasse é instanciada, um único objeto é criado, combinando propriedades ― Com a prototipagem, cada nível da hierarquia é representado ― e eles são vinculados ― O comportamento da cadeia de protótipos se assemelha" },
+          { name: "Classes de javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript", description: "O construtor é definido usando ― Assim como um construtor fora da definição de uma classe , ele irá: ― Se você não precisar realizar nenhuma inicialização especial ― e um construtor padrão ― Usamos a extendspalavra-chave para indicar ― Se uma subclasse tiver alguma inicialização própria a fazer, ela deve primeiro ― Os campos privados devem ser declarados ― e seus nomes" },
+        ]
+      },
+
+      {
+        category: "Java",
+        tags: [
+          { name: "O que é um objeto", description: "Os objetos do mundo real compartilham duas características ― Um objeto armazena seu estado ― e expõe seu comportamento por meio ― Os métodos operam ― encapsulamento de dados" },
+          { name: "O que é uma classe", description: "Podem existir milhares de outras bicicletas, todas ― Cada bicicleta foi construída a partir ― Em termos de programação orientada a objetos, dizemos que sua bicicleta ― Uma classe é o projeto a partir ― A responsabilidade de criar e usar novos Bicycleobjetos" },
+          { name: "O que e herança", description: "Na linguagem de programação Java, cada classe pode ter ― e cada superclasse ― A sintaxe para criar uma subclasse é simples. No início da declaração da classe ― seguida pelo ― Isso fornece MountainBike os mesmos ― mas permite que seu código se concentre exclusivamente" },
+          { name: "O que e uma interface", description: "Em sua forma mais comum, uma interface é um grupo ― com corpos ― Interfaces estabelecem um contrato entre ― Se sua classe afirma implementar uma interface, todos os métodos definidos por essa interface devem" },
+          { name: "O que e um pacote", description: "Um pacote é um ― Conceitualmente, você pode pensar em pacotes ― A plataforma Java oferece uma enorme ― Essa biblioteca é conhecida como ― Isso permite que você, o programador, se concentre ― em vez da " },
+          { name: "Variáveis java", description: "Variáveis de Instância (Campos Não Estáticos) ― Variáveis de Classe (Campos Estáticos) ― isso informa ao compilador que existe exatamente ― independentemente ― Variáveis locais : Assim como um objeto armazena seu estado em campos, um método geralmente armazena ― Não existe uma palavra-chave específica que designe ― essa determinação vem inteiramente ― que é entre as chaves ― Dessa forma, as variáveis locais são visíveis apenas ― Parâmetros ― O importante é lembrar que os parâmetros são sempre classificados ― Os campos, métodos e tipos aninhados de um tipo são chamados ― Os nomes de variáveis diferenciam ― Espaços em branco ― Se a sua variável armazenar um valor constante" },
+          { name: "Tipos de dados primitivos", description: "A linguagem de programação Java é tipada estaticamente, o que significa ― O tipo de dados de uma variável determina ― Além de `int` int, a linguagem de programação Java suporta outros ― Um tipo primitivo é predefinido pela linguagem e nomeado ― Valores primitivos não compartilham ― Os oito tipos de dados primitivos suportados pela linguagem de programação Java são ― Além dos oito tipos de dados primitivos listados acima, a linguagem de programação Java também oferece suporte especial ― Colocar sua string de caracteres entre aspas duplas ― são imutáveis , o que significa ― A Stringclasse `String` não é tecnicamente ― mas considerando o suporte especial que a linguagem lhe oferece ― Campos declarados, mas não inicializados, receberão um ― De modo geral, esse valor padrão será ― As variáveis ​​locais são ligeiramente diferentes ― Se você não puder inicializar sua variável local onde ela foi declarada, certifique-se ― Acessar uma variável local não inicializada ― Você deve ter notado que a newpalavra-chave `new` não é usada ao inicializar ― Tipos primitivos são tipos de dados especiais, inerentes à linguagem; eles não são ― Um literal é a representação ― Um literal inteiro é do tipo longse termina ― caso contrário ― Literais inteiros podem ser expressos pelos seguintes sistemas numéricos ― Um literal de ponto flutuante é do tipo float ― caso contrário ― Os tipos de ponto flutuante ( floate double) também podem ser expressos usando ― A linguagem de programação Java também suporta algumas sequências de escape especiais ― Existe também um nullliteral especial que pode ser usado como valor para qualquer ― nullEle pode ser atribuído a qualquer variável, exceto ― Há pouco que se possa fazer com um nullvalor além ― Finalmente, existe também um tipo especial de literal chamado literal de classe , formado ― No Java SE 7 e versões posteriores, qualquer número de caracteres de sublinhado (_ _) pode aparecer ― Esse recurso permite ― Você só pode usar sublinhados entre dígitos; não é possível usar sublinhados nos seguintes locais" },
+          { name: "Matrizes Java", description: "Um array é um objeto contêiner que armazena ― O tamanho de um array é definido ― Após a criação, seu tamanho ― Cada item em um array é chamado ― e cada elemento é acessado ― anArray ― Assim como as declarações de variáveis de outros tipos, a declaração de um array possui dois componentes ― O tipo de um array é escrito ― O tamanho do array não faz parte ― Assim como com variáveis de outros tipos, a declaração ― Você também pode colocar os colchetes ― Uma maneira de criar um array é com ― Cada elemento da matriz é acessado ― Alternativamente, você pode usar a sintaxe abreviada para ― Aqui, o comprimento da matriz é determinado ― Você também pode declarar uma matriz de matrizes (também conhecida como matriz multidimensional) usando ― Na linguagem de programação Java, um array multidimensional é um array cujos componentes ― Por fim, você pode usar a propriedade integrada lengthpara determinar" },
+          { name: "Operadores", description: "Operadores são símbolos especiais que executam ― Operadores com maior precedência são avaliados ― Quando operadores de mesma precedência aparecem na mesma expressão ― E lógico ― OU lógico" },
+          { name: "Operadores de atribuição, aritméticos e unários", description: "Um dos operadores mais comuns que você encontrará é o operador de atribuição simples ''=''. Você viu esse operador na classe Bicycle; ele atribui o valor ― [+] ― [-] ― [*] ― [/] ― [%] ― O +operador também pode ser usado ― [!]" },
+          { name: "Operadores de igualdade, relacionais e condicionais", description: "Os operadores de igualdade e relacionais determinam se um operando ― Esses operadores exibem comportamento de 'curto-circuito, o que significa ― Este operador também é conhecido como operador ternário ― O instanceof operador compara" },
+          { name: "Expressões, instruções e blocos", description: "Uma expressão é uma construção composta ― O tipo de dados do valor retornado por uma expressão depende ― A expressão cadence = 0 retorna ― porque o operador de atribuição retorna um valor do mesmo ― A linguagem de programação Java permite construir expressões compostas a partir ― Você pode especificar exatamente como uma expressão será avaliada usando ― Se você não indicar explicitamente a ordem das operações a serem executadas, a ordem será determinada ― Os operadores com maior precedência ― Um bloco é um grupo ― e pode ser usado em qualquer lugar" },
+          { name: "Instruções de fluxo de controle", description: "As instruções dentro dos seus arquivos de código-fonte geralmente são executadas ― As instruções de controle de fluxo ― permitindo que seu programa execute ― instruções de tomada de decisão ― as instruções de repetição ― instruções de ramificação" },
+          { name: "As intruções if-then", description: "No entanto, uma vez que uma condição é satisfeita, as instruções apropriadas" },
+          { name: "A declaração switch", description: "até que uma breakdeclaração seja encontrada" },
+          { name: "As instruções while e do-while", description: "A diferença entre do-whilee whileé que do-whileavalia" },
+          { name: "A declaração for", description: "A expressão de inicialização ― ela é executada ― Quando a expressão de término― A expressão de incremento é invocada ― O escopo dessa variável se estende ― As três expressões do for loop são opcionais ― Essa forma é às vezes chamada de instrução 'for' aprimorada e pode ser usada para tornar seus loops mais compactos e fáceis de ler" },
+          { name: "Instruções de ramificação", description: "A break instrução possui duas formas ― Você também pode usar uma instrução sem rótulo break para encerrar ― O fluxo de controle é transferido para a instrução imediatamente ― A return instrução possui duas formas ― O tipo de dados do valor retornado deve corresponder ao tipo do valor de retorno" },
+          { name: "Declarando Classes", description: "O corpo da classe (a área entre as chaves) contém ― Você também pode adicionar ― Em geral, as declarações de classe podem incluir estes componentes, nesta ordem" },
+          { name: "Declarando variáveis membro", description: "campos ― variáveis locais ― parâmetros ― As declarações de campo são compostas por três componentes, nesta ordem ― A public plavra-chave identifica esses campos como membros públicos, acessíveis por qualquer ― private modificador ― Todas as variáveis devem ter ― Você pode usar tipos primitivos ― Ou pode usar tipos de referência ― A primeira letra do nome de uma classe" },
+          { name: "Definindo Métodos", description: "Os únicos elementos obrigatórios de uma declaração de método são ― De forma mais geral, as declarações de métodos têm seis componentes, nesta ordem ― Dois dos componentes de uma declaração de método constituem a assinatura do método ― A linguagem de programação Java suporta sobrecarga de métodos e consegue distinguir entre métodos com ― Isso significa que métodos dentro de uma classe podem ter o mesmo nome se possuírem ― Na linguagem de programação Java, você pode usar o mesmo nome para todos os métodos de desenho, mas passar ― Métodos sobrecarregados são diferenciados ― Não é possível declarar mais de um método com o mesmo ― O compilador não considera o tipo de retorno" },
+          { name: "Fornecendo construtores para suas classes", description: "Uma classe contém construtores que são invocados para criar objetos a partir ― As declarações de construtores são semelhantes às declarações de métodos, exceto ― Assim como ocorre com os métodos, a plataforma Java diferencia os construtores com base ― Você não precisa fornecer nenhum ― O compilador fornece automaticamente ― Esse construtor padrão chamará ― Nessa situação, o compilador reclamará se a superclasse ― Se sua classe não tiver uma superclasse explícita ― Você pode usar modificadores de acesso na declaração de um construtor para controlar ― Se outra classe não puder chamar um MyClass construtor" },
+          { name: "Passando informações para um método ou construtor", description: "Os parâmetros são usados no corpo do método e, em tempo de execução, assumirão os valores ― Argumentos são os valores ― Ao invocar um método, os argumentos usados devem ― Para usar varargs ― um espaço ― O método pode então ser chamado com qualquer ― O nome de um parâmetro deve ser ― e não pode ser o nome de uma variável ― Um parâmetro pode ter o mesmo nome ― Nesse caso, diz-se que o parâmetro ― Argumentos primitivos, como um int ou um double, são passados para os métodos ― Isso significa que quaisquer alterações nos valores dos parâmetros existem ― Quando o método retorna ― Parâmetros de tipo de dados de referência, como objetos, também são passados ― No entanto, os valores dos campos do objeto podem ser ― Essas alterações persistirão" },
+          { name: "Objetos java", description: "Um programa Java típico cria muitos objetos que, como você sabe, interagem ― Através dessas interações entre objetos, um programa pode executar diversas tarefas, como " },
+          { name: "Criando objetos", description: "Como você sabe, uma classe fornece o modelo para objetos; ― Simplesmente declarar uma variável de referência não ― Para isso, você precisa usar ― Você deve atribuir um objeto à variável originOne antes ― Caso contrário, você receberá ― O operador 'new' instancia uma classe alocando ― e retornando uma ― O operador 'new' também invoca ― A expressão 'instanciar uma classe' significa o mesmo ― O novo operador requer um único argumento pós-fixado: uma chamada ― O operador 'new' retorna ― Essa referência geralmente é atribuída ― A referência retornada pelo operador 'new' não precisa ser atribuída a uma variável. Ela também pode ser usada ― Você pode reconhecer um construtor porque sua declaração usa o mesmo ― O compilador Java diferencia os construtores com base ― um objeto pode ter múltiplas" },
+          { name: "Usando objetos", description: "Os campos de um objeto são acessados ― O código que estiver fora da classe do objeto deve usar ― seguida pelo operador ― seguido por um nome ― esses campos existem apenas dentro de um objeto ― Objetos do mesmo tipo têm sua própria ― Quando você acessa um campo de instância por meio de uma referência de objeto ― Lembre-se de que o operador 'new' retorna ― Portanto, você pode usar o valor retornado por 'new' para ― Observe que, após a execução desta instrução, o programa não possui mais uma referência ao Rectangle criado ― Você também usa uma referência de objeto para invocar ― Além disso, você fornece, entre parênteses, quaisquer ― Se o método não exigir nenhum ― argumento ― Para métodos que retornam um valor, você pode usar a invocação do método em ― A plataforma Java permite que você crie quantos ― sem precisar se preocupar em destruí-los. O ambiente de execução Java ― Um objeto torna-se elegível para coleta de lixo quando ― Alternativamente, você pode descartar explicitamente uma referência a um objeto atribuindo" },
+          { name: "Retornando um valor de um método", description: "Um método retorna ao código que o invocou quando ele ― Você declara o tipo de retorno de um método ― Dentro do corpo do método, você usa a return instrução ― Qualquer método declarado void não ― não precisa conter ― Se você tentar retornar um valor de um método que foi declarado como void, você receberá ― Qualquer método que não seja declarado void deve conter ― Um método também pode retornar ― Quando um método usa um nome de classe como seu tipo de retorno, como whosFastest faz o método get, a classe do tipo do objeto retornado deve ser uma ― você também pode usar nomes de interface como tipos de retorno. Nesse caso, o objeto retornado deve" },
+          { name: "Usando a palavra-chave this", description: "Dentro de um método de instância ou construtor, this é uma referência ― Você pode se referir a qualquer membro do objeto atual de dentro de um método de instância ou construtor usando ― O motivo mais comum para usar a this palavra-chave é porque um campo está ― Dentro de um construtor, você também pode usar a this palavra-chave para chamar outro ― Isso é chamado de invocação explícita de construtor ― Caso esteja presente, a invocação de outro construtor deve" },
+          { name: "Controlando o acesso aos membros de uma classe", description: "Os modificadores de nível de acesso determinam se outras classes podem ― Existem dois níveis de controle de acesso ― Se uma classe não tiver nenhum modificador (o padrão, também conhecido como 'package-private'), ela será visível apenas ― Para membros, existem dois modificadores de acesso adicionais ― public ― protected ― sem modificador ― private" },
+          { name: "Compreendendo os membros da classe", description: "Quando vários objetos são criados a partir do mesmo modelo de classe, cada um deles possui suas próprias ― Às vezes, você deseja ter variáveis que sejam comuns a todos os objetos. Isso é conseguido com ― Campos que possuem o static modificador 'static' em sua declaração são chamados ― estão associados ― Qualquer objeto pode alterar o valor de uma variável de classe, mas as variáveis de classe também podem ser manipuladas ― As variáveis de classe são referenciadas pelo ― você também pode se referir a campos estáticos com uma ― A linguagem de programação Java suporta métodos estáticos, bem como ― Métodos estáticos, que possuem o static modificador 'static' em suas declarações, devem ser invocados ― sem a necessidade ― Você também pode se referir a métodos estáticos com uma ― Métodos de classe não podem acessar ― devem usar ― Além disso, métodos de classe não podem usar ― O static modificador, em combinação com o final modificador, também é usado ― O final modificador indica que o valor deste campo ― os nomes dos valores constantes são escritos ― Se o nome for composto por mais de uma palavra" },
+          { name: "Inicializando campos", description: "Se a inicialização exigir alguma lógica ― Variáveis de instância podem ser inicializadas ― onde o tratamento de erros ou outras lógicas ― Para fornecer a mesma capacidade para variáveis de classe, a linguagem de programação Java inclui ― Não é necessário declarar os campos ― Basta que sejam declarados e inicializados ― Uma classe pode ter qualquer número ― e eles podem aparecer ― O sistema de tempo de execução garante que os blocos de inicialização estática ― Os blocos de inicialização para variáveis de instância são idênticos aos blocos de inicialização estáticos, mas sem" },
+          { name: "Classe aninhadas", description: "Classes aninhadas são divididas em duas categorias ― Uma classe aninhada é um ― Classes aninhadas não estáticas (classes internas) têm acesso ― mesmo ― que sejam declaradas ― Classes aninhadas estáticas não têm ― Como membro de uma classe externa OuterClass, uma classe aninhada pode ser declarada ― Lembre-se de que classes externas só podem ser declaradas como ― Assim como os métodos e variáveis de instância, uma classe interna está associada ― e tem acesso direto ― Além disso, como uma classe interna está associada a uma instância, ela não pode definir ― Para instanciar uma classe interna, primeiro ― Existem dois tipos especiais de classes internas ― Assim como os métodos e variáveis de classe, uma classe estática aninhada está associada ― e assim como os métodos estáticos de classe, uma classe estática aninhada não pode ― ela só pode usá-los por meio ― Se uma declaração de um tipo (como uma variável membro ou o nome de um parâmetro) em um escopo específico (como uma classe interna ou a definição de um método) tiver o mesmo nome que outra declaração no escopo que a contém, então" },
+          { name: "Exemplo de classe Interna", description: "Existem dois tipos adicionais de classes internas ― classes locais ― classes anônimas ― Você pode usar os mesmos modificadores para classes internas que usa para outros" },
+          { name: "Classes locais", description: "Classes locais são classes definidas ― que é um grupo de zero ou mais instruções ― Normalmente, você encontra classes locais definidas ― Você pode definir uma classe local dentro de qualquer bloco ― Uma classe local tem acesso aos membros ― Além disso, uma classe local tem acesso ― No entanto, uma classe local só pode acessar ― Quando uma classe local acessa uma variável local ou um parâmetro do bloco que a contém ― No entanto, a partir do Java SE 8, uma classe local pode acessar variáveis e parâmetros locais do bloco que a contém que sejam ― Uma variável ou parâmetro cujo valor nunca é alterado ― A partir do Java SE 8, se você declarar uma classe local dentro de um método, ela poderá acessar ― Declarações de um tipo (como uma variável) em uma classe local ocultam ― Classes locais são semelhantes a classes internas porque não podem ― Classes locais em métodos estáticos, como a classe 'LocalPhoneNumber', que é definida no método estático 'get validatePhoneNumber', só podem se referir ― Classes locais não são estáticas porque têm acesso ― Consequentemente, elas não podem conter ― Não é possível declarar uma interface dentro de um bloco; interfaces são ― Não é possível declarar inicializadores estáticos ou interfaces de membros em uma ― Uma classe local pode ter membros estáticos, desde que sejam" },
+        ]
+      },
+    ];
+
     const Cod = [
       {
         category: "Javascript",
@@ -888,11 +992,12 @@
           {
             name: "Uso while", description: `let i = 0;
 
-while (i < 5) {
-  console.log(i);
+     while (i < 5) {
+      console.log(i);
   i++;
 }` },
-          { name: "Uso var, let e const", description: `// var tem escopo de função e sofre hoisting
+          {
+            name: "Uso var, let e const", description: `// var tem escopo de função e sofre hoisting
 var a = 1
 if (true) {
   var a = 2 // mesma variável do escopo externo
@@ -1006,7 +1111,8 @@ async function executar() {
 }
 
 executar()` },
-          { name: "typeof", description: `console.log(typeof "texto")        // "string"
+          {
+            name: "typeof", description: `console.log(typeof "texto")        // "string"
 console.log(typeof 123)            // "number"
 console.log(typeof true)           // "boolean"
 console.log(typeof undefined)      // "undefined"
@@ -1014,13 +1120,15 @@ console.log(typeof null)           // "object"
 console.log(typeof {})             // "object"
 console.log(typeof [])             // "object"
 console.log(typeof function(){})   // "function"` },
-          { name: "try...catch", description: `try {
+          {
+            name: "try...catch", description: `try {
   let x = y + 1
   console.log(x)
 } catch (e) {
   console.log(e.message) // y is not defined
 }` },
-          { name: "tratamento de erro async/await", description: `async function buscaDados() {
+          {
+            name: "tratamento de erro async/await", description: `async function buscaDados() {
   return Promise.reject("falhou")
 }
 
@@ -1035,7 +1143,8 @@ async function executar() {
 
 executar()` },
           { name: "template string", description: "const mensagem = `Olá, meu nome é ${nome} e tenho ${idade} anos.`" },
-          { name: "switch", description: `const dia = 3
+          {
+            name: "switch", description: `const dia = 3
 let nomeDia
 
 switch (dia) {
@@ -1059,7 +1168,8 @@ switch (dia) {
 }
 
 console.log(nomeDia) // Quarta` },
-          { name: "super e this em classes", description: `class Animal {
+          {
+            name: "super e this em classes", description: `class Animal {
   constructor(nome) {
     this.nome = nome
   }
@@ -1082,7 +1192,8 @@ const dog = new Cachorro("Rex", "Labrador")
 console.log(dog.nome)   // Rex
 console.log(dog.raca)   // Labrador
 console.log(dog.falar()) // Rex faz um som - au au!` },
-          { name: "substituir um membros static de uma classe, mas aprimorado com super", description: `class Base {
+          {
+            name: "substituir um membros static de uma classe, mas aprimorado com super", description: `class Base {
   static info() {
     return "base"
   }
@@ -1096,7 +1207,8 @@ class Derivada extends Base {
 
 console.log(Base.info())      // base
 console.log(Derivada.info())  // base + derivada` },
-          { name: "parametro rest em contrutor de classe", description: `class Turma {
+          {
+            name: "parametro rest em contrutor de classe", description: `class Turma {
   constructor(nome, ...alunos) {
     this.nome = nome
     this.alunos = alunos // rest junta todos os argumentos restantes em array
@@ -1115,7 +1227,8 @@ console.log(t1.alunos)        // ["Ana", "Bruno", "Carlos"]
 console.log(t1.listar())      // JS101: Ana, Bruno, Carlos
 
 console.log(t2.alunos.length) // 1` },
-          { name: "parametro padrão", description: `// função com parâmetro padrão
+          {
+            name: "parametro padrão", description: `// função com parâmetro padrão
 function saudar(nome = "visitante", saudacao = "Olá") {
   return saudacao + ", " + nome + "!"
 }
@@ -1140,7 +1253,8 @@ const p3 = new Produto("Mochila", 89.9, 5)
 console.log(p1.preco)    // 0
 console.log(p2.estoque)  // 1
 console.log(p3.preco)    // 89.9` },
-          { name: "operador de coalescência nula (??)", description: `const a = null ?? "padrão"
+          {
+            name: "operador de coalescência nula (??)", description: `const a = null ?? "padrão"
 const b = undefined ?? "padrão"
 const c = 0 ?? 10
 const d = "" ?? "texto"
@@ -1153,7 +1267,8 @@ console.log(c) // 0
 console.log(d) // ""
 console.log(e) // false
 console.log(f) // "valor"` },
-          { name: "Objeto literal com prototipo, campo e metodo", description: `// protótipo
+          {
+            name: "Objeto literal com prototipo, campo e metodo", description: `// protótipo
 const animalProto = {
   falar: function() {
     return this.nome + " faz um som"
@@ -1169,133 +1284,669 @@ const gato = {
     return this.nome + " mia"
   }
 }` },
-          { name: "objeto literal", description: "?" },
-          { name: "Module.exports e require com desestruturação", description: "?" },
-          { name: "Module.exports e require", description: "?" },
-          { name: "Matriz de 2 dimensoes sendo com inicialiazação sendo criada e acessada", description: "?" },
-          { name: "Lançar uma exceção com um bloco de instrução", description: "?" },
-          { name: "Herança em classe e override metodos da classe pai", description: "?" },
-          { name: "Funções de seta", description: "?" },
-          { name: "Função hoisting", description: "?" },
-          { name: "Função geradora lidando com sequencias assincrona", description: "?" },
-          { name: "Função construtora com campo e metodo", description: "?" },
-          { name: "Função com um iterator e consumir ele", description: "?" },
-          { name: "Função auto invocado com void", description: "?" },
-          { name: "Função auto invocada com e sem argumento", description: "?" },
-          { name: "Função anônima como argumento de outra função", description: "?" },
-          { name: "for..in", description: "?" },
-          { name: "for...of", description: "?" },
-          { name: "Expressão de função", description: "?" },
-          { name: "Exportando todas as funções como um objeto padrão e import", description: "?" },
-          { name: "Export nomeado e import", description: "?" },
-          { name: "Export default e import", description: "?" },
-          { name: "encadeamento opcional", description: "?" },
-          { name: "do while", description: "?" },
-          { name: "destruturação em for..of", description: "?" },
+          {
+            name: "objeto literal", description: `// objeto literal com campos e métodos
+const pessoa = {
+  nome: "Ana",          // campo string
+  idade: 30,            // campo número
+  ativo: true,          // campo booleano
+  endereco: {           // campo objeto aninhado
+    cidade: "Natal",
+    uf: "RN"
+  },
+  saudar: function() {  // método
+    return "Olá, " + this.nome
+  },
+  aniversario() {       // método abreviado
+    this.idade = this.idade + 1
+  }
+}` },
+          {
+            name: "Module.exports e require com desestruturação", description: `// arquivo: math.js
+function soma(a, b) {
+  return a + b
+}
+function subtrai(a, b) {
+  return a - b
+}
+
+// exporta como objeto
+module.exports = { soma, subtrai }
+
+// arquivo: app.js
+const { soma, subtrai } = require("./math") // desestruturação no require
+
+console.log(soma(2, 3))     // 5
+console.log(subtrai(5, 2))  // 3` },
+          {
+            name: "Module.exports e require", description: `// arquivo: math.js
+function soma(a, b) {
+  return a + b
+}
+
+// exporta a função
+module.exports = soma
+
+// arquivo: app.js
+const soma = require("./math") // importa
+
+console.log(soma(2, 3)) // 5` },
+          {
+            name: "Matriz de 2 dimensoes sendo com inicialiazação sendo criada e acessada", description: `// matriz 2D inicializada
+const matriz = [
+  [1, 2, 3], // linha 0
+  [4, 5, 6], // linha 1
+  [7, 8, 9] // linha 2
+]
+
+// acessando elementos
+const a = matriz[0][0] // 1
+const b = matriz[1][2] // 6
+const c = matriz[2][1] // 8
+
+// modificando
+matriz[0][1] = 20
+
+// criando matriz vazia 2x3
+const linhas = 2
+const colunas = 3
+const m2 = []
+for (let i = 0; i < linhas; i++) {
+  m2[i] = []
+  for (let j = 0; j < colunas; j++) {
+    m2[i][j] = 0
+  }
+}` },
+          {
+            name: "lançando um objeto literal como exceção", description: `// lançando um objeto literal como exceção
+function testar(valor) {
+  if (valor < 0) {
+    throw { message: "teste", codigo: 400 } // lança bloco de instrução
+  }
+  return valor
+}
+
+try {
+  testar(-1)
+} catch (e) {
+  console.log(e.message) // "teste"
+  console.log(e.codigo)  // 400
+}` },
+          {
+            name: "Herança em classe e override metodos da classe pai", description: `// classe pai
+class Animal {
+  constructor(nome) {
+    this.nome = nome
+  }
+  falar() {
+    return this.nome + " faz som"
+  }
+}
+
+// classe filha com herança
+class Cachorro extends Animal {
+  constructor(nome, raca) {
+    super(nome) // chama construtor do pai
+    this.raca = raca
+  }
+  // override do método do pai
+  falar() {
+    return this.nome + " late"
+  }
+}
+
+const a = new Animal("bicho")
+const c = new Cachorro("Rex", "labrador")
+
+console.log(a.falar()) // "bicho faz som"
+console.log(c.falar()) // "Rex late"` },
+          {
+            name: "Funções de seta", description: `// função normal
+function soma(a, b) {
+  return a + b
+}
+
+// seta com corpo
+const somaSeta = (a, b) => {
+  return a + b
+}
+
+// seta curta (retorno implícito)
+const somaCurta = (a, b) => a + b
+
+// um parâmetro (parênteses opcionais)
+const dobro = n => n * 2
+
+// sem parâmetro
+const oi = () => "olá"
+
+// com objeto (precisa de parênteses)
+const criaPessoa = nome => ({ nome: nome })
+
+console.log(somaCurta(2, 3)) // 5
+console.log(dobro(4))        // 8
+console.log(oi())            // "olá"` },
+          {
+            name: "Função hoisting", description: `// HOISTING COM FUNCTION DECLARATION
+// pode chamar antes de declarar
+saudacao() // "ola"
+
+function saudacao() {
+  console.log("ola")
+}
+
+// HOISTING COM FUNCTION EXPRESSION (var)
+try {
+  testeVar() // erro: testeVar is not a function
+} catch(e) {}
+
+var testeVar = function() {
+  console.log("var")
+}
+
+// HOISTING COM FUNCTION EXPRESSION (const/let)
+try {
+  testeConst() // erro: Cannot access before initialization
+} catch(e) {}
+
+const testeConst = function() {
+  console.log("const")
+}
+
+// HOISTING COM ARROW FUNCTION
+try {
+  testeArrow() // erro: Cannot access before initialization
+} catch(e) {}
+
+const testeArrow = () => {
+  console.log("arrow")
+}` },
+          {
+            name: "Função geradora lidando com sequencias assincrona", description: `// geradora assíncrona
+async function* sequenciaAsync() {
+  yield await busca(1) // espera 1
+  yield await busca(2) // espera 2
+  yield await busca(3) // espera 3
+}
+
+// simula busca assíncrona
+function busca(id) {
+  return new Promise(res => {
+    setTimeout(() => res("dado " + id), 500)
+  })
+}
+
+// consumindo com for await
+(async () => {
+  for await (const valor of sequenciaAsync()) {
+    console.log(valor)
+  }
+})()
+
+// consumindo manual
+// const gen = sequenciaAsync()
+// gen.next().then(r => console.log(r.value))` },
+          {
+            name: "Função construtora com campo e metodo", description: `// função construtora com campo e método dentro
+function Pessoa(nome, idade) {
+  this.nome = nome      // campo
+  this.idade = idade    // campo
+
+  this.falar = function() {  // método
+    return this.nome + " tem " + this.idade + " anos"
+  }
+}
+
+const p1 = new Pessoa("Ana", 30)
+console.log(p1.falar()) // "Ana tem 30 anos"` },
+          {
+            name: "Função com um iterator e consumir ele (yield)", description: `// função geradora com yield (cria iterator automático)
+function* contador(limite) {
+  let i = 1
+  while (i <= limite) {
+    yield i  // pausa e entrega valor
+    i++
+  }
+}
+
+// consumindo manual
+const it = contador(3)
+console.log(it.next()) // { value: 1, done: false }
+console.log(it.next()) // { value: 2, done: false }
+console.log(it.next()) // { value: 3, done: false }
+console.log(it.next()) // { value: undefined, done: true }
+
+// consumindo com for...of
+for (const n of contador(3)) {
+  console.log(n) // 1, 2, 3
+}
+
+// consumindo com spread
+const lista = [...contador(5)]
+console.log(lista) // [1, 2, 3, 4, 5]` },
+          {
+            name: "Função auto invocado com void", description: `// IIFE com void (auto invocada, não cria variável)
+void function() {
+  console.log("executou sozinha")
+}()
+
+// com parâmetros
+void function(nome) {
+  console.log("oi " + nome)
+}("Ana")
+
+// com arrow
+void (() => {
+  console.log("arrow auto")
+})()` },
+          {
+            name: "Função auto invocada com e sem argumento", description: `// auto invocada sem argumento
+(function() {
+  console.log("sem argumento")
+})()
+
+// auto invocada com argumento
+(function(nome) {
+  console.log("com " + nome)
+})("Ana")
+
+// arrow sem argumento
+(() => {
+  console.log("arrow sem")
+})()
+
+// arrow com argumento
+((idade) => {
+  console.log("tenho " + idade)
+})(30)` },
+          {
+            name: "Função anônima como argumento de outra função", description: `function fazerAlgo(callback) {
+  callback()
+}
+
+fazerAlgo(function() {
+  console.log("anônima")
+})` },
+          {
+            name: "for..in", description: `const obj = { a: 1, b: 2, c: 3 }
+
+for (const chave in obj) {
+  console.log(chave) // a, b, c
+  console.log(obj[chave]) // 1, 2, 3
+}` },
+          {
+            name: "for...of", description: `const arr = [10, 20, 30]
+
+for (const valor of arr) {
+  console.log(valor) // 10, 20, 30
+}` },
+          {
+            name: "Expressão de função", description: `const somar = function(a, b) {
+  return a + b
+}
+
+console.log(somar(2, 3)) // 5` },
+          {
+            name: "Exportando todas as funções como um objeto padrão e import", description: `// utils.js
+function soma(a, b) {
+  return a + b
+}
+
+function mult(a, b) {
+  return a * b
+}
+
+export default { soma, mult }
+
+// main.js
+import utils from './utils.js'
+
+utils.soma(2, 3)
+utils.mult(2, 3)` },
+          {
+            name: "Export nomeado e import", description: `// utils.js
+export function soma(a, b) {
+  return a + b
+}
+
+export function mult(a, b) {
+  return a * b
+}
+
+// main.js
+import { soma, mult } from './utils.js'
+
+soma(2, 3)
+mult(2, 3)` },
+          {
+            name: "Export default e import", description: `// utils.js
+export default function soma(a, b) {
+  return a + b
+}
+
+// main.js
+import soma from './utils.js'
+
+soma(2, 3) // 5`},
+          {
+            name: "encadeamento opcional", description: `const user = { perfil: { nome: 'Ana' } }
+
+console.log(user.perfil?.nome)     // 'Ana'
+console.log(user.endereco?.cidade) // undefined (não quebra)` },
+          {
+            name: "do while", description: `let i = 0
+
+do {
+  console.log(i) // 0, 1, 2
+  i++
+} while (i < 3)` },
+          {
+            name: "destruturação em for..of", description: `const pares = [[1, 2], [3, 4], [5, 6]]
+
+for (const [a, b] of pares) {
+  console.log(a + b) // 3, 7, 11
+}` },
           { name: "Definir uma função com uma expressão de função condicionalmente", description: "?" },
-          { name: "definir um metodo normal e abreviado em um objeto literal", description: "?" },
-          { name: "definir um metodo em uma classe via this", description: "?" },
-          { name: "definir um get/set posteriomente em um objeto ja criado", description: "?" },
-          { name: "definir um get/set em um objeto literal", description: "?" },
-          { name: "Definir dinamicamente o nome de um campo em uma classe", description: "?" },
-          { name: "Definir dinamicamente o nome de um campo em um objeto literal", description: "?" },
-          { name: "definir dinamicamenfte o nome de um membro em uma função construtora", description: "?" },
-          { name: "definir campo/metodo em prototype", description: "?" },
-          { name: "declaração de função", description: "?" },
-          { name: "Criar uma função com 'function' construtor", description: "?" },
-          { name: "concatenar string com +", description: "?" },
-          { name: "closure", description: "?" },
-          { name: "Classe com construtor e um metodo, sendo construido com tres campos direto no construtor", description: "?" },
-          { name: "Classe com campos e metodos privados", description: "?" },
-          { name: "Chamar uma função", description: "?" },
-          { name: "campos static, metodo static e static block em uma class", description: "?" },
-          { name: "Callback", description: "?" },
-          { name: "Cadeia de promise com arrow function", description: "?" },
-          { name: "Arrow 'function' sem e com abreviações", description: "?" },
-          { name: "Acessando um objeto, criando e atribuindo valores as propriedades", description: "?" },
+          {
+            name: "definir um metodo normal e abreviado em um objeto literal", description: `const calc = {
+  // método abreviado (ES6)
+  soma(a, b) {
+    return a + b
+  },
+
+  // método normal (forma clássica)
+  mult: function(a, b) {
+    return a * b
+  }
+}
+
+calc.soma(2, 3) // 5
+calc.mult(2, 3) // 6` },
+          {
+            name: "definir um metodo em uma classe via this no construtor", description: `class Calculadora {
+  constructor() {
+    // método definido dentro do construtor via this
+    this.soma = function(a, b) {
+      this.ultimo = a + b
+      return this.ultimo
+    }
+  }
+}
+
+const calc = new Calculadora()
+
+calc.soma(2, 3)  // 5
+calc.ultimo      // 5` },
+          {
+            name: "definir um get/set posteriomente em um objeto ja criado", description: `const obj = {}
+
+// define getter e setter depois
+Object.defineProperty(obj, 'valor', {
+  // getter
+  get() {
+    return this._valor
+  },
+  // setter
+  set(v) {
+    this._valor = v
+  },
+  enumerable: true,
+  configurable: true
+})
+
+// uso
+obj.valor = 10
+console.log(obj.valor) // 10` },
+          {
+            name: "definir um get/set em um objeto literal", description: `const pessoa = {
+  _idade: 0,
+
+  // getter
+  get idade() {
+    return this._idade
+  },
+
+  // setter
+  set idade(v) {
+    this._idade = v >= 0 ? v : 0
+  }
+}
+
+pessoa.idade = 30
+console.log(pessoa.idade) // 30` },
+          {
+            name: "Definir dinamicamente o nome de um campo em uma classe", description: `// também funciona direto no construtor
+class Produto {
+  constructor(chave, valor) {
+    // define this[chave] = valor
+    this[chave] = valor
+  }
+}
+
+const p = new Produto('preco', 99.9)
+console.log(p.preco) // 99.9`},
+          {
+            name: "Definir dinamicamente o nome de um campo em um objeto literal", description: `const campo = 'email'
+const valor = 'ana@teste.com'
+
+// nome do campo definido dinamicamente com [ ]
+const usuario = {
+  nome: 'Ana',
+  [campo]: valor
+}
+
+console.log(usuario) // { nome: 'Ana', email: 'ana@teste.com' }` },
+          {
+            name: "definir dinamicamenfte o nome de um membro em uma função construtora", description: `function Usuario(nome, chave, valor) {
+  this.nome = nome
+  // define membro com nome dinâmico
+  this[chave] = valor
+}
+
+const u1 = new Usuario('Ana', 'email', 'ana@teste.com')
+const u2 = new Usuario('Bruno', 'idade', 30)
+
+console.log(u1) // Usuario { nome: 'Ana', email: 'ana@teste.com' }
+console.log(u2) // Usuario { nome: 'Bruno', idade: 30 }` },
+          {
+            name: "definir campo/metodo em prototype", description: `function Pessoa(nome) {
+  this.nome = nome
+}
+
+// campo no prototype (compartilhado)
+Pessoa.prototype.especie = 'humana'
+
+// método no prototype
+Pessoa.prototype.apresentar = function() {
+  return this.nome + ' é ' + this.especie
+}
+
+const p1 = new Pessoa('Ana')
+const p2 = new Pessoa('Bruno')
+
+console.log(p1.apresentar()) // Ana é humana
+console.log(p2.especie) // humana` },
+          {
+            name: "declaração de função", description: `// declaração de função
+function soma(a, b) {
+  return a + b
+}
+
+console.log(soma(2, 3)) // 5` },
+          {
+            name: "Criar uma função com 'function' construtor", description: `// new Function(parametros, corpo)
+const soma = new Function('a', 'b', 'return a + b')
+
+console.log(soma(2, 3)) // 5` },
+          {
+            name: "concatenar string com +", description: `const nome = 'Ana'
+const saudacao = 'Olá, ' + nome + '!'
+
+console.log(saudacao) // Olá, Ana!` },
+          {
+            name: "closure", description: `function contador() {
+  let n = 0
+  return function() {
+    n = n + 1
+    return n
+  }
+}
+
+const c = contador()
+c() // 1
+c() // 2` },
+          {
+            name: "Classe com construtor e um metodo, sendo construido com tres campos direto no construtor", description: `class Produto {
+  constructor(id, nome, preco) {
+    this.id = id
+    this.nome = nome
+    this.preco = preco
+  }
+
+  descricao() {
+    return this.id + ' - ' + this.nome + ': R$ ' + this.preco
+  }
+}
+
+const p = new Produto(1, 'Teclado', 199.90)
+console.log(p.descricao())` },
+          {
+            name: "Classe com campos e metodos privados", description: `class Carro {
+  #velocidade
+  #modelo
+
+  constructor(modelo) {
+    this.#modelo = modelo
+    this.#velocidade = 0
+  }
+
+  acelerar(v) {
+    this.#velocidade += v
+    this.#limitar()
+  }
+
+  ver() {
+    return this.#modelo + ' a ' + this.#velocidade + ' km/h'
+  }
+
+  #limitar() {
+    if (this.#velocidade > 200) this.#velocidade = 200
+  }
+}` },
+          {
+            name: "Chamar uma função", description: `function dizerOi(nome) {
+  return 'Oi, ' + nome
+}
+
+// chamar a função
+dizerOi('Ana')` },
+          {
+            name: "campos static, metodo static e static block em uma class", description: `class Config {
+  static versao = '1.0'
+  static ambiente
+
+  static getInfo() {
+    return Config.versao + ' - ' + Config.ambiente
+  }
+
+  static {
+    Config.ambiente = 'producao'
+  }
+}
+
+console.log(Config.getInfo())` },
+          {
+            name: "Callback", description: `function processar(valor, cb) {
+  const resultado = valor * 2
+  cb(resultado)
+}
+
+processar(5, function(r) {
+  console.log('Resultado: ' + r) // 10
+})` },
+          {
+            name: "Cadeia de promise com arrow function", description: `const buscar = () => Promise.resolve(5)
+
+buscar()
+  .then(n => n * 2)
+  .then(n => n + 1)
+  .then(n => console.log(n)) // 11
+  .catch(e => console.error(e))` },
+          {
+            name: "Arrow 'function' sem e com abreviações", description: `// completa
+const soma = (a, b) => {
+  return a + b
+}
+
+// abreviada 1: sem chaves (retorno implícito)
+const soma2 = (a, b) => a + b
+
+// abreviada 2: um parâmetro sem parênteses
+const dobro = n => n * 2
+
+console.log(soma(2,3), soma2(2,3), dobro(4))` },
+          {
+            name: "Acessando um objeto, criando e atribuindo valores as propriedades", description: `// criando
+const pessoa = {}
+
+// atribuindo
+pessoa.nome = 'Ana'
+pessoa['idade'] = 30
+
+// acessando
+console.log(pessoa.nome) // Ana
+console.log(pessoa['idade']) // 30` },
+        ]
+      },
+      {
+        category: "Java",
+        tags: [
+          {
+            name: "Herança", description: ``
+          },
+          {
+            name: "final palavra-chave para uma variavel", description: ``
+          },
+          {
+            name: "?", description: ``
+          },
+          {
+            name: "?", description: ``
+          },
+          {
+            name: "?", description: ``
+          },
+          {
+            name: "?", description: ``
+          },
+          {
+            name: "?", description: ``
+          },
+          {
+            name: "?", description: ``
+          },
+          {
+            name: "?", description: ``
+          },
+          {
+            name: "?", description: ``
+          },
+          {
+            name: "?", description: ``
+          },
         ]
       }
     ];
 
-    const Did = [
-      {
-        category: "Javascript",
-        tags: [
-          { name: "O que é Javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript", description: "O que são APIs? conjunto de que, que permite o que ― API de terceiros ― API do navegador ― ao carregar uma pagina da web, executando ― cada aba possui ― quando o navegador encontra ― interpretada e leve ― compilação just-in-time ― e uma ma pratica ― existem alguma estrategias" },
-          { name: "Passo a passo do javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/A_first_splash", description: "template literals" },
-          { name: "Variaveis", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Variables", description: "uma caracteristica especial das variaveis ― tambem podem conter ― nao sao ― nao confunda ― içamento ― tipagem dinamica" },
-          { name: "Numeros e operadores", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Math", description: "isso significa que independente do tipo de numero ― as vezes voce pode acabar com um numero ― [+] ― [-] ― [*] ― [/] ― [%] ― [**] ― precendencia ― se voce tentar inserir alguns desses valores no console" },
-          { name: "Cordas", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Strings", description: "dentro de um template literal voce pode envolver ― para obter o mesmo resultado ― barra invertida ― o que acontece quando tentamos concatenar" },
-          { name: "Métodos de string", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Useful_string_methods", description: "voce pode retornar qualquer" },
-          { name: "Matrizes", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays", description: "descobrir o comprimento do array" },
-          { name: "Condicionais", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Conditionals", description: "Embora nao seja recomendado if..else ― um erro comum ao usar OR" },
-          { name: "Crie sua própria função", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Build_your_own_function", description: "só o usa quando deseja executar" },
-          { name: "Eventos", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events", description: "para reagir a um evento ― quando um bloco de codigo desse tipo e configurado, dizemos que estamos ― se voce adicionou um ouvinte de eventos usando ― ao fazer mais de uma chamada para addEventListener() fornecendo diferentes, voce pode ter varias ― no entanto existem outras duas maneiras ― objetos (como botoes), tambem possuem propriedades ― eventos embutidos ― nao e uma boa ideia misturar ― event, evt ― isso e chamado de objeto de evento e e passada ― preventDefault()" },
-          { name: "Objetos", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics", description: "um objeto e uma coleção ― geralmente consiste em diversas ― um objeto e composto por multiplos membros, cada um com ― cada par nome/valor deve ser separado ― e o nome e o valor em cada caso sao separados ― o que sao metodos? ― objeto literal ― o nome do objeto (pessoa) funciona ― a notação de colchetes oferece uma maneira alternativa ― nao e a toa que os objetos as vezes sao chamados ― a definição de membros nao se limita apenas ― this geralmente se refere ― no contexto de um metodo de objeto, this refere-se ― mas sera essencial quando começarmos a usar construtores ― gostariamos de uma maneira de definir a 'forma' de um objeto ― quando voce chama um construtor, ele ira" },
-          { name: "Script DOM", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting", description: "window ― Navigator ― Document ― o documento carregado em cada uma das suas aba do navegador e representado, trata-se de uma representação em 'estrutura de arvores, que permite ― cada entrada na arvore e chamado ― o nos tambem sao referidos pela sua posição ― HTMLElement.style" },
-          { name: "Solicitações de rede", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Network_requests", description: "Outra tarefa muito comum em sites e aplicativos modernos ― O modelo básico de carregamento de páginas na Web é o seguinte: ― A principal API aqui é a Fetch API . Ela permite que o JavaScript em execução em uma página faça ― Os dados solicitados costumam ― No início, essa técnica geral era conhecida como ― Para agilizar ainda mais o processo, alguns sites também armazenam ― No entanto, os servidores web tendem a diferenciar ― Os navegadores modernos não executarão solicitações HTTP se você executar ― Às vezes, especialmente em códigos mais antigos, você verá outra API chamada XMLHttpRequest" },
-          { name: "Guia - Introdução", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction", description: "JavaScript é uma linguagem de script ― usada para tornar ― Existem também versões mais avançadas de JavaScript para o lado do servidor, como o Node.js, que permitem ― JavaScript contém uma biblioteca padrão ― e um conjunto central de elementos da linguagem, como ― Isso significa que, no navegador, o JavaScript pode ― Da mesma forma, o JavaScript do Node.js no servidor pode ― O JavaScript possui um modelo de objetos baseado ― em vez do modelo ― O modelo baseado em protótipos permite herança dinâmica ― O JavaScript também suporta funções sem quaisquer" },
-          { name: "Fluxo de controle e tratamento de erros", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling", description: "A instrução mais básica ― O JavaScript suporta dois tipos de instruções condicionais: ― para testar várias condições em sequência ― Em geral, é uma boa prática não usar ― Os seguintes valores são avaliados como false ― Todos os outros valores, incluindo todos os objetos, são avaliados ― Não confunda os valores booleanos primitivos ` true` e `fase` ― Uma switch instrução permite que um programa ― Se uma correspondência for encontrada ― Por convenção, odefaulta cláusula está escrita ― Se break é omitido ― Embora seja comum lançar números ou strings como erros, frequentemente é mais eficaz usar ― Use a throw instrução para ― Um throw declaração específica ― Você pode lançar qualquer ― A try...catch instrução ― Se uma exceção for lançada ― Se nenhuma exceção for lançada no try bloco ― finally bloco é executado ― Também é importante notar que ofinally O bloco será executado ― Se uma exceção for lançada, no entanto, as instruções no finally bloco serão executadas mesmo que nenhum ― Se finally O bloco retorna um valor, esse valor se torna" },
-          { name: "Usando classes", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes", description: "JavaScript é uma linguagem baseada ― os comportamentos de um objeto são especificados ― No entanto, com a adição de classes ― Em muitas outras linguagens, classes , ou construtores, são claramente distinguidas de objetos , ou instâncias. Em JavaScript, as classes são principalmente ― As próprias classes também ― As classes criam objetos através ― A classe armazena algumas propriedades (dados ou métodos) em si, que geralmente são usadas ― Construtores de funções típicos podem ser construídos ― No entanto, tentar 'chamar' uma classe ― Diferentemente das declarações de funções, as declarações de classes não são ― Expressões de classe também podem ter nomes. O nome da expressão só é visível ― A sintaxe do construtor é exatamente a mesma de uma função normal — o que significa que você pode usar ― O this valor será retornado automaticamente como ― É aconselhável não retornar ― Um campo privado é um identificador prefixado ― é parte integrante do nome do campo, o que significa ― os campos privados são estritamente privados : se a classe não implementar métodos que exponham ― Isso significa que você pode refatorar os campos privados da sua classe ― Um método de classe pode ler os campos privados de outras instâncias, desde que ― Acessar um elemento privado inexistente gera ― Existem algumas limitações no uso de elementos privados: ― Métodos, getters e setters também podem ― Blocos de inicialização estática são quase equivalentes à execução ― A única diferença é que eles têm acesso ― Ao usar extends, os métodos estáticos também" },
-          { name: "Usando promessas", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises", description: "Uma promessa Promise ― Essencialmente, uma promessa ― Promessas flutuantes ― Portanto, como regra geral ― Em Node.js , o tratamento de rejeições de promessas é um pouco diferente ― Por outro lado, as promises são uma forma de inversão de controle ― As funções de retorno adicionadas com ` then() ― É possível adicionar várias funções de retorno de chamada (callbacks) fazendo-as then()diversas vezes. Elas serão invocadas ― Para evitar surpresas, as funções passadas para then()`will` nunca serão chamadas ― Em vez de ser executada imediatamente, a função passada como parâmetro é colocada em uma fila de microtarefas, o que significa que ela será executada ― As funções de retorno de promessas são tratadas como microtarefas, enquanto setTimeout()as funções de retorno de chamada são tratadas ― Se você se deparar com situações em que tem promessas e tarefas (como eventos ou callbacks) que são disparadas em ordens imprevisíveis, pode ser vantajoso" },
-          { name: "Assincrono - introdução", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing", description: "A programação assíncrona é uma técnica que permite ― A razão para isso é que este programa JavaScript ― Uma thread é uma ― Como o programa consiste em uma única thread, ele só pode ― manipuladores de eventos são, na verdade, uma forma de programação assíncrona: você fornece ― e você é notificado sobre o progresso e a eventual conclusão de uma requisição ao adicionar ― Um manipulador de eventos é um tipo específico ― Uma função de retorno de chamada é simplesmente uma função ― Isso às vezes é chamado de 'inferno de funções de retorno de chamada' ou 'pirâmide da perdição' ― Por esses motivos, a maioria das APIs assíncronas modernas não usa ― Em vez disso, a base da programação assíncrona em JavaScript" },
-          { name: "Usando promessas", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises", description: "Uma promessa é um objeto ― que representa ― No momento em que a promessa é retornada para quem a chamou, a operação geralmente ― mas o objeto promessa fornece ― Com uma API baseada em promessas, a função assíncrona inicia ― Você pode então associar manipuladores a esse objeto de promessa, e esses manipuladores serão executados ― Isso é chamado de encadeamento de promessas ― Para dar suporte ao tratamento de erros, Promiseos objetos fornecem ― Se você adicionar um ` catch()wait()` ao final de uma cadeia de promessas, ele será chamado quando ― Primeiro, uma promessa pode estar em um de três estados ― mas a promessa é cumprida se o servidor enviou uma resposta, mesmo que a resposta ― A asyncpalavra-chave `async` oferece uma maneira ― Adicioná-la asyncno início de uma função a torna ― Dentro de uma função assíncrona, você pode usar a awaitpalavra-chave `await` antes de uma chamada para uma função que retorna uma promessa. Isso faz com que o código espere ― Isso permite escrever código que usa funções assíncronas, mas que se parece ― Podemos até usar um try...catch ― Observe também que você só pode usar `this` await ― Lembre-se de que, assim como uma cadeia de promessas, awaito `asyncio` força a conclusão" },
-          { name: "Implementando APIs baseadas em promessas", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Implementing_a_promise-based_API", description: "O Promise()construtor recebe uma única ― Chamaremos essa função ― Ao criar uma nova promessa, você fornece ― Essa função executora recebe dois ― ambos também ― Se a função assíncrona for bem-sucedida ― Se a função executora lançar um erro ― Você pode passar um único parâmetro de qualquer tipo para" },
-          { name: "Prototipos de objetos", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object_prototypes", description: "Os protótipos são o mecanismo ― Se você digitar o nome do objeto seguido de um ponto no console, como myObject.`object`, o console exibirá ― A cadeia termina quando ― A propriedade de um objeto que aponta para seu protótipo não é chamada ― A maneira padrão de acessar o protótipo de um objeto ― Ao tentar acessar uma propriedade de um objeto: se a propriedade não for encontrada no próprio objeto ― Se a propriedade ainda não for encontrada ― Isso se chama 'sombreamento' da propriedade ― Existem várias maneiras de definir o protótipo de um objeto em JavaScript, e aqui descreveremos duas ― Em JavaScript, todas as funções possuem uma propriedade ― Quando você chama uma função como construtor" },
-          { name: "Programação orientada a objetos", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming", description: "Um objeto fornece uma interface pública para ― mas mantém seu próprio ― Por si só, uma classe não faz nada ― O processo de criação de uma instância é realizado ― Passamos valores para o construtor para qualquer ― ela cria uma espécie de firewall entre esse objeto e o restante do sistema ― Em JavaScript, podemos, e frequentemente ― Isso pode tornar o trabalho com objetos muito mais leve do que ― Quando uma subclasse é instanciada, um único objeto é criado, combinando propriedades ― Com a prototipagem, cada nível da hierarquia é representado ― e eles são vinculados ― O comportamento da cadeia de protótipos se assemelha" },
-          { name: "Classes de javascript", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript", description: "O construtor é definido usando ― Assim como um construtor fora da definição de uma classe , ele irá: ― Se você não precisar realizar nenhuma inicialização especial ― e um construtor padrão ― Usamos a extendspalavra-chave para indicar ― Se uma subclasse tiver alguma inicialização própria a fazer, ela deve primeiro ― Os campos privados devem ser declarados ― e seus nomes" },
-        ]
-      },
-
-      {
-        category: "Java",
-        tags: [
-          { name: "O que é um objeto", description: "Os objetos do mundo real compartilham duas características ― Um objeto armazena seu estado ― e expõe seu comportamento por meio ― Os métodos operam ― encapsulamento de dados" },
-          { name: "O que é uma classe", description: "Podem existir milhares de outras bicicletas, todas ― Cada bicicleta foi construída a partir ― Em termos de programação orientada a objetos, dizemos que sua bicicleta ― Uma classe é o projeto a partir ― A responsabilidade de criar e usar novos Bicycleobjetos" },
-          { name: "O que e herança", description: "Na linguagem de programação Java, cada classe pode ter ― e cada superclasse ― A sintaxe para criar uma subclasse é simples. No início da declaração da classe ― seguida pelo ― Isso fornece MountainBike os mesmos ― mas permite que seu código se concentre exclusivamente" },
-          { name: "O que e uma interface", description: "Em sua forma mais comum, uma interface é um grupo ― com corpos ― Interfaces estabelecem um contrato entre ― Se sua classe afirma implementar uma interface, todos os métodos definidos por essa interface devem" },
-          { name: "O que e um pacote", description: "Um pacote é um ― Conceitualmente, você pode pensar em pacotes ― A plataforma Java oferece uma enorme ― Essa biblioteca é conhecida como ― Isso permite que você, o programador, se concentre ― em vez da " },
-          { name: "Variáveis java", description: "Variáveis de Instância (Campos Não Estáticos) ― Variáveis de Classe (Campos Estáticos) ― isso informa ao compilador que existe exatamente ― independentemente ― Variáveis locais : Assim como um objeto armazena seu estado em campos, um método geralmente armazena ― Não existe uma palavra-chave específica que designe ― essa determinação vem inteiramente ― que é entre as chaves ― Dessa forma, as variáveis locais são visíveis apenas ― Parâmetros ― O importante é lembrar que os parâmetros são sempre classificados ― Os campos, métodos e tipos aninhados de um tipo são chamados ― Os nomes de variáveis diferenciam ― Espaços em branco ― Se a sua variável armazenar um valor constante" },
-          { name: "Tipos de dados primitivos", description: "A linguagem de programação Java é tipada estaticamente, o que significa ― O tipo de dados de uma variável determina ― Além de `int` int, a linguagem de programação Java suporta outros ― Um tipo primitivo é predefinido pela linguagem e nomeado ― Valores primitivos não compartilham ― Os oito tipos de dados primitivos suportados pela linguagem de programação Java são ― Além dos oito tipos de dados primitivos listados acima, a linguagem de programação Java também oferece suporte especial ― Colocar sua string de caracteres entre aspas duplas ― são imutáveis , o que significa ― A Stringclasse `String` não é tecnicamente ― mas considerando o suporte especial que a linguagem lhe oferece ― Campos declarados, mas não inicializados, receberão um ― De modo geral, esse valor padrão será ― As variáveis ​​locais são ligeiramente diferentes ― Se você não puder inicializar sua variável local onde ela foi declarada, certifique-se ― Acessar uma variável local não inicializada ― Você deve ter notado que a newpalavra-chave `new` não é usada ao inicializar ― Tipos primitivos são tipos de dados especiais, inerentes à linguagem; eles não são ― Um literal é a representação ― Um literal inteiro é do tipo longse termina ― caso contrário ― Literais inteiros podem ser expressos pelos seguintes sistemas numéricos ― Um literal de ponto flutuante é do tipo float ― caso contrário ― Os tipos de ponto flutuante ( floate double) também podem ser expressos usando ― A linguagem de programação Java também suporta algumas sequências de escape especiais ― Existe também um nullliteral especial que pode ser usado como valor para qualquer ― nullEle pode ser atribuído a qualquer variável, exceto ― Há pouco que se possa fazer com um nullvalor além ― Finalmente, existe também um tipo especial de literal chamado literal de classe , formado ― No Java SE 7 e versões posteriores, qualquer número de caracteres de sublinhado (_ _) pode aparecer ― Esse recurso permite ― Você só pode usar sublinhados entre dígitos; não é possível usar sublinhados nos seguintes locais" },
-          { name: "Matrizes Java", description: "Um array é um objeto contêiner que armazena ― O tamanho de um array é definido ― Após a criação, seu tamanho ― Cada item em um array é chamado ― e cada elemento é acessado ― anArray ― Assim como as declarações de variáveis de outros tipos, a declaração de um array possui dois componentes ― O tipo de um array é escrito ― O tamanho do array não faz parte ― Assim como com variáveis de outros tipos, a declaração ― Você também pode colocar os colchetes ― Uma maneira de criar um array é com ― Cada elemento da matriz é acessado ― Alternativamente, você pode usar a sintaxe abreviada para ― Aqui, o comprimento da matriz é determinado ― Você também pode declarar uma matriz de matrizes (também conhecida como matriz multidimensional) usando ― Na linguagem de programação Java, um array multidimensional é um array cujos componentes ― Por fim, você pode usar a propriedade integrada lengthpara determinar" },
-          { name: "Operadores", description: "Operadores são símbolos especiais que executam ― Operadores com maior precedência são avaliados ― Quando operadores de mesma precedência aparecem na mesma expressão ― E lógico ― OU lógico" },
-          { name: "Operadores de atribuição, aritméticos e unários", description: "Um dos operadores mais comuns que você encontrará é o operador de atribuição simples ''=''. Você viu esse operador na classe Bicycle; ele atribui o valor ― [+] ― [-] ― [*] ― [/] ― [%] ― O +operador também pode ser usado ― [!]" },
-          { name: "Operadores de igualdade, relacionais e condicionais", description: "Os operadores de igualdade e relacionais determinam se um operando ― Esses operadores exibem comportamento de 'curto-circuito, o que significa ― Este operador também é conhecido como operador ternário ― O instanceof operador compara" },
-          { name: "Expressões, instruções e blocos", description: "Uma expressão é uma construção composta ― O tipo de dados do valor retornado por uma expressão depende ― A expressão cadence = 0 retorna ― porque o operador de atribuição retorna um valor do mesmo ― A linguagem de programação Java permite construir expressões compostas a partir ― Você pode especificar exatamente como uma expressão será avaliada usando ― Se você não indicar explicitamente a ordem das operações a serem executadas, a ordem será determinada ― Os operadores com maior precedência ― Um bloco é um grupo ― e pode ser usado em qualquer lugar" },
-          { name: "Instruções de fluxo de controle", description: "As instruções dentro dos seus arquivos de código-fonte geralmente são executadas ― As instruções de controle de fluxo ― permitindo que seu programa execute ― instruções de tomada de decisão ― as instruções de repetição ― instruções de ramificação" },
-          { name: "As intruções if-then", description: "No entanto, uma vez que uma condição é satisfeita, as instruções apropriadas" },
-          { name: "A declaração switch", description: "até que uma breakdeclaração seja encontrada" },
-          { name: "As instruções while e do-while", description: "A diferença entre do-whilee whileé que do-whileavalia" },
-          { name: "A declaração for", description: "A expressão de inicialização ― ela é executada ― Quando a expressão de término― A expressão de incremento é invocada ― O escopo dessa variável se estende ― As três expressões do for loop são opcionais ― Essa forma é às vezes chamada de instrução 'for' aprimorada e pode ser usada para tornar seus loops mais compactos e fáceis de ler" },
-          { name: "Instruções de ramificação", description: "A break instrução possui duas formas ― Você também pode usar uma instrução sem rótulo break para encerrar ― O fluxo de controle é transferido para a instrução imediatamente ― A return instrução possui duas formas ― O tipo de dados do valor retornado deve corresponder ao tipo do valor de retorno" },
-          { name: "Declarando Classes", description: "O corpo da classe (a área entre as chaves) contém ― Você também pode adicionar ― Em geral, as declarações de classe podem incluir estes componentes, nesta ordem" },
-          { name: "Declarando variáveis membro", description: "campos ― variáveis locais ― parâmetros ― As declarações de campo são compostas por três componentes, nesta ordem ― A public plavra-chave identifica esses campos como membros públicos, acessíveis por qualquer ― private modificador ― Todas as variáveis devem ter ― Você pode usar tipos primitivos ― Ou pode usar tipos de referência ― A primeira letra do nome de uma classe" },
-          { name: "Definindo Métodos", description: "Os únicos elementos obrigatórios de uma declaração de método são ― De forma mais geral, as declarações de métodos têm seis componentes, nesta ordem ― Dois dos componentes de uma declaração de método constituem a assinatura do método ― A linguagem de programação Java suporta sobrecarga de métodos e consegue distinguir entre métodos com ― Isso significa que métodos dentro de uma classe podem ter o mesmo nome se possuírem ― Na linguagem de programação Java, você pode usar o mesmo nome para todos os métodos de desenho, mas passar ― Métodos sobrecarregados são diferenciados ― Não é possível declarar mais de um método com o mesmo ― O compilador não considera o tipo de retorno" },
-          { name: "Fornecendo construtores para suas classes", description: "Uma classe contém construtores que são invocados para criar objetos a partir ― As declarações de construtores são semelhantes às declarações de métodos, exceto ― Assim como ocorre com os métodos, a plataforma Java diferencia os construtores com base ― Você não precisa fornecer nenhum ― O compilador fornece automaticamente ― Esse construtor padrão chamará ― Nessa situação, o compilador reclamará se a superclasse ― Se sua classe não tiver uma superclasse explícita ― Você pode usar modificadores de acesso na declaração de um construtor para controlar ― Se outra classe não puder chamar um MyClass construtor" },
-          { name: "Passando informações para um método ou construtor", description: "Os parâmetros são usados no corpo do método e, em tempo de execução, assumirão os valores ― Argumentos são os valores ― Ao invocar um método, os argumentos usados devem ― Para usar varargs ― um espaço ― O método pode então ser chamado com qualquer ― O nome de um parâmetro deve ser ― e não pode ser o nome de uma variável ― Um parâmetro pode ter o mesmo nome ― Nesse caso, diz-se que o parâmetro ― Argumentos primitivos, como um int ou um double, são passados para os métodos ― Isso significa que quaisquer alterações nos valores dos parâmetros existem ― Quando o método retorna ― Parâmetros de tipo de dados de referência, como objetos, também são passados ― No entanto, os valores dos campos do objeto podem ser ― Essas alterações persistirão" },
-          { name: "Objetos java", description: "Um programa Java típico cria muitos objetos que, como você sabe, interagem ― Através dessas interações entre objetos, um programa pode executar diversas tarefas, como " },
-          { name: "Criando objetos", description: "Como você sabe, uma classe fornece o modelo para objetos; ― Simplesmente declarar uma variável de referência não ― Para isso, você precisa usar ― Você deve atribuir um objeto à variável originOne antes ― Caso contrário, você receberá ― O operador 'new' instancia uma classe alocando ― e retornando uma ― O operador 'new' também invoca ― A expressão 'instanciar uma classe' significa o mesmo ― O novo operador requer um único argumento pós-fixado: uma chamada ― O operador 'new' retorna ― Essa referência geralmente é atribuída ― A referência retornada pelo operador 'new' não precisa ser atribuída a uma variável. Ela também pode ser usada ― Você pode reconhecer um construtor porque sua declaração usa o mesmo ― O compilador Java diferencia os construtores com base ― um objeto pode ter múltiplas" },
-          { name: "Usando objetos", description: "Os campos de um objeto são acessados ― O código que estiver fora da classe do objeto deve usar ― seguida pelo operador ― seguido por um nome ― esses campos existem apenas dentro de um objeto ― Objetos do mesmo tipo têm sua própria ― Quando você acessa um campo de instância por meio de uma referência de objeto ― Lembre-se de que o operador 'new' retorna ― Portanto, você pode usar o valor retornado por 'new' para ― Observe que, após a execução desta instrução, o programa não possui mais uma referência ao Rectangle criado ― Você também usa uma referência de objeto para invocar ― Além disso, você fornece, entre parênteses, quaisquer ― Se o método não exigir nenhum ― argumento ― Para métodos que retornam um valor, você pode usar a invocação do método em ― A plataforma Java permite que você crie quantos ― sem precisar se preocupar em destruí-los. O ambiente de execução Java ― Um objeto torna-se elegível para coleta de lixo quando ― Alternativamente, você pode descartar explicitamente uma referência a um objeto atribuindo" },
-          { name: "Retornando um valor de um método", description: "Um método retorna ao código que o invocou quando ele ― Você declara o tipo de retorno de um método ― Dentro do corpo do método, você usa a return instrução ― Qualquer método declarado void não ― não precisa conter ― Se você tentar retornar um valor de um método que foi declarado como void, você receberá ― Qualquer método que não seja declarado void deve conter ― Um método também pode retornar ― Quando um método usa um nome de classe como seu tipo de retorno, como whosFastest faz o método get, a classe do tipo do objeto retornado deve ser uma ― você também pode usar nomes de interface como tipos de retorno. Nesse caso, o objeto retornado deve" },
-          { name: "Usando a palavra-chave this", description: "Dentro de um método de instância ou construtor, this é uma referência ― Você pode se referir a qualquer membro do objeto atual de dentro de um método de instância ou construtor usando ― O motivo mais comum para usar a this palavra-chave é porque um campo está ― Dentro de um construtor, você também pode usar a this palavra-chave para chamar outro ― Isso é chamado de invocação explícita de construtor ― Caso esteja presente, a invocação de outro construtor deve" },
-          { name: "Controlando o acesso aos membros de uma classe", description: "Os modificadores de nível de acesso determinam se outras classes podem ― Existem dois níveis de controle de acesso ― Se uma classe não tiver nenhum modificador (o padrão, também conhecido como 'package-private'), ela será visível apenas ― Para membros, existem dois modificadores de acesso adicionais ― public ― protected ― sem modificador ― private" },
-          { name: "Compreendendo os membros da classe", description: "Quando vários objetos são criados a partir do mesmo modelo de classe, cada um deles possui suas próprias ― Às vezes, você deseja ter variáveis que sejam comuns a todos os objetos. Isso é conseguido com ― Campos que possuem o static modificador 'static' em sua declaração são chamados ― estão associados ― Qualquer objeto pode alterar o valor de uma variável de classe, mas as variáveis de classe também podem ser manipuladas ― As variáveis de classe são referenciadas pelo ― você também pode se referir a campos estáticos com uma ― A linguagem de programação Java suporta métodos estáticos, bem como ― Métodos estáticos, que possuem o static modificador 'static' em suas declarações, devem ser invocados ― sem a necessidade ― Você também pode se referir a métodos estáticos com uma ― Métodos de classe não podem acessar ― devem usar ― Além disso, métodos de classe não podem usar ― O static modificador, em combinação com o final modificador, também é usado ― O final modificador indica que o valor deste campo ― os nomes dos valores constantes são escritos ― Se o nome for composto por mais de uma palavra" },
-          { name: "Inicializando campos", description: "Se a inicialização exigir alguma lógica ― Variáveis de instância podem ser inicializadas ― onde o tratamento de erros ou outras lógicas ― Para fornecer a mesma capacidade para variáveis de classe, a linguagem de programação Java inclui ― Não é necessário declarar os campos ― Basta que sejam declarados e inicializados ― Uma classe pode ter qualquer número ― e eles podem aparecer ― O sistema de tempo de execução garante que os blocos de inicialização estática ― Os blocos de inicialização para variáveis de instância são idênticos aos blocos de inicialização estáticos, mas sem" },
-          { name: "Classe aninhadas", description: "Classes aninhadas são divididas em duas categorias ― Uma classe aninhada é um ― Classes aninhadas não estáticas (classes internas) têm acesso ― mesmo ― que sejam declaradas ― Classes aninhadas estáticas não têm ― Como membro de uma classe externa OuterClass, uma classe aninhada pode ser declarada ― Lembre-se de que classes externas só podem ser declaradas como ― Assim como os métodos e variáveis de instância, uma classe interna está associada ― e tem acesso direto ― Além disso, como uma classe interna está associada a uma instância, ela não pode definir ― Para instanciar uma classe interna, primeiro ― Existem dois tipos especiais de classes internas ― Assim como os métodos e variáveis de classe, uma classe estática aninhada está associada ― e assim como os métodos estáticos de classe, uma classe estática aninhada não pode ― ela só pode usá-los por meio ― Se uma declaração de um tipo (como uma variável membro ou o nome de um parâmetro) em um escopo específico (como uma classe interna ou a definição de um método) tiver o mesmo nome que outra declaração no escopo que a contém, então" },
-          { name: "Exemplo de classe Interna", description: "Existem dois tipos adicionais de classes internas ― classes locais ― classes anônimas ― Você pode usar os mesmos modificadores para classes internas que usa para outros" },
-          { name: "Classes locais", description: "Classes locais são classes definidas ― que é um grupo de zero ou mais instruções ― Normalmente, você encontra classes locais definidas ― Você pode definir uma classe local dentro de qualquer bloco ― Uma classe local tem acesso aos membros ― Além disso, uma classe local tem acesso ― No entanto, uma classe local só pode acessar ― Quando uma classe local acessa uma variável local ou um parâmetro do bloco que a contém ― No entanto, a partir do Java SE 8, uma classe local pode acessar variáveis e parâmetros locais do bloco que a contém que sejam ― Uma variável ou parâmetro cujo valor nunca é alterado ― A partir do Java SE 8, se você declarar uma classe local dentro de um método, ela poderá acessar ― Declarações de um tipo (como uma variável) em uma classe local ocultam ― Classes locais são semelhantes a classes internas porque não podem ― Classes locais em métodos estáticos, como a classe 'LocalPhoneNumber', que é definida no método estático 'get validatePhoneNumber', só podem se referir ― Classes locais não são estáticas porque têm acesso ― Consequentemente, elas não podem conter ― Não é possível declarar uma interface dentro de um bloco; interfaces são ― Não é possível declarar inicializadores estáticos ou interfaces de membros em uma ― Uma classe local pode ter membros estáticos, desde que sejam" },
-        ]
-      },
-    ];
-
+    // FIM DATAVASE
     // 3/4
     const db = {
       'CSS': dataCSS,
       'HTML': dataHTML,
       'JS': dataJS,
       'Java': dataJava,
-      'Cod': Cod,
       'Did': Did,
+      'Cod': Cod,
     };
 
     // --- FUNÇÕES ---
@@ -1322,8 +1973,8 @@ const gato = {
         'CSS': 'Biblioteca CSS',
         'HTML': 'Biblioteca HTML',
         'Java': 'Biblioteca Java',
-        'Cod': 'Codigo',
         'Did': 'Didatica',
+        'Cod': 'Codigo',
       };
 
       document.getElementById("mainTitle").textContent = titles[type];
@@ -1361,21 +2012,21 @@ const gato = {
             const code = document.createElement('code');
             code.className = 'hljs';
             function draculaHighlight(str) {
-              str = str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+              str = str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
               // 1) comentários /* */ /** */ e //
               var C = [];
-              str = str.replace(/\/\*[\s\S]*?\*\//g, function(m){ C.push(m); return '__C'+(C.length-1)+'__'; });
-              str = str.replace(/\/\/.*$/gm, function(m){ C.push(m); return '__C'+(C.length-1)+'__'; });
+              str = str.replace(/\/\*[\s\S]*?\*\//g, function (m) { C.push(m); return '__C' + (C.length - 1) + '__'; });
+              str = str.replace(/\/\/.*$/gm, function (m) { C.push(m); return '__C' + (C.length - 1) + '__'; });
               // 2) strings
               var S = [];
-              str = str.replace(/"([^"\\]|\\.)*"/g, function(m){ S.push(m); return '__S'+(S.length-1)+'__'; });
-              str = str.replace(/'([^'\\]|\\.)*'/g, function(m){ S.push(m); return '__S'+(S.length-1)+'__'; });
-              str = str.replace(/`([^`\\]|\\.)*`/g, function(m){ S.push(m); return '__S'+(S.length-1)+'__'; });
+              str = str.replace(/"([^"\\]|\\.)*"/g, function (m) { S.push(m); return '__S' + (S.length - 1) + '__'; });
+              str = str.replace(/'([^'\\]|\\.)*'/g, function (m) { S.push(m); return '__S' + (S.length - 1) + '__'; });
+              str = str.replace(/`([^`\\]|\\.)*`/g, function (m) { S.push(m); return '__S' + (S.length - 1) + '__'; });
               // 3) palavras-chave multilinguagem
-              str = str.replace(/\b(abstract|as|async|await|auto|base|bool|boolean|break|byte|case|catch|char|checked|class|clone|const|continue|decimal|def|default|defer|del|delegate|delete|do|double|elif|else|elseif|elsif|end|enum|event|except|explicit|extends|extern|False|final|finally|float|fn|for|foreach|from|function|global|goto|if|implements|import|in|inline|instanceof|int|interface|internal|is|lambda|let|lock|long|match|module|namespace|new|None|nonlocal|not|null|object|or|override|package|pass|private|protected|public|raise|readonly|ref|register|require|return|sealed|short|signed|sizeof|static|struct|super|switch|synchronized|template|this|throw|throws|trait|True|try|typedef|type|typeof|uint|ulong|union|unsigned|unsafe|ushort|using|var|virtual|void|volatile|while|with|xor|yield)\b/g, '<span class="hljs-keyword">$1</span>');
+              str = str.replace(/\b(export|abstract|as|async|await|auto|base|bool|boolean|break|byte|case|catch|char|checked|class|clone|const|continue|decimal|def|default|defer|del|delegate|delete|do|double|elif|else|elseif|elsif|end|enum|event|except|explicit|extends|extern|False|final|finally|float|fn|for|foreach|from|function|global|goto|if|implements|import|in|inline|instanceof|int|interface|internal|is|lambda|let|lock|long|match|module|namespace|new|None|nonlocal|not|null|object|or|override|package|pass|private|protected|public|raise|readonly|ref|register|require|return|sealed|short|signed|sizeof|static|struct|super|switch|synchronized|template|this|throw|throws|trait|True|try|typedef|type|typeof|uint|ulong|union|unsigned|unsafe|ushort|using|var|virtual|void|volatile|while|with|xor|yield)\b/g, '<span class="hljs-keyword">$1</span>');
               // restaura
-              str = str.replace(/__S(\d+)__/g, function(a,i){ return '<span class="hljs-string">'+S[i]+'</span>'; });
-              str = str.replace(/__C(\d+)__/g, function(a,i){ return '<span class="hljs-comment">'+C[i]+'</span>'; });
+              str = str.replace(/__S(\d+)__/g, function (a, i) { return '<span class="hljs-string">' + S[i] + '</span>'; });
+              str = str.replace(/__C(\d+)__/g, function (a, i) { return '<span class="hljs-comment">' + C[i] + '</span>'; });
               return str;
             }
             code.innerHTML = draculaHighlight(tag.description);
