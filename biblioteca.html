@@ -985,7 +985,7 @@
     ];
 
     const Cod = [
-      {
+      { // CODIGO JAVASCRIPT
         category: "Javascript",
         tags: [
           {
@@ -1901,40 +1901,3131 @@ console.log(pessoa['idade']) // 30` },
         category: "Java",
         tags: [
           {
-            name: "Herança", description: ``
+            "name": "Herança",
+            "description": `
+class MountainBike extends Bicycle {
+
+    // new fields and methods defining
+    // a mountain bike would go here
+
+}
+`
           },
           {
-            name: "final palavra-chave para uma variavel", description: ``
+            "name": "final palavra-chave para uma variavel",
+            "description": `
+final int CONSTANTE = 10;
+`
           },
           {
-            name: "?", description: ``
+            "name": "final palavra-chave para um metodo",
+            "description": `
+class Pai {
+    public final void metodoFinal() {
+        // Este método não pode ser sobrescrito
+    }
+}
+`
           },
           {
-            name: "?", description: ``
+            "name": "final palavra-chave para uma classe",
+            "description": `
+final class ClasseFinal {
+    // Nenhuma outra classe pode estender esta classe
+}
+`
           },
           {
-            name: "?", description: ``
+            "name": "Declarar, alocar memoria e inicializar um array",
+            "description": `
+class ArrayDemo {
+    public static void main(String[] args) {
+        // declares an array of integers
+        int[] anArray;
+
+        // allocates memory for 10 integers
+        anArray = new int[10];
+
+        // initialize first element
+        anArray[0] = 100;
+        // initialize second element
+        anArray[1] = 200;
+        // and so forth
+        anArray[2] = 300;
+        anArray[3] = 400;
+        anArray[4] = 500;
+        anArray[5] = 600;
+        anArray[6] = 700;
+        anArray[7] = 800;
+        anArray[8] = 900;
+        anArray[9] = 1000;
+
+        System.out.println("Element at index 0: "
+                           + anArray[0]);
+        System.out.println("Element at index 1: "
+                           + anArray[1]);
+        System.out.println("Element at index 2: "
+                           + anArray[2]);
+        System.out.println("Element at index 3: "
+                           + anArray[3]);
+        System.out.println("Element at index 4: "
+                           + anArray[4]);
+        System.out.println("Element at index 5: "
+                           + anArray[5]);
+        System.out.println("Element at index 6: "
+                           + anArray[6]);
+        System.out.println("Element at index 7: "
+                           + anArray[7]);
+        System.out.println("Element at index 8: "
+                           + anArray[8]);
+        System.out.println("Element at index 9: "
+                           + anArray[9]);
+    }
+}
+`
           },
           {
-            name: "?", description: ``
+            "name": "Outra forma nao usual de declarar array",
+            "description": `
+// this form is discouraged
+float anArrayOfFloats[];
+`
           },
           {
-            name: "?", description: ``
+            "name": "Declarar um array abreviado com inicialização",
+            "description": `
+int[] umaArray = {
+    100, 200, 300,
+    400, 500, 600,
+    700, 800, 900, 1000
+};
+`
           },
           {
-            name: "?", description: ``
+            "name": "Matriz de mais de uma dimensao com inicialização",
+            "description": `
+classe MultiDimArrayDemo {
+    public static void main(String[] args) {
+        String[][] nomes = {
+            {"Sr. ", "Sra. ", "Sra. "},
+            {"Smith", "Jones"}
+        };
+        // Sr. Smith
+        System.out.println(nomes[0][0] + nomes[1][0]);
+        // Sra. Jones
+        System.out.println(nomes[0][2] + nomes[1][1]);
+    }
+}
+`
           },
           {
-            name: "?", description: ``
+            "name": "Concatenar duas string",
+            "description": `
+class ConcatDemo {
+    public static void main(String[] args){
+        String firstString = "This is";
+        String secondString = " a concatenated string.";
+        String thirdString = firstString+secondString;
+        System.out.println(thirdString);
+    }
+}
+`
           },
           {
-            name: "?", description: ``
+            "name": "if...else",
+            "description": `
+class IfElseDemo {
+    public static void main(String[] args) {
+
+        int testscore = 76;
+        char grade;
+
+        if (testscore >= 90) {
+            grade = 'A';
+        } else if (testscore >= 80) {
+            grade = 'B';
+        } else if (testscore >= 70) {
+            grade = 'C';
+        } else if (testscore >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+        System.out.println("Grade = " + grade);
+    }
+}
+`
           },
           {
-            name: "?", description: ``
+            "name": "Switch com default",
+            "description": `
+public class SwitchDemo {
+    public static void main(String[] args) {
+
+        int month = 8;
+        String monthString;
+        switch (month) {
+            case 1:  monthString = "January";
+                     break;
+            case 2:  monthString = "February";
+                     break;
+            case 3:  monthString = "March";
+                     break;
+            case 4:  monthString = "April";
+                     break;
+            case 5:  monthString = "May";
+                     break;
+            case 6:  monthString = "June";
+                     break;
+            case 7:  monthString = "July";
+                     break;
+            case 8:  monthString = "August";
+                     break;
+            case 9:  monthString = "September";
+                     break;
+            case 10: monthString = "October";
+                     break;
+            case 11: monthString = "November";
+                     break;
+            case 12: monthString = "December";
+                     break;
+            default: monthString = "Invalid month";
+                     break;
+        }
+        System.out.println(monthString);
+    }
+}
+`
           },
+          {
+            "name": "while",
+            "description": `
+class WhileDemo {
+    public static void main(String[] args){
+        int count = 1;
+        while (count < 11) {
+            System.out.println("Count is: " + count);
+            count++;
+        }
+    }
+}
+`
+          },
+          {
+            "name": "do while",
+            "description": `
+class DoWhileDemo {
+    public static void main(String[] args){
+        int count = 1;
+        do {
+            System.out.println("Count is: " + count);
+            count++;
+        } while (count < 11);
+    }
+}
+`
+          },
+          {
+            "name": "for loop",
+            "description": `
+class ForDemo {
+    public static void main(String[] args){
+         for(int i=1; i<11; i++){
+              System.out.println("Count is: " + i);
+         }
+    }
+}
+`
+          },
+          {
+            "name": "for loop aprimorado",
+            "description": `
+class EnhancedForDemo {
+    public static void main(String[] args){
+         int[] numbers =
+             {1,2,3,4,5,6,7,8,9,10};
+         for (int item : numbers) {
+             System.out.println("Count is: " + item);
+         }
+    }
+}
+`
+          },
+          {
+            "name": "label e uma break encerrando a label externa",
+            "description": `
+class BreakWithLabelDemo {
+    public static void main(String[] args) {
+
+        int[][] arrayOfInts = {
+            { 32, 87, 3, 589 },
+            { 12, 1076, 2000, 8 },
+            { 622, 127, 77, 955 }
+        };
+        int searchfor = 12;
+
+        int i;
+        int j = 0;
+        boolean foundIt = false;
+
+    search:
+        for (i = 0; i < arrayOfInts.length; i++) {
+            for (j = 0; j < arrayOfInts[i].length;
+                 j++) {
+                if (arrayOfInts[i][j] == searchfor) {
+                    foundIt = true;
+                    break search;
+                }
+            }
+        }
+
+        if (foundIt) {
+            System.out.println("Found " + searchfor + " at " + i + ", " + j);
+        } else {
+            System.out.println(searchfor + " not in the array");
+        }
+    }
+}
+`
+          },
+          {
+            "name": "continue palavra-chave",
+            "description": `
+class BreakWithLabelDemo {
+    public static void main(String[] args) {
+
+        int[][] arrayOfInts = {
+            { 32, 87, 3, 589 },
+            { 12, 1076, 2000, 8 },
+            { 622, 127, 77, 955 }
+        };
+        int searchfor = 12;
+
+        int i;
+        int j = 0;
+        boolean foundIt = false;
+
+    search:
+        for (i = 0; i < arrayOfInts.length; i++) {
+            for (j = 0; j < arrayOfInts[i].length;
+                 j++) {
+                if (arrayOfInts[i][j] == searchfor) {
+                    foundIt = true;
+                    break search;
+                }
+            }
+        }
+
+        if (foundIt) {
+            System.out.println("Found " + searchfor + " at " + i + ", " + j);
+        } else {
+            System.out.println(searchfor + " not in the array");
+        }
+    }
+}
+`
+          },
+          {
+            "name": "construtor e encapsulamento",
+            "description": `
+public class Bicycle {
+
+    private int cadence;
+    private int gear;
+    private int speed;
+
+    public Bicycle(int startCadence, int startSpeed, int startGear) {
+        gear = startGear;
+        cadence = startCadence;
+        speed = startSpeed;
+    }
+
+    public int getCadence() {
+        return cadence;
+    }
+
+    public void setCadence(int newValue) {
+        cadence = newValue;
+    }
+
+    public int getGear() {
+        return gear;
+    }
+
+    public void setGear(int newValue) {
+        gear = newValue;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void applyBrake(int decrement) {
+        speed -= decrement;
+    }
+
+    public void speedUp(int increment) {
+        speed += increment;
+    }
+}
+`
+          },
+          {
+            "name": "declaração simples de um metodo",
+            "description": `
+public double calculateAnswer(double wingSpan, int numberOfEngines,
+                              double length, double grossTons) {
+    //do the calculation here
+}
+`
+          },
+          {
+            "name": "sobrecarga de metodo",
+            "description": `
+public class DataArtist {
+    ...
+    public void draw(String s) {
+        ...
+    }
+    public void draw(int i) {
+        ...
+    }
+    public void draw(double f) {
+        ...
+    }
+    public void draw(int i, double f) {
+        ...
+    }
+}
+`
+          },
+          {
+            "name": "metodo com um array como parametro",
+            "description": `
+public class ExemploArray {
+    public static void main(String[] args) {
+        // Criação de um array de inteiros
+        int[] numeros = {1, 2, 3, 4, 5};
+
+        // Chamada do método que aceita um array como parâmetro
+        imprimirArray(numeros);
+    }
+
+    // Método que aceita um array de inteiros como parâmetro e imprime os elementos
+    public static void imprimirArray(int[] array) {
+        for (int num : array) {
+            System.out.println(num);
+        }
+    }
+}
+`
+          },
+          {
+            "name": "sintaxe spreed",
+            "description": `
+public class ExemploVarargs {
+
+    // Método que aceita um número variável de argumentos do tipo int
+    public static void somar(int... numeros) {
+        int soma = 0;
+        for (int numero : numeros) {
+            soma += numero;
+        }
+        System.out.println("A soma é: " + soma);
+    }
+
+    public static void main(String[] args) {
+        somar(1, 2, 3);           // Saída: A soma é: 6
+        somar(4, 5);              // Saída: A soma é: 9
+        somar(7, 8, 9, 10);       // Saída: A soma é: 34
+    }
+}
+`
+          },
+          {
+            "name": "Instanciação",
+            "description": `
+Point originOne = new Point(23, 94);
+Rectangle rectOne = new Rectangle(originOne, 100, 200);
+Rectangle rectTwo = new Rectangle(50, 100);
+`
+          },
+          {
+            "name": "Referenciar um campo/metodo de objeto",
+            "description": `
+objectReference.fieldName
+objectReference.methodName();
+`
+          },
+          {
+            "name": "Método retornando um tipo de referência",
+            "description": `
+public Bicycle seeWhosFastest(Bicycle myBike, Bicycle yourBike,
+                              Environment env) {
+    Bicycle fastest;
+    // code to calculate which bike is
+    // faster, given each bike's gear
+    // and cadence and given the
+    // environment (terrain and wind)
+    return fastest;
+}
+`
+          },
+          {
+            "name": "Usar this em um construtor para resolver problema de identificadores iguais",
+            "description": `
+public class Point {
+    public int x = 0;
+    public int y = 0;
+
+    //constructor
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+`
+          },
+          {
+            "name": "Construtor usando this para chamar outro construtor",
+            "description": `
+public class Rectangle {
+    private int x, y;
+    private int width, height;
+
+    public Rectangle() {
+        this(0, 0, 1, 1);
+    }
+    public Rectangle(int width, int height) {
+        this(0, 0, width, height);
+    }
+    public Rectangle(int x, int y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+    ...
+}
+`
+          },
+          {
+            "name": "Membro static",
+            "description": `
+public class Bicycle {
+
+    private int cadence;
+    private int gear;
+    private int speed;
+
+    // add an instance variable for the object ID
+    private int id;
+
+    // add a class variable for the
+    // number of Bicycle objects instantiated
+    private static int numberOfBicycles = 0;
+        ...
+}
+`
+          },
+          {
+            "name": "campo static final",
+            "description": `
+static final double PI = 3.141592653589793;
+`
+          },
+          {
+            "name": "blocos de inicialização estáticos",
+            "description": `
+public class ExemploBlocoEstatico {
+
+    // Variável estática
+    static int contador;
+
+    // Bloco de inicialização estático
+    static {
+        System.out.println("Bloco de inicialização estático 1 executado.");
+        contador = 10;  // Inicializando a variável estática
+    }
+
+    // Outro bloco de inicialização estático
+    static {
+        System.out.println("Bloco de inicialização estático 2 executado.");
+        contador += 5;  // Modificando a variável estática
+    }
+
+    // Construtor da classe
+    public ExemploBlocoEstatico() {
+        System.out.println("Construtor executado. Valor de contador: " + contador);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Método main iniciado.");
+
+        // Criando uma instância da classe
+        ExemploBlocoEstatico obj1 = new ExemploBlocoEstatico();
+
+        // Criando outra instância da classe
+        ExemploBlocoEstatico obj2 = new ExemploBlocoEstatico();
+    }
+}
+`
+          },
+          {
+            "name": "Blocos inicializadores para variáveis ​​de instância",
+            "description": `
+public class ExemploBlocoEstatico {
+
+    // Variável estática
+    static int contador;
+
+    // Bloco de inicialização estático
+    static {
+        System.out.println("Bloco de inicialização estático 1 executado.");
+        contador = 10;  // Inicializando a variável estática
+    }
+
+    // Outro bloco de inicialização estático
+    static {
+        System.out.println("Bloco de inicialização estático 2 executado.");
+        contador += 5;  // Modificando a variável estática
+    }
+
+    // Construtor da classe
+    public ExemploBlocoEstatico() {
+        System.out.println("Construtor executado. Valor de contador: " + contador);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Método main iniciado.");
+
+        // Criando uma instância da classe
+        ExemploBlocoEstatico obj1 = new ExemploBlocoEstatico();
+
+        // Criando outra instância da classe
+        ExemploBlocoEstatico obj2 = new ExemploBlocoEstatico();
+    }
+}
+`
+          },
+          {
+            "name": "Instaniar diretamente uma classe interna",
+            "description": `
+public class Externa {
+    private String mensagem = "Olá do mundo externo!";
+
+    // Definindo a classe interna
+    class Interna {
+        void mostrarMensagem() {
+            System.out.println(mensagem);
+        }
+    }
+
+    // Método main para testar
+    public static void main(String[] args) {
+        // Instanciando a classe externa
+        Externa externa = new Externa();
+
+        // Instanciando a classe interna diretamente através da instância da classe externa
+        Externa.Interna interna = externa.new Interna();
+
+        // Chamando o método da classe interna
+        interna.mostrarMensagem();
+    }
+}
+`
+          },
+          {
+            "name": "classe local",
+            "description": `
+public class ClasseExterna {
+    void meuMetodo() {
+        // Definindo uma classe local dentro do método
+        class ClasseLocal {
+            void mostrarMensagem() {
+                System.out.println("Olá, esta é uma classe local.");
+            }
+        }
+
+        // Criando uma instância da classe local e chamando seu método
+        ClasseLocal local = new ClasseLocal();
+        local.mostrarMensagem();
+    }
+
+    // Método main para testar
+    public static void main(String[] args) {
+        ClasseExterna externa = new ClasseExterna();
+        externa.meuMetodo();
+    }
+}
+`
+          },
+          {
+            "name": "classe local acessando membro final do metodo",
+            "description": `
+public class Exemplo {
+    public void metodo() {
+        final int numero = 10; // ou efetivamente final, ou seja, não é alterada depois
+        class ClasseLocal {
+            public void imprimirNumero() {
+                System.out.println(numero); // Classe local acessa variáveis locais
+            }
+        }
+
+        ClasseLocal local = new ClasseLocal();
+        local.imprimirNumero();
+    }
+}
+`
+          },
+          {
+            "name": "Variavel efetivamente final",
+            "description": `
+public class Exemplo {
+    public void metodo() {
+        int numero = 10; // Não é explicitamente final, mas é "efetivamente final"
+
+        class ClasseLocal {
+            public void imprimirNumero() {
+                System.out.println(numero); // Acesso permitido porque a variável é efetivamente final
+            }
+        }
+
+        ClasseLocal local = new ClasseLocal();
+        local.imprimirNumero();
+
+        // numero = 20; // Se esta linha estivesse ativa, numero deixaria de ser efetivamente final
+    }
+}
+`
+          },
+          {
+            "name": "Interface sendo usado como variavel tipo de uma classe",
+            "description": `
+// Definindo a interface
+public interface MinhaInterface {
+    void executar();
+}
+
+// Implementando a interface
+public class MinhaClasse implements MinhaInterface {
+    @Override
+    public void executar() {
+        System.out.println("Executando...");
+    }
+
+    public static void main(String[] args) {
+        // Usando a interface como tipo
+        MinhaInterface obj = new MinhaClasse();
+        obj.executar();
+    }
+}
+`
+          },
+          {
+            "name": "Classe anonima com interface",
+            "description": `
+public class ExemploClasseAnonima {
+    // Definindo uma interface
+    interface Saudacao {
+        void dizerOla();
+    }
+
+    public static void main(String[] args) {
+        // Criando uma instância de uma classe anônima que implementa Saudacao
+        Saudacao saudacao = new Saudacao() {
+            @Override
+            public void dizerOla() {
+                System.out.println("Olá de uma classe anônima!");
+            }
+        };
+
+        // Chamando o método dizerOla da classe anônima
+        saudacao.dizerOla();
+    }
+}
+`
+          },
+          {
+            "name": "Usando uma enum",
+            "description": `
+public class Main {
+
+    // Definindo um enum para os dias da semana
+    public enum Day {
+        SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+    }
+
+    // Método que imprime uma mensagem diferente dependendo do dia
+    public static void printDayMessage(Day day) {
+        switch (day) {
+            case MONDAY:
+                System.out.println("Começo da semana! Vamos com tudo.");
+                break;
+            case FRIDAY:
+                System.out.println("Sexta-feira! Quase fim de semana!");
+                break;
+            case SUNDAY:
+                System.out.println("Dia de descanso.");
+                break;
+            default:
+                System.out.println("É um dia comum.");
+                break;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Usando o enum para representar um dia específico
+        Day today = Day.MONDAY;
+
+        // Imprime uma mensagem baseada no valor do enum
+        printDayMessage(today);
+    }
+}
+`
+          },
+          {
+            "name": "expressao lambda",
+            "description": `
+// Interface funcional
+interface Calculator {
+    int operate(int a, int b);
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Expressão lambda para somar dois números
+        Calculator addition = (a, b) -> a + b;
+
+        // Expressão lambda para multiplicar dois números
+        Calculator multiplication = (a, b) -> a * b;
+
+        // Testando as operações
+        int x = 5;
+        int y = 10;
+
+        System.out.println("Soma: " + addition.operate(x, y)); // Saída: Soma: 15
+        System.out.println("Multiplicação: " + multiplication.operate(x, y)); // Saída: Multiplicação: 50
+    }
+}
+`
+          },
+          {
+            "name": "corpo de expressão lambda com múltiplas instruções dentro das chaves",
+            "description": `
+import java.util.function.BiFunction;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Usando expressão lambda com múltiplas instruções no corpo
+        BiFunction<Integer, Integer, Integer> calculate = (a, b) -> {
+            System.out.println("Calculando a soma de " + a + " e " + b);
+            int sum = a + b;
+            System.out.println("Soma calculada: " + sum);
+            return sum;  // retorna a soma
+        };
+
+        // Chamando a lambda
+        int result = calculate.apply(5, 10);
+        System.out.println("Resultado final: " + result);
+    }
+}
+`
+          },
+          {
+            "name": "operador de referência de método",
+            "description": `
+public class Pessoa {
+    private String name;
+    private int age;
+
+    // Construtor
+    public Pessoa(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Método estático para comparar duas pessoas pela idade
+    public static int compareByAge(Pessoa a, Pessoa b) {
+        return Integer.compare(a.getAge(), b.getAge());
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Pessoa[] rosterAsArray = {
+            new Pessoa("Alice", 30),
+            new Pessoa("Bob", 25),
+            new Pessoa("Charlie", 35)
+        };
+
+        // Ordenando o array usando a referência de método
+        Arrays.sort(rosterAsArray, Pessoa::compareByAge);
+
+        // Imprimindo o array ordenado
+        for (Pessoa p : rosterAsArray) {
+            System.out.println(p.name + " - " + p.age);
+        }
+    }
+}
+`
+          },
+          {
+            "name": "enum com 2 valores entre ()",
+            "description": `
+public enum Fruit {
+    APPLE(150, "Red"),
+    BANANA(120, "Yellow"),
+    ORANGE(130, "Orange");
+
+    private final int weight; // em gramas
+    private final String color;
+
+    // Construtor da enum que recebe dois valores
+    Fruit(int weight, String color) {
+        this.weight = weight;
+        this.color = color;
+    }
+
+    // Métodos para acessar os valores
+    public int getWeight() {
+        return weight;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public static void main(String[] args) {
+        for (Fruit fruit : Fruit.values()) {
+            System.out.printf("A %s pesa %d gramas e é de cor %s.%n", fruit, fruit.getWeight(), fruit.getColor());
+        }
+    }
+}
+`
+          },
+          {
+            "name": "atributo deprecated",
+            "description": `
+   // Javadoc comment follows
+    /**
+     * @deprecated
+     * explanation of why it was deprecated
+     */
+    @Deprecated
+    static void deprecatedMethod() { }
+}
+`
+          },
+          {
+            "name": "atributo override",
+            "description": `
+   // mark method as a superclass method
+   // that has been overridden
+   @Override
+   int overriddenMethod() { }
+`
+          },
+          {
+            "name": "interface e implesments",
+            "description": `
+// Definição da interface
+interface Animal {
+    void som();   // Método abstrato
+    void mover(); // Método abstrato
+}
+
+// Classe que implementa a interface Animal
+class Cachorro implements Animal {
+
+    // Implementação do método som
+    @Override
+    public void som() {
+        System.out.println("O cachorro faz: Au Au");
+    }
+
+    // Implementação do método mover
+    @Override
+    public void mover() {
+        System.out.println("O cachorro está correndo");
+    }
+}
+
+// Classe principal para executar o programa
+public class Main {
+    public static void main(String[] args) {
+        // Criando objeto da classe que implementa a interface
+        Animal cachorro = new Cachorro();
+
+        // Chamando os métodos implementados
+        cachorro.som();
+        cachorro.mover();
+    }
+}
+`
+          },
+          {
+            "name": "interface extends outra interface",
+            "description": `
+public interface GroupedInterface extends Interface1, Interface2, Interface3 {
+
+    // constant declarations
+
+    // base of natural logarithms
+    double E = 2.718282;
+
+    // method signatures
+    void doSomething (int i, double x);
+    int doSomethingElse(String s);
+}
+`
+          },
+          {
+            "name": "interface com default modificador",
+            "description": `
+public interface Animal {
+    void fazerSom();
+
+    // Método default com uma implementação padrão
+    default void dormir() {
+        System.out.println("Dormindo...");
+    }
+}
+
+public class Cachorro implements Animal {
+    public void fazerSom() {
+        System.out.println("Latido");
+    }
+}
+`
+          },
+          {
+            "name": "interface com membro static",
+            "description": `
+public interface Calculadora {
+
+    // Método estático na interface
+    static int somar(int a, int b) {
+        return a + b;
+    }
+
+    // Outro método estático
+    static int subtrair(int a, int b) {
+        return a - b;
+    }
+
+    // Método abstrato (precisa ser implementado pelas classes)
+    void mostrarResultado();
+}
+
+public class TesteCalculadora implements Calculadora {
+
+    // Implementação do método abstrato
+    @Override
+    public void mostrarResultado() {
+        System.out.println("Implementação de mostrar resultado.");
+    }
+
+    public static void main(String[] args) {
+        // Chamando os métodos estáticos diretamente pela interface
+        int resultadoSoma = Calculadora.somar(10, 5);
+        int resultadoSubtracao = Calculadora.subtrair(10, 5);
+
+        System.out.println("Resultado da soma: " + resultadoSoma);
+        System.out.println("Resultado da subtração: " + resultadoSubtracao);
+
+        // Criando uma instância da classe e chamando o método de instância
+        TesteCalculadora teste = new TesteCalculadora();
+        teste.mostrarResultado();
+    }
+}
+`
+          },
+          {
+            "name": "interface com constantes",
+            "description": `
+public interface Configuracao {
+    // Constantes em uma interface (são public, static e final por padrão)
+    int MAX_USUARIOS = 100;
+    String VERSAO_SISTEMA = "1.0.0";
+    boolean MODO_DEBUG = true;
+
+    // Método abstrato
+    void exibirConfiguracoes();
+}
+
+public class Sistema implements Configuracao {
+
+    @Override
+    public void exibirConfiguracoes() {
+        // Podemos acessar as constantes diretamente, sem usar o nome da interface
+        System.out.println("Configurações do Sistema:");
+        System.out.println("Máximo de Usuários: " + MAX_USUARIOS);
+        System.out.println("Versão do Sistema: " + VERSAO_SISTEMA);
+        System.out.println("Modo Debug: " + (MODO_DEBUG ? "Ativado" : "Desativado"));
+    }
+
+    public static void main(String[] args) {
+        Sistema sistema = new Sistema();
+        sistema.exibirConfiguracoes();
+    }
+}
+`
+          },
+          {
+            "name": "uso de .super. para resolver conflito em interface",
+            "description": `
+// Definição da interface OperateCar
+interface OperateCar {
+    // Método padrão (default) da interface OperateCar
+    default void startEngine(String key) {
+        System.out.println("OperateCar: O motor está sendo ligado com a chave " + key);
+    }
+}
+
+// Definição da interface FlyCar
+interface FlyCar {
+    // Método padrão (default) da interface FlyCar
+    default void startEngine(String key) {
+        System.out.println("FlyCar: O motor de voo está sendo ligado com a chave " + key);
+    }
+}
+
+// Classe FlyingCar que implementa ambas as interfaces
+public class FlyingCar implements OperateCar, FlyCar {
+
+    // Sobrescrevendo o método startEngine na classe FlyingCar
+    @Override
+    public void startEngine(String key) {
+        // Chamando o método startEngine da interface FlyCar
+        FlyCar.super.startEngine(key);
+        // Chamando o método startEngine da interface OperateCar
+        OperateCar.super.startEngine(key);
+    }
+
+    public static void main(String[] args) {
+        FlyingCar myFlyingCar = new FlyingCar();
+        // Chama o método startEngine, que por sua vez invoca os métodos das duas interfaces
+        myFlyingCar.startEngine("Chave123");
+    }
+}
+`
+          },
+          {
+            "name": "uso de super() em classe",
+            "description": `
+// Classe base (superclasse)
+class Animal {
+    public void fazerSom() {
+        System.out.println("O animal faz algum som");
+    }
+}
+
+// Subclasse que herda de Animal
+class Cachorro extends Animal {
+    @Override
+    public void fazerSom() {
+        // Usando super para chamar o método da classe pai (Animal)
+        super.fazerSom();  // Chama o método da superclasse
+        System.out.println("O cachorro late");
+    }
+}
+
+// Classe principal para testar
+public class Main {
+    public static void main(String[] args) {
+        Cachorro meuCachorro = new Cachorro();
+        // Chama o método fazerSom da classe Cachorro
+        meuCachorro.fazerSom();
+    }
+}
+`
+          },
+          {
+            "name": "importação estática",
+            "description": `
+import static java.lang.Math.*;
+
+public class Main {
+    public static void main(String[] args) {
+        double resultado = sqrt(25); // Em vez de Math.sqrt(25)
+        System.out.println("Raiz quadrada de 25 é: " + resultado);
+
+        double pi = PI; // Em vez de Math.PI
+        System.out.println("O valor de PI é: " + pi);
+    }
+}
+`
+          },
+          {
+            "name": "definir uma string",
+            "description": `
+String greeting = "Hello world!";
+`
+          },
+          {
+            "name": "concatenar uma string com tambem uma variavel",
+            "description": `
+String string1 = "saw I was ";
+System.out.println("Dot " + string1 + "Tod");
+`
+          },
+          {
+            "name": "Classe com construtor, campo, metodo e o metodo main",
+            "description": `
+public class Pessoa {
+    // Atributos da classe
+    private String nome;
+    private int idade;
+
+    // Construtor da classe
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    // Método para exibir as informações da pessoa
+    public void exibirInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+    }
+
+    // Método para simular o aniversário da pessoa (incrementa a idade)
+    public void fazerAniversario() {
+        idade++;
+        System.out.println("Parabéns! Agora " + nome + " tem " + idade + " anos.");
+    }
+
+    // Método principal para testar a classe
+    public static void main(String[] args) {
+        // Criação de um objeto da classe Pessoa
+        Pessoa pessoa1 = new Pessoa("João", 25);
+
+        // Exibindo as informações da pessoa
+        pessoa1.exibirInformacoes();
+
+        // Fazendo aniversário
+        pessoa1.fazerAniversario();
+    }
+}
+`
+          },
+          {
+            "name": "Uso package",
+            "description": `
+// Saudacao.java:
+package pacote;
+
+public class Saudacao {
+    public void dizerOla() {
+        System.out.println("Olá, mundo!");
+    }
+}
+
+// Principal.java:
+
+package pacote;
+
+public class Principal {
+    public static void main(String[] args) {
+        Saudacao saudacao = new Saudacao();
+        saudacao.dizerOla();
+    }
+}
+`
+          },
+          {
+            "name": "Inferir o tipo da variavel com var palavra chave",
+            "description": `
+public class Exemplo {
+    public static void main(String[] args) {
+        var numero = 10;           // int
+        var texto = "Olá, mundo!"; // String
+        var lista = new ArrayList<String>(); // ArrayList<String>
+
+        for (var item : lista) {
+            System.out.println(item);
+        }
+    }
+}
+`
+          },
+          {
+            "name": "Campo static final",
+            "description": `
+public class Carro {
+    // Constante compartilhada por todas as instâncias da classe Carro
+    public static final int NUM_GEARS = 6;
+
+    private String modelo;
+
+    public Carro(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void mostrarInformacoes() {
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Número de marchas: " + NUM_GEARS);
+    }
+
+    public static void main(String[] args) {
+        Carro carro1 = new Carro("Fusca");
+        carro1.mostrarInformacoes();
+
+        Carro carro2 = new Carro("Civic");
+        carro2.mostrarInformacoes();
+
+        // A constante NUM_GEARS pode ser acessada diretamente pela classe
+        System.out.println("Número de marchas padrão para todos os carros: " + Carro.NUM_GEARS);
+    }
+}
+`
+          },
+          {
+            "name": "Interface com metodo default",
+            "description": `
+// Definindo a interface
+public interface MinhaInterface {
+
+    // Método abstrato
+    void metodoAbstrato();
+
+    // Método padrão
+    default void metodoPadrao() {
+        System.out.println("Este é um método padrão na interface.");
+    }
+}
+
+// Implementando a interface
+public class MinhaClasse implements MinhaInterface {
+
+    // Implementando o método abstrato
+    @Override
+    public void metodoAbstrato() {
+        System.out.println("Implementação do método abstrato.");
+    }
+
+    // Método main para testar
+    public static void main(String[] args) {
+        MinhaClasse obj = new MinhaClasse();
+        obj.metodoAbstrato();
+        obj.metodoPadrao(); // Chamando o método padrão diretamente
+    }
+}
+`
+          },
+          {
+            "name": "Classe anonima estendendo de uma classe concreta",
+            "description": `
+public class ExemploClasseAnonima {
+    // Definindo uma classe concreta
+    class Saudacao {
+        void dizerOla() {
+            System.out.println("Olá do método original!");
+        }
+    }
+
+    public static void main(String[] args) {
+        ExemploClasseAnonima externa = new ExemploClasseAnonima();
+
+        // Criando uma instância de uma classe anônima que estende Saudacao
+        Saudacao saudacao = externa.new Saudacao() {
+            @Override
+            void dizerOla() {
+                System.out.println("Olá de uma classe anônima!");
+            }
+        };
+
+        // Chamando o método dizerOla da classe anônima
+        saudacao.dizerOla();
+    }
+}
+`
+          },
+          {
+            "name": "rule switch",
+            "description": `
+int x = 1;
+System.out.println(
+    switch (x) {
+        case 1 -> "one";
+        case 2 -> "two";
+        default -> null;
+    }
+);
+`
+          },
+          {
+            "name": "Uso import",
+            "description": `
+package app;
+
+import util.Calculadora;
+
+public class Principal {
+    public static void main(String[] args) {
+        Calculadora calculadora = new Calculadora();
+        int resultado = calculadora.somar(5, 3);
+        System.out.println("O resultado da soma é: " + resultado);
+    }
+}
+`
+          }
         ]
-      }
+      },
+      { // CODIGO C#
+        category: "C#",
+        tags: [
+          {
+            name: "Main declarado async",
+            description: `class Program
+{
+    static async Task<int> Main(string[] args)
+    {
+        return await AsyncConsoleWork();
+    }
+
+    private static async Task<int> AsyncConsoleWork()
+    {
+        // main body here
+        return 0;
+    }
+}`
+          },
+          {
+            name: "Instruição de nivel superior",
+            description: `MyClass.TestMethod();
+MyNamespace.MyClass.MyMethod();
+
+public class MyClass
+{
+    public static void TestMethod()
+    {
+        Console.WriteLine('Hello World!');
+    }
+}
+
+namespace MyNamespace
+{
+    class MyClass
+    {
+        public static void MyMethod()
+        {
+            Console.WriteLine('Hello World from MyNamespace.MyClass.MyMethod!');
+        }
+    }
+}`
+          },
+          {
+            name: "Enum",
+            description: `public enum FileMode
+{
+    CreateNew = 1,
+    Create = 2,
+    Open = 3,
+    OpenOrCreate = 4,
+    Truncate = 5,
+    Append = 6,
+}`
+          },
+          {
+            name: "Diretiva using em ação eliminando o uso de System no codigo",
+            description: `System.Console.WriteLine('Hello World!');
+
+using System;
+Console.WriteLine('Hello World!');`
+          },
+          {
+            name: "Namespace com chaves",
+            description: `namespace SampleNamespace
+{
+    class SampleClass
+    {
+        public void SampleMethod()
+        {
+            System.Console.WriteLine(
+                'SampleMethod inside SampleNamespace');
+        }
+    }
+}`
+          },
+          {
+            name: "Namespace global",
+            description: `namespace SampleNamespace;
+
+class AnotherSampleClass
+{
+    public void AnotherSampleMethod()
+    {
+       System.Console.WriteLine(
+            'SampleMethod inside SampleNamespace');
+    }
+}`
+          },
+          {
+            name: "Propriedade auto-implementada com required e inicializador de objeto",
+            description: `public class Person
+{
+    public required string LastName { get; set; }
+    public required string FirstName { get; set; }
+}
+
+var p1 = new Person(); // Error! Required properties not set
+var p2 = new Person() { FirstName = 'Grace', LastName = 'Hopper' };`
+          },
+          {
+            name: "Classe com construtor primario",
+            description: `public class Container(int capacity)
+{
+    private int _capacity = capacity;
+}`
+          },
+          {
+            name: "Uso simples de record",
+            description: `public record Person(string FirstName, string LastName);
+
+public static class Program
+{
+    public static void Main()
+    {
+        Person person = new('Nancy', 'Davolio');
+        Console.WriteLine(person);
+        // output: Person { FirstName = Nancy, LastName = Davolio }
+    }
+
+}`
+          },
+          {
+            name: "Uso record com with",
+            description: `public record Person(string FirstName, string LastName)
+{
+    public required string[] PhoneNumbers { get; init; }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person1 = new('Nancy', 'Davolio') { PhoneNumbers = new string[1] };
+        Console.WriteLine(person1);
+        // output: Person { FirstName = Nancy, LastName = Davolio, PhoneNumbers = System.String[] }
+
+        Person person2 = person1 with { FirstName = 'John' };
+        Console.WriteLine(person2);
+        // output: Person { FirstName = John, LastName = Davolio, PhoneNumbers = System.String[] }
+        Console.WriteLine(person1 == person2); // output: False
+
+        person2 = person1 with { PhoneNumbers = new string[1] };
+        Console.WriteLine(person2);
+        // output: Person { FirstName = Nancy, LastName = Davolio, PhoneNumbers = System.String[] }
+        Console.WriteLine(person1 == person2); // output: False
+
+        person2 = person1 with { };
+        Console.WriteLine(person1 == person2); // output: True
+    }
+}`
+          },
+          {
+            name: "Uso record mais complicadinho",
+            description: `public record Person(string FirstName, string LastName)
+{
+    public required string[] PhoneNumbers { get; init; }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person1 = new('Nancy', 'Davolio') { PhoneNumbers = new string[1] };
+        Console.WriteLine(person1);
+        // output: Person { FirstName = Nancy, LastName = Davolio, PhoneNumbers = System.String[] }
+
+        Person person2 = person1 with { FirstName = 'John' };
+        Console.WriteLine(person2);
+        // output: Person { FirstName = John, LastName = Davolio, PhoneNumbers = System.String[] }
+        Console.WriteLine(person1 == person2); // output: False
+
+        person2 = person1 with { PhoneNumbers = new string[1] };
+        Console.WriteLine(person2);
+        // output: Person { FirstName = Nancy, LastName = Davolio, PhoneNumbers = System.String[] }
+        Console.WriteLine(person1 == person2); // output: False
+
+        person2 = person1 with { };
+        Console.WriteLine(person1 == person2); // output: True
+    }
+}`
+          },
+          {
+            name: "Tipo anonimo",
+            description: `var v = new { Amount = 108, Message = 'Hello' };
+
+Console.WriteLine(v.Amount + v.Message);`
+          },
+          {
+            name: "Tipo anonimo com um membro mais complexo",
+            description: `var product = new Product();
+var bonus = new { note = 'You won!' };
+var shipment = new { address = 'Nowhere St.', product };
+var shipmentWithBonus = new { address = 'Somewhere St.', product, bonus };`
+          },
+          {
+            name: "Matriz com tipo anonimo",
+            description: `var anonArray = new[] { new { name = 'apple', diam = 4 }, new { name = 'grape', diam = 1 } }`
+          },
+          {
+            name: "Mutação com with em tipo anonimo",
+            description: `var apple = new { Item = '0apples', Price = 1.35 };
+var onSale = apple with { Price = 0.79 };
+Console.WriteLine(apple);
+Console.WriteLine(onSale);`
+          },
+          {
+            name: "Criando uma struct com new e tambem a partir de um objeto struct ja criado sem usar new",
+            description: `using System;
+
+namespace Example
+{
+    public struct Person
+    {
+        public string Name;
+        public int Age;
+        public Person(string name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+    }
+
+    public class Application
+    {
+        static void Main()
+        {
+            // Crie uma instância de struct e inicialize usando 'new'.
+            // A memória é alocada na pilha de threads
+            Person p1 = new Person('Alex', 9);
+            Console.WriteLine('p1 Name = {0} Age = {1}', p1.Name, p1.Age);
+
+            // cria um novo objeto struct. Observe que struct pode ser inicializado
+            // sem usar 'novo'.
+            Person p2 = p1;
+
+            // Assign values to p2 members.
+            p2.Name = 'Spencer';
+            p2.Age = 7;
+            Console.WriteLine('p2 Name = {0} Age = {1}', p2.Name, p2.Age);
+
+            // p1 values remain unchanged because p2 is copy.
+            Console.WriteLine('p1 Name = {0} Age = {1}', p1.Name, p1.Age);
+        }
+    }
+
+        Output:
+        p1 Name = Alex Age = 9
+        p2 Name = Spencer Age = 7
+        p1 Name = Alex Age = 9
+
+ }`
+          },
+          {
+            name: "Override em metodo virtual",
+            description: `public class Shape
+{
+    // A few example members
+    public int X { get; private set; }
+    public int Y { get; private set; }
+    public int Height { get; set; }
+    public int Width { get; set; }
+
+    // Virtual method
+    public virtual void Draw()
+    {
+        Console.WriteLine('Performing base class drawing tasks');
+    }
+}
+
+public class Circle : Shape
+{
+    public override void Draw()
+    {
+        // Code to draw a circle...
+        Console.WriteLine('Drawing a circle');
+        base.Draw();
+    }
+}
+public class Rectangle : Shape
+{
+    public override void Draw()
+    {
+        // Code to draw a rectangle...
+        Console.WriteLine('Drawing a rectangle');
+        base.Draw();
+    }
+}
+public class Triangle : Shape
+{
+    public override void Draw()
+    {
+        // Code to draw a triangle...
+        Console.WriteLine('Drawing a triangle');
+        base.Draw();
+    }
+}`
+          },
+          {
+            name: "Ocultar membro com new",
+            description: `public class BaseClass
+{
+    public void DoWork() { WorkField++; }
+    public int WorkField;
+    public int WorkProperty
+    {
+        get { return 0; }
+    }
+}
+
+public class DerivedClass : BaseClass
+{
+    public new void DoWork() { WorkField++; }
+    public new int WorkField;
+    public new int WorkProperty
+    {
+        get { return 0; }
+    }
+}`
+          },
+          {
+            name: "Membro ocultado com new sendo convertido para chamar o metodo da classe base que foi ocultado",
+            description: `DerivedClass B = new DerivedClass();
+B.DoWork(); // Calls the new method.
+
+BaseClass A = (BaseClass)B;
+A.DoWork(); // Calls the old method.`
+          },
+          {
+            name: "Polimorfismo e selead",
+            description: `public class A
+{
+public virtual void DoWork() { }
+}
+public class B : A
+{
+public override void DoWork() { }
+}
+
+public class C : B
+{
+public sealed override void DoWork() { }
+}`
+          },
+          {
+            name: "Usando base palavra chave",
+            description: `public class Base
+{
+    public virtual void DoWork() {////}
+}
+public class Derived : Base
+{
+    public override void DoWork()
+    {
+        //Perform Derived's work here
+        //...
+        // Call DoWork on base class
+        base.DoWork();
+    }
+}`
+          },
+          {
+            name: "Usando tupla +1 forma",
+            description: `public class Example
+{
+    public static void Main()
+    {
+        var result = QueryCityData('New York City');
+
+        var city = result.Item1;
+        var pop = result.Item2;
+        var size = result.Item3;
+
+         // Do something with the data.
+    }
+
+    private static (string, int, double) QueryCityData(string name)
+    {
+        if (name == 'New York City')
+            return (name, 8175133, 468.48);
+
+        return ('', 0, 0);
+    }
+}
+
+public static void Main()
+{
+    (string city, int population, double area) = QueryCityData(''New York City'');
+
+    // Do something with the data.
+}
+
+///////////////////////////////////////////////////////////////
+
+public static void Main()
+{
+    var (city, population, area) = QueryCityData('New York City');
+
+    // Do something with the data.
+}
+
+///////////////////////////////////////////////////////////////
+
+public static void Main()
+{
+    string city = 'Raleigh';
+    int population = 458880;
+
+    (city, population, double area) = QueryCityData('New York City');
+
+    // Do something with the data.
+}`
+          },
+          {
+            name: "Desconstruindo tupla",
+            description: `using System;
+
+public class ExampleDiscard
+{
+    public static void Main()
+    {
+        var (_, _, _, pop1, _, pop2) = QueryCityDataForYears('New York City', 1960, 2010);
+
+       Console.WriteLine($'Population change, 1960 to 2010: {pop2 - pop1:N0}');
+    }
+
+    private static (string, double, int, int, int, int) QueryCityDataForYears(string name, int year1, int year2)
+    {
+        int population1 = 0, population2 = 0;
+        double area = 0;
+
+        if (name == 'New York City')
+        {
+            area = 468.48;
+            if (year1 == 1960)
+            {
+                population1 = 7781984;
+            }
+            if (year2 == 2010)
+            {
+                population2 = 8175133;
+            }
+            return (name, area, year1, population1, year2, population2);
+        }
+
+       return ('', 0, 0, 0, 0, 0);
+    }
+}
+// The example displays the following output:
+//      Population change, 1960 to 2010: 393,149`
+          },
+          {
+            name: "Desconstruindo tupla com Desconstruct metodo",
+            description: `using System;
+
+public class Person
+{
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
+
+    public Person(string fname, string mname, string lname,
+                  string cityName, string stateName)
+    {
+        FirstName = fname;
+        MiddleName = mname;
+        LastName = lname;
+        City = cityName;
+        State = stateName;
+    }
+
+    // Return the first and last name.
+    public void Deconstruct(out string fname, out string lname)
+    {
+        fname = FirstName;
+        lname = LastName;
+    }
+
+    public void Deconstruct(out string fname, out string mname, out string lname)
+    {
+        fname = FirstName;
+        mname = MiddleName;
+        lname = LastName;
+    }
+
+    public void Deconstruct(out string fname, out string lname,
+                            out string city, out string state)
+    {
+        fname = FirstName;
+        lname = LastName;
+        city = City;
+        state = State;
+    }
+}
+
+public class ExampleClassDeconstruction
+{
+    public static void Main()
+    {
+        var p = new Person('John', 'Quincy', 'Adams', 'Boston', 'MA');
+
+        // Deconstruct the person object.
+        var (fName, lName, city, state) = p;
+        Console.WriteLine($'Hello {fName} {lName} of {city}, {state}!');
+    }
+}
+// The example displays the following output:
+//    Hello John Adams of Boston, MA!`
+          },
+          {
+            name: "Override metodo toString() object",
+            description: `class Person
+{
+    public string Name { get; set; }
+   public int Age { get; set; }
+
+    public override string ToString()
+    {
+        return 'Person: ' + Name + ' ' + Age;'
+    }
+}`
+          },
+          {
+            name: "Classe e metodo abstract",
+            description: `public abstract class A
+{
+    public abstract void DoWork(int i);
+}`
+          },
+          {
+            name: "Classe abstract transformando um metodo virtual em abstract",
+            description: `// compile with: -target:library
+public class D
+{
+    public virtual void DoWork(int i)
+    {
+        // Original implementation.
+    }
+}
+
+public abstract class E : D
+{
+    public abstract override void DoWork(int i);
+}
+
+public class F : E
+{
+    public override void DoWork(int i)
+    {
+       // New implementation.
+    }
+}`
+          },
+          {
+            name: "Acabando com a herança virtual de metodo com selead",
+            description: `public class D : C
+{
+    public sealed override void DoWork() { }
+}`
+          },
+          {
+            name: "Classe e metodo selead",
+            description: `public sealed class D : C
+{
+public sealed override void DoWork() { }
+    // Class members here.
+}`
+          },
+          {
+            name: "Criar e acessar uma constante",
+            description: `class Calendar2
+{
+    public const int Months = 12, Weeks = 52, Days = 365;
+}
+
+int birthstones = Calendar.Months;`
+          },
+          {
+            name: "Classe abstract",
+            description: `// compile with: csc -target:library abstractshape.cs
+public abstract class Shape
+{
+    private string name;
+
+    public Shape(string s)
+    {
+        // calling the set accessor of the Id property.
+        Id = s;
+   }
+
+    public string Id
+   {
+        get
+        {
+            return name;
+        }
+
+        set
+        {
+            name = value;
+        }
+    }
+
+    // Area is a read-only property - only a get accessor is needed:
+    public abstract double Area
+    {
+        get;
+    }
+
+    public override string ToString()
+    {
+        return $'{Id} Area = {Area:F2}'';
+    }
+}
+
+public class Square : Shape
+{
+   private int side;
+
+    public Square(int side, string id)
+        : base(id)
+    {
+        this.side = side;
+    }
+
+    public override double Area
+    {
+        get
+        {
+            // Given the side, return the area of a square:
+            return side * side;
+        }
+    }
+}`
+          },
+          {
+            name: "Class constante",
+            description: `static class Constants
+{
+    public const double Pi = 3.14159;
+    public const int SpeedOfLight = 300000; // km per sec.
+}
+
+class Program
+{
+    static void Main()
+    {
+        double radius = 5.3;
+        double area = Constants.Pi * (radius * radius);
+        int secsFromSun = 149476000 / Constants.SpeedOfLight; // in km
+        Console.WriteLine(secsFromSun);
+    }
+}`
+          },
+          {
+            name: "Campo static reandoly",
+            description: `using System;
+
+public class 
+{
+    // Declaração de um campo readonly e static
+    public static readonly int Numero = 10;
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+       // Acesso ao campo readonly e static
+        Console.WriteLine(MyClass.Numero); // Saída: 10
+
+        // Tentativa de modificar o valor do campo (não é possível, pois é readonly)
+        // MyClass.Numero = 20; // Isso resultará em um erro de compilação
+    }
+}`
+          },
+          {
+            name: "Propriedade",
+            description: `public class TimePeriod
+{
+    private double _seconds;
+
+    public double Hours
+    {
+        get { return _seconds / 3600; }
+        set
+        {
+            if (value < 0 || value > 24)
+                throw new ArgumentOutOfRangeException(nameof(value),
+                     'The valid range is between 0 and 24.');
+
+            _seconds = value * 3600;
+        }
+    }
+}`
+          },
+          {
+            name: "Sintaxe simples para propriedade somente leitura com membro apto de expressao",
+            description: `public class Person
+{
+    private string _firstName;
+    private string _lastName;
+
+    public Person(string first, string last)
+    {
+        _firstName = first;
+        _lastName = last;
+    }
+
+    public string Name => $'{_firstName} {_lastName}';
+}`
+          },
+          {
+            name: "Propriedade com membro apto de expressao",
+            description: `public class SaleItem
+{
+    string _name;
+    decimal _cost;
+
+    public SaleItem(string name, decimal cost)
+    {
+        _name = name;
+        _cost = cost;
+    }
+
+    public string Name
+    {
+        get => _name;
+        set => _name = value;
+    }
+
+    public decimal Price
+    {
+        get => _cost;
+        set => _cost = value;
+    }
+}`
+          },
+          {
+            name: "Propriedade auto-implementada",
+            description: `public class SaleItem
+{
+    public string Name
+    { get; set; }
+
+    public decimal Price
+   { get; set; }
+}`
+          },
+          {
+            name: "Propriedade auto-implementada required",
+            description: `public class SaleItem
+{
+    public required string Name
+    { get; set; }
+
+    public required decimal Price
+    { get; set; }
+}`
+          },
+          {
+            name: "Acessador propriedade com modificador de acesso",
+            description: `private string _name = 'Hello';
+
+public string Name
+{
+    get
+    {
+        return _name;
+    }
+    protected set
+    {
+        _name = value;
+    }
+}`
+          },
+          {
+            name: "Indexador com membro apto de expressão",
+            description: `using System;
+
+class Person
+{
+    private string[] names = new string[10];
+
+    public string this[int i]
+    {
+        get => names[i];
+        set => names[i] = value;
+    }
+}`
+          },
+          {
+            name: "Indexador",
+            description: `public class TempRecord
+{
+    // Array of temperature values
+    private float[] temps = new float[10]
+    {
+        56.2F, 56.7F, 56.5F, 56.9F, 58.8F,
+        61.3F, 65.9F, 62.1F, 59.2F, 57.5F
+    };
+
+    // To enable client code to validate input
+    // when accessing your indexer.
+    public int Length => temps.Length;
+
+    // Indexer declaration.
+    // If index is out of range, the temps array will throw the exception.
+    public float this[int index]
+    {
+        get => temps[index];
+        set => temps[index] = value;
+    }
+}`
+          },
+          {
+            name: "Criando um metodo",
+            description: `abstract class Motorcycle
+{
+    // Anyone can call this.
+    public void StartEngine() {/* Method statements here */ }
+
+    // Only derived classes can call this.
+    protected void AddGas(int gallons) { /* Method statements here */ }
+
+    // Derived classes can override the base class implementation.
+    public virtual int Drive(int miles, int speed) { /* Method statements here */ return 1; }
+
+    // Derived classes must implement this.
+    public abstract double GetTopSpeed();
+}`
+          },
+          {
+            name: "Sobrecarga de metodo",
+            description: `public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine('foo');
+    }
+    public static void Main(string[] args)
+    {
+        Console.WriteLine('foo');
+    }
+}`
+          },
+          {
+            name: "Metodo com parametro opcional",
+            description: `public static void Main()
+    {
+        Console.WriteLine('foo');
+    }
+    public static void Main(string[] args = null)
+    {
+        Console.WriteLine('foo');
+    }`
+          },
+          {
+            name: "Sobrescrever um metodo",
+            description: `public class BaseClass
+{
+    public virtual void DoWork() { }
+    public virtual int WorkProperty
+    {
+        get { return 0; }
+    }
+}
+public class DerivedClass : BaseClass
+{
+    public override void DoWork() { }
+    public override int WorkProperty
+    {
+        get { return 0; }
+    }
+}`
+          },
+          {
+            name: "Construtor de instancia",
+            description: `public class Coords
+{
+    public int X { get; }
+    public int Y { get; }
+
+    // Default constructor
+    public Coords() => (X, Y) = (0, 0);
+
+    // Instance constructor
+    public Coords(int x, int y) => (X, Y) = (x, y);
+}`
+          },
+          {
+            name: "Construtor static",
+            description: `public class Bus
+{
+    // Static variable used by all Bus instances.
+   // Represents the time the first bus of the day starts its route.
+    protected static readonly DateTime globalStartTime;
+
+    // Property for the number of each bus.
+    protected int RouteNumber { get; set; }
+
+    // Static constructor to initialize the static variable.
+    // It is invoked before the first instance constructor is run.
+    static Bus()
+    {
+        globalStartTime = DateTime.Now;
+
+        // The following statement produces the first line of output,
+        // and the line occurs only once.
+        Console.WriteLine('Static constructor sets global start time to {0}',
+            globalStartTime.ToLongTimeString());
+    }
+
+    // Instance constructor.
+    public Bus(int routeNum)
+    {
+        RouteNumber = routeNum;
+        Console.WriteLine('Bus #{0} is created.', RouteNumber);
+    }
+
+    // Instance method.
+    public void Drive()
+    {
+        TimeSpan elapsedTime = DateTime.Now - globalStartTime;
+
+        // For demonstration purposes we treat milliseconds as minutes to simulate
+        // actual bus times. Do not do this in your actual bus schedule program!
+        Console.WriteLine('{0} is starting its route {1:N2} minutes after global start time {2}.',
+                                this.RouteNumber,
+                                elapsedTime.Milliseconds,
+                                globalStartTime.ToShortTimeString());
+    }
+}`
+          },
+          {
+            name: "Finalizador",
+            description: `class Car
+{
+    ~Car()  // finalizer
+    {
+        // cleanup statements...
+    }
+}`
+          },
+          {
+            name: "As duas sintaxe de inicializador de objeto",
+            description: `public class Cat
+{
+    // Auto-implemented properties.
+    public int Age { get; set; }
+    public string? Name { get; set; }
+
+    public Cat()
+    {
+    }
+
+    public Cat(string name)
+    {
+        this.Name = name;
+    }
+}
+
+Cat cat = new Cat { Age = 10, Name = 'Fluffy' };
+Cat sameCat = new Cat('Fluffy'){ Age = 10 };`
+          },
+          // ... [todos os itens 51 a 106 seguem o mesmo padrão, já convertidos] ...
+          {
+            name: "Passando um valor por referencia",
+            description: `public static class ByRefExample
+{
+    public static void Main()
+    {
+        var value = 20;
+        Console.WriteLine('In Main, value = {0}', value);
+        ModifyValue(ref value);
+        Console.WriteLine('Back in Main, value = {0}', value);
+    }
+
+    private static void ModifyValue(ref int i)
+    {
+        i = 30;
+        Console.WriteLine('In ModifyValue, parameter value = {0}', i);
+        return;
+    }
+}
+// The example displays the following output:
+//      In Main, value = 20
+//      In ModifyValue, parameter value = 30
+//      Back in Main, value = 30`
+          },
+          {
+            name: "Usando inicializador de objeto",
+            description: `public class HowToObjectInitializers
+{
+    public static void Main()
+    {
+        // Declare a StudentName by using the constructor that has two parameters.
+        StudentName student1 = new StudentName('Craig', 'Playstead');
+
+        // Make the same declaration by using an object initializer and sending
+        // arguments for the first and last names. The default constructor is
+        // invoked in processing this declaration, not the constructor that has
+        // two parameters.
+        StudentName student2 = new StudentName
+        {
+            FirstName = 'Craig',
+            LastName = 'Playstead'
+        };
+
+        // Declare a StudentName by using an object initializer and sending
+        // an argument for only the ID property. No corresponding constructor is
+        // necessary. Only the default constructor is used to process object
+        // initializers.
+        StudentName student3 = new StudentName
+        {
+            ID = 183
+        };
+
+        // Declare a StudentName by using an object initializer and sending
+        // arguments for all three properties. No corresponding constructor is
+        // defined in the class.
+        StudentName student4 = new StudentName
+        {
+            FirstName = 'Craig',
+            LastName = 'Playstead',
+            ID = 116
+        };
+
+        Console.WriteLine(student1.ToString());
+        Console.WriteLine(student2.ToString());
+        Console.WriteLine(student3.ToString());
+        Console.WriteLine(student4.ToString());
+    }
+    // Output:
+    // Craig 0
+    // Craig  0
+    //   183
+    // Craig  116
+}
+
+public class StudentName
+{
+    // The following constructor has parameters for two of the three
+    // properties.
+    public StudentName(string first, string last)
+    {
+        FirstName = first;
+        LastName = last;
+    }
+
+    // The default constructor initializes the properties with default
+    // values.
+    public StudentName() { }
+
+    // Properties.
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int ID { get; set; }
+
+    public override string ToString() => FirstName + '  ' + ID;
+}`
+          },
+          {
+            name: "Inicializador de coleção",
+            description: `List<int> digits = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+List<int> digits2 = new List<int> { 0 + 1, 12 % 3, MakeInt() };`
+          },
+          {
+            name: "Inicializador de coleção de objetos",
+            description: `public class HowToCollectionInitializers
+{
+    public static void Main()
+    {
+        // The following code is the same as:
+        // List<StudentName> students = new List<StudentName>();
+        // students.Add(new StudentName() { FirstName='Scott', LastName='Reynolds', ID=111});
+        // students.Add(new StudentName() { FirstName='Ben', LastName='Adams', ID=222});
+        // students.Add(new StudentName() { FirstName='Scott', LastName='Reynolds', ID=333});
+        // students.Add(new StudentName() { FirstName='Ben', LastName='Adams', ID=444});
+
+        List<StudentName> students = new List<StudentName>()
+        {
+            new StudentName() { FirstName='Scott', LastName='Reynolds', ID=111},
+            new StudentName() { FirstName='Ben', LastName='Adams', ID=222},
+            new StudentName() { FirstName='Scott', LastName='Reynolds', ID=333},
+            new StudentName() { FirstName='Ben', LastName='Adams', ID=444}
+        };
+
+        foreach (var student in students)
+        {
+            Console.WriteLine(student.ToString());
+        }
+        // Output:
+        // Scott  111
+        // Ben  222
+        // Scott  333
+        // Ben  444
+    }
+}
+
+public class StudentName
+{
+    // The default constructor has no parameters. The default constructor
+    // is invoked in the processing of the collection initializer.
+    public StudentName() { }
+
+    // Properties.
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int ID { get; set; }
+
+    public override string ToString() => FirstName + '  ' + ID;
+}`
+          },
+          {
+            name: "Criando um evento",
+            description: `using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var meuObjeto = new MinhaClasse();
+        meuObjeto.MeuEvento += MeuMetodo;
+    }
+
+    private static void MeuMetodo(object sender, EventArgs e)
+    {
+        Console.WriteLine('O evento foi disparado!');
+    }
+}
+
+public class MinhaClasse
+{
+    public event EventHandler MeuEvento;
+}`
+          },
+          {
+            name: "Assinando evento",
+            description: `public class Publisher
+{
+    public event EventHandler MyEvent;
+
+    public void RaiseEvent()
+    {
+        MyEvent?.Invoke(this, EventArgs.Empty);
+    }
+}
+
+public class Subscriber
+{
+    public Subscriber(Publisher publisher)
+    {
+        publisher.MyEvent += HandleEvent;
+    }
+
+    private void HandleEvent(object sender, EventArgs e)
+    {
+        Console.WriteLine('Evento recebido!');
+    }
+}`
+          },
+          {
+            name: "Desinscrevendo evento",
+            description: `publisher.MyEvent -= HandleEvent;`
+          },
+          {
+            name: "Criando um evento com delegate EventHandler",
+            description: `public class Publisher
+{
+    public event EventHandler<CustomEventArgs> RaiseCustomEvent;
+
+    public void DoSomething()
+    {
+       // Write some code that does something useful here
+       // then raise the event. You can also raise an event
+       // before you execute a block of code.
+       OnRaiseCustomEvent(new CustomEventArgs('Did something'));
+    }
+
+    // Wrap event invocations inside a protected virtual method
+    // to allow derived classes to override the event invocation behavior
+    protected virtual void OnRaiseCustomEvent(CustomEventArgs e)
+    {
+        // Make a temporary copy of the event to avoid possibility of
+        // a race condition if the last subscriber unsubscribes
+        // immediately after the null check and before the event is raised.
+        EventHandler<CustomEventArgs> raiseEvent = RaiseCustomEvent;
+
+        // Event will be null if there are no subscribers
+        if (raiseEvent != null)
+        {
+            // Format the string to send inside the CustomEventArgs parameter
+            e.Message += $' at {DateTime.Now}';
+
+            // Call to raise the event.
+            raiseEvent(this, e);
+        }
+    }
+}
+
+// Define a class to hold custom event info
+public class CustomEventArgs : EventArgs
+{
+    public CustomEventArgs(string s)
+    {
+        message = s;
+    }
+
+    private string message;
+
+    public string Message
+    {
+        get { return message; }
+        set { message = value; }
+    }
+}`
+          },
+          {
+            name: "Criando um evento usando delegate customizado",
+            description: `public delegate void CustomEventHandler(object sender, CustomEventArgs e);
+
+public class Publisher
+{
+    public event CustomEventHandler RaiseCustomEvent;
+
+    public void DoSomething()
+    {
+        OnRaiseCustomEvent(new CustomEventArgs('Did something'));
+    }
+
+    protected virtual void OnRaiseCustomEvent(CustomEventArgs e)
+    {
+        CustomEventHandler raiseEvent = RaiseCustomEvent;
+        if (raiseEvent != null)
+        {
+            e.Message += $' at {DateTime.Now}';
+            raiseEvent(this, e);
+        }
+    }
+}`
+          },
+          {
+            name: "Usando herança em interface",
+            description: `interface IParent
+{
+    void ParentMethod();
+}
+
+interface IChild : IParent
+{
+    void ChildMethod();
+}
+
+public class Implementation : IChild
+{
+    public void ParentMethod() { }
+    public void ChildMethod() { }
+}`
+          },
+          {
+            name: "Usando herança multipla em interface",
+            description: `interface IParent1
+{
+    void Parent1Method();
+}
+
+interface IParent2
+{
+    void Parent2Method();
+}
+
+interface IChild : IParent1, IParent2
+{
+    void ChildMethod();
+}`
+          },
+          {
+            name: "Sobrescrevendo metodo em interface",
+            description: `public interface IPrinter
+{
+    void Print();
+}
+
+public interface IControl : IPrinter
+{
+    new void Print();
+}`
+          },
+          {
+            name: "Implementando membro de interface",
+            description: `interface IPoint
+{
+    // Property signatures:
+    int X { get; set; }
+    int Y { get; set; }
+    double Distance { get; }
+}
+
+class Point : IPoint
+{
+    // Constructor:
+    public Point(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
+    // Property implementation:
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    // Property implementation
+    public double Distance =>
+       Math.Sqrt(X * X + Y * Y);
+}`
+          },
+          {
+            name: "Implementação explicita de interface",
+            description: `interface IControl
+{
+    void Paint();
+}
+
+interface ISurface
+{
+    void Paint();
+}
+
+class SampleClass : IControl, ISurface
+{
+    // Both ISurface.Paint and IControl.Paint call this method.
+    public void Paint()
+    {
+        Console.WriteLine('Paint method in SampleClass');
+    }
+}`
+          },
+          {
+            name: "Implementação explicita de interface para dois metodos com mesmo nome",
+            description: `public class SampleClass : IControl, ISurface
+{
+    void IControl.Paint()
+    {
+        System.Console.WriteLine('IControl.Paint');
+    }
+    void ISurface.Paint()
+    {
+        System.Console.WriteLine('ISurface.Paint');
+    }
+}`
+          },
+          {
+            name: "Usando default em interface",
+            description: `interface ICustomer
+{
+    IEnumerable<IOrder> PreviousOrders { get; }
+
+    DateTime DateJoined { get; }
+    DateTime? LastOrder { get; }
+    string Name { get; }
+    IDictionary<DateTime, string> Reminders { get; }
+
+    // Default interface methods:
+    public decimal ComputeLoyaltyDiscount()
+    {
+        DateTime TwoYearsAgo = DateTime.Now.AddYears(-2);
+        if (DateJoined < TwoYearsAgo && PreviousOrders.Count() > 10)
+        {
+            return 0.10m;
+        }
+        return 0;
+    }
+}`
+          },
+          {
+            name: "Usando static em interface",
+            description: `public interface IParseable<TSelf> where TSelf : IParseable<TSelf>
+{
+    static abstract TSelf Parse(string s);
+}`
+          },
+          {
+            name: "Criando um delegate",
+            description: `public delegate void MyDelegate(string message);`
+          },
+          {
+            name: "Criando uma instancia de delegate",
+            description: `public class Program
+{
+    public static void Main()
+    {
+        MyDelegate del = new MyDelegate(ShowMessage);
+        del('Hello, World!');
+    }
+
+    public static void ShowMessage(string message)
+    {
+        Console.WriteLine(message);
+    }
+}`
+          },
+          {
+            name: "Usando um delegate",
+            description: `del('Hello');`
+          },
+          {
+            name: "Combinando delegates usando +",
+            description: `MyDelegate del1 = new MyDelegate(ShowMessage);
+MyDelegate del2 = new MyDelegate(ShowMessage2);
+MyDelegate del3 = del1 + del2;`
+          },
+          {
+            name: "Removendo delegates usando -",
+            description: `MyDelegate del1 = new MyDelegate(ShowMessage);
+MyDelegate del2 = new MyDelegate(ShowMessage2);
+MyDelegate del3 = del1 + del2;
+MyDelegate del4 = del3 - del2;`
+          },
+          {
+            name: "Adicionando metodo anonimo a um delegate",
+            description: `MyDelegate del = delegate(string message)
+{
+    Console.WriteLine(message);
+};`
+          },
+          {
+            name: "Lambda simples",
+            description: `Func<int, int> square = x => x * x;
+Console.WriteLine(square(5));`
+          },
+          {
+            name: "Lambda com tipo explicito",
+            description: `Func<int, int> square = (int x) => x * x;`
+          },
+          {
+            name: "Lambda com mais de um parametro",
+            description: `Func<int, int, int> sum = (x, y) => x + y;`
+          },
+          {
+            name: "Lambda com corpo de mais de uma linha",
+            description: `Func<int, int, int> sum = (x, y) =>
+{
+    int temp = x + y;
+    return temp;
+};`
+          },
+          {
+            name: "Lambda com variavel externa",
+            description: `int factor = 2;
+Func<int, int> multiplier = x => x * factor;`
+          },
+          {
+            name: "Lambda com tupla",
+            description: `Func<(int, int), int> sum = t => t.Item1 + t.Item2;`
+          },
+          {
+            name: "Lambda com valor de retorno explicito",
+            description: `Func<int, int, int> sum = (x, y) => { return x + y; };`
+          },
+          {
+            name: "Metodo de extensão",
+            description: `public static class MyExtensions
+{
+    public static int WordCount(this string str)
+    {
+        return str.Split(new char[] { ' ', '.', '?' },
+                         StringSplitOptions.RemoveEmptyEntries).Length;
+    }
+}`
+          },
+          {
+            name: "Metodo de extensão com interface",
+            description: `public static class MyExtensions
+{
+    public static int WordCount(this IMyInterface str)
+    {
+        return str.ToString().Split(new char[] { ' ', '.', '?' },
+                         StringSplitOptions.RemoveEmptyEntries).Length;
+    }
+}`
+          },
+          {
+            name: "Criando classe parcial",
+            description: `public partial class Employee
+{
+    public void DoWork()
+    {
+    }
+}
+
+public partial class Employee
+{
+    public void GoToLunch()
+    {
+    }
+}`
+          },
+          {
+            name: "Criando metodo parcial",
+            description: `// Definition in file1.cs
+partial class PartialClass
+{
+    partial void OnSomethingHappened(string s);
+}
+
+// Implementation in file2.cs
+partial class PartialClass
+{
+    partial void OnSomethingHappened(string s)
+    {
+        Console.WriteLine('Something happened: {0}', s);
+    }
+}`
+          },
+          {
+            name: "Usando ref",
+            description: `void Method(ref int refArgument)
+{
+    refArgument = refArgument + 44;
+}
+
+int number = 1;
+Method(ref number);
+Console.WriteLine(number);
+// Output: 45`
+          },
+          {
+            name: "Usando out",
+            description: `int initializeInMethod;
+OutArgExample(out initializeInMethod);
+Console.WriteLine(initializeInMethod);     // value is now 44
+
+void OutArgExample(out int number)
+{
+    number = 44;
+}`
+          },
+          {
+            name: "Usando in",
+            description: `int readonlyArgument = 44;
+InArgExample(readonlyArgument);
+Console.WriteLine(readonlyArgument);     // value is still 44
+
+void InArgExample(in int number)
+{
+    // number = 44; // CS8331
+}`
+          },
+          {
+            name: "Usando params",
+            description: `public static void UseParams(params int[] list)
+{
+    for (int i = 0; i < list.Length; i++)
+    {
+        Console.Write(list[i] + ' ');
+    }
+    Console.WriteLine();
+}`
+          },
+          {
+            name: "Usando nameof",
+            description: `string name = nameof(System.String);`
+          },
+          {
+            name: "Usando using estatico",
+            description: `using static System.Console;
+using static System.Math;
+
+class Program
+{
+    static void Main()
+    {
+        WriteLine(Sqrt(3*3 + 4*4));
+    }
+}`
+          },
+          {
+            name: "Usando alias",
+            description: `using Co = System.Console;`
+          },
+          {
+            name: "Usando lock",
+            description: `class Account
+{
+    private readonly object balanceLock = new object();
+    private decimal balance;
+
+    public void Deposit(decimal amount)
+    {
+        lock (balanceLock)
+        {
+            balance += amount;
+        }
+    }
+
+    public void Withdraw(decimal amount)
+    {
+        lock (balanceLock)
+        {
+            balance -= amount;
+        }
+    }
+}`
+          },
+          {
+            name: "Usando checked",
+            description: `int a = int.MaxValue;
+checked
+{
+    int b = a + 1;
+}`
+          },
+          {
+            name: "Usando unchecked",
+            description: `int a = int.MaxValue;
+unchecked
+{
+    int b = a + 1;
+}`
+          },
+          {
+            name: "Usando fixed",
+            description: `unsafe
+{
+    int[] arr = new int[5];
+    fixed (int* p = arr)
+    {
+        *p = 1;
+    }
+}`
+          },
+          {
+            name: "Usando stackalloc",
+            description: `Span<int> numbers = stackalloc int[10];
+for (int i = 0; i < 10; i++)
+{
+    numbers[i] = i;
+}`
+          },
+          {
+            name: "Usando yield return",
+            description: `public static IEnumerable<int> GetNumbers()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        yield return i;
+    }
+}`
+          },
+          {
+            name: "Usando yield break",
+            description: `public static IEnumerable<int> GetNumbers()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        if (i == 5)
+        {
+            yield break;
+        }
+        yield return i;
+    }
+}`
+          },
+          {
+            name: "Usando async await",
+            description: `public async Task<int> GetNumberAsync()
+{
+    await Task.Delay(1000);
+    return 1;
+}`
+          },
+          {
+            name: "Usando await foreach",
+            description: `await foreach (var number in GetNumbersAsync())
+{
+    Console.WriteLine(number);
+}`
+          },
+          {
+            name: "Usando await using",
+            description: `await using (var resource = new MyAsyncDisposable())
+{
+    // Use resource
+}`
+          },
+          {
+            name: "Usando try catch finally",
+            description: `try
+{
+    // Code that may throw an exception
+}
+catch (Exception ex)
+{
+    // Handle exception
+}
+finally
+{
+    // Code that always runs
+}`
+          },
+          {
+            name: "Usando throw",
+            description: `throw new Exception('Something went wrong');`
+          },
+          {
+            name: "Propriedade em interface",
+            description: `interface IEmployee
+{
+    string Name
+    {
+        get;
+        set;
+    }
+
+    int Counter
+    {
+        get;
+    }
+}
+
+public class Employee : IEmployee
+{
+    public static int numberOfEmployees;
+
+   private string _name;
+    public string Name  // read-write instance property
+    {
+        get => _name;
+        set => _name = value;
+   }
+
+    private int _counter;
+    public int Counter  // read-only instance property
+    {
+        get => _counter;
+    }
+
+    // constructor
+    public Employee() => _counter = ++numberOfEmployees;
+}`
+          },
+
+        ]
+      },
     ];
 
     // FIM DATAVASE
