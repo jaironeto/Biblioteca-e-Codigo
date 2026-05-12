@@ -245,88 +245,418 @@
       {
         category: "Todos",
         tags: [
-          { "name": "backface-visibility", "description": "A propriedade CSS `backface-visibility` define se a parte de trás de um elemento fica visível quando ele está virado para o usuário. Essa propriedade não tem efeito em transformações 2D, que não possuem perspectiva.", "url": "https://developer.mozilla.org/pt-BR/docs/Web/CSS/backface-visibility" },
-          { "name": "backdrop-filter", "description": "permite aplicar efeitos gráficos, como desfoque ou mudança de cor, à área atrás de um elemento", "url": "https://developer.mozilla.org/pt-BR/docs/Web/CSS/backdrop-filter", "image": "https://via.placeholder.com/250x100.png?text=Exemplo" },
-          { "name": "appearance", "description": "A appearance propriedade permite exibir elementos em seu estilo nativo do sistema operacional, com base no tema do sistema, bem como remover qualquer estilo nativo da plataforma com o nonevalor definido" },
-          { "name": "all", "description": "redefine todas¹ exceto, unicode-bidi, direction e custom properties²" },
-          { "name": "accent-color", "description": "especifica a cor, interface, input¹" },
-          { "name": "content", "description": "usada com os pseudo-elementos ::before ::after para inserir conteúdo gerado" },
-          { "name": "content-visibility", "description": "controla se um elemento renderiza ou não seu conteúdo, além de impor um conjunto robusto de restrições, permitindo que os agentes do usuário omitam grandes partes do trabalho de layout e renderização até que seja necessário. Isso permite que o agente do usuário ignore o trabalho de renderização de um elemento (incluindo layout e pintura) até que seja necessário " },
-          { "name": "container-type", "description": "usada para definir o tipo de contexto de um container que pode ser consultado com container queries (@container)" },
-          { "name": "container-name", "description": "serve para atribuir um nome a um elemento que foi definido como “container”. esse nome permite que você faça consultas específicas com @container em vez de depender apenas do ancestral mais próximo com contençãoserve para atribuir um nome a um elemento que foi definido como “container”. esse nome permite que você faça con" },
-          { "name": "container", "description": "container-name, container-type" },
-          { "name": "contain", "description": "indica que um elemento e seu conteúdo são, tanto quanto possível, independentes do restante da árvore do documento" },
-          { "name": "color-scheme", "description": "indica qual esquema de cores do sistema operacional um elemento deve usar para ser renderizado" },
-          { "name": "color", "description": "define a cor" },
-          { "name": "clip-path", "description": "permite recortar um elemento em uma forma básica ou em uma fonte SVG" },
-          { "name": "clear", "description": "especifica se um elemento pode ter elementos flutuantes ao seu lado ou se devem ser movidos para abaixo dele (clear). Essa propriedade se aplica à elementos flutuantes ou não flutuantesespecifica se um elemento pode ter elementos flutuantes ao seu lado " },
-          { "name": "caret-color", "description": "A propriedade CSS define a cor do cursor de inserção , também conhecido como cursor de entrada de texto" },
-          { "name": "caption-side", "description": "especifica o posicionamento da legenda da tabela" },
-          { "name": "box-sizing", "description": "define como a largura e a altura de um elemento são calculadas: se devem incluir preenchimento e bordas, ou não" },
-          { "name": "box-shadow", "description": "atribui uma ou mais sombras a um elemento" },
-          { "name": "box-decoration-break", "description": "especifica como o plano de fundo, o preenchimento, a borda, a imagem da borda, a sombra da caixa, a margem e o caminho de recorte de um elemento são aplicados quando a caixa do elemento é fragmentada" },
-          { "name": "bottom", "description": "afeta a posição, vertical de um elemento posicionado¹ ela não tem efeito sobre, elementos não posicionados²" },
-          { "name": "cursor", "description": "especifica o cursor do mouse a ser exibido ao apontar para um elemento" },
-          { "name": "display", "description": "define se um elemento é tratado como um bloco ou uma caixa embutida e o layout usado para seus filhos, como layout de fluxo , grade ou flexível" },
-          { "name": "empty-cells", "description": "define se as bordas das células vazias em uma tabela devem ou não ser exibidas" },
-          { "name": "filter", "description": "define efeitos visuais (como desfoque e saturação) para um elemento (geralmente <img>)" },
-          { "name": "float", "description": "Essa floatpropriedade especifica se um elemento deve flutuar para a esquerda, para a direita ou não flutuar. Nota: Elementos com posicionamento absoluto ignoram a float propriedade! Observação: Elementos adjacentes a um elemento flutuante irão contorná-lo. Para evitar isso, use a propriedade `clear` ou o truque `clearfix`" },
-          { "name": "forced-color-adjust", "description": "permite que os autores desativem o modo de cores forçadas para determinados elementos. Isso restaura o controle desses valores para o CSS" },
-          { "name": "height", "description": "Define a altura" },
-          { "name": "image-orientation", "description": "especifica uma correção independente do layout para a orientação de uma imagem." },
-          { "name": "image-rendering", "description": "Essa image-renderingpropriedade especifica o tipo de algoritmo a ser usado para o redimensionamento da imagem" },
-          { "name": "isolation", "description": "Essa isolationpropriedade define se um elemento deve criar um novo conteúdo de empilhamento. Nota: Essa isolationpropriedade é útil quando usada com background-blend-mode ou mix-blend-mode." },
-          { "name": "kerning", "description": "A propriedade CSS font-kerning controla o o uso da informação de kerning, que é, o controle de como as letras serão espaçadas. A informação de kerning é armazenada na fonte, e se a fonte é well-kerned, essa caracteristica permite que o espaçamento entre caracteres seja muito parecido, independente dos caracteres" },
-          { "name": "mix-blend-mode", "description": "Essa mix-blend-modepropriedade especifica como o conteúdo de um elemento deve se mesclar com o fundo do seu elemento pai direto." },
-          { "name": "opacity", "description": "Essa opacitypropriedade define o nível de opacidade de um elemento. O nível de opacidade descreve o nível de transparência, onde 1 é totalmente opaco, 0,5 é 50% transparente e 0 é completamente transparente. Observação: ao usar a opacitypropriedade para adicionar transparência ao fundo de um elemento, todos os seus elementos filhos também se tornam transparentes. Isso pode dificultar a leitura do texto dentro de um elemento totalmente transparente. Se você não quiser aplicar opacidade aos elementos filhos, use valores de cor RGBA " },
-          { "name": "order", "description": "Essa orderpropriedade especifica a ordem visual de um item flexível ou de um item de grade em um contêiner flexível ou de grade. Observação: Se o elemento não for um item flexível ou um item de grade, a orderpropriedade não terá efeito. Nota sobre acessibilidade: A order propriedade permite a reordenação visual, mas não altera a ordem lógica dos elementos no DOM. Isso afetará os usuários que navegam pelo site com tecnologias assistivas, como leitores de tela, pois o conteúdo será lido em uma ordem diferente da apresentada visualmente" },
-          { "name": "orphans", "description": "Essa orphanspropriedade especifica o número mínimo de linhas que devem ser deixadas na parte inferior de uma página ou coluna" },
-          { "name": "overflow", "description": "?" },
-          { "name": "overflow-x", "description": "?" },
-          { "name": "overflow-y", "description": "?" },
-          { "name": "page", "description": "A propriedade CSS `page` é usada para especificar a página nomeada, um tipo específico de página definido pela regra `@page`." },
-          { "name": "paint-order", "description": "A propriedade CSS paint-order permite controlar a ordem em que o preenchimento e o contorno (e os marcadores de pintura) do conteúdo de texto e das formas são desenhados." },
-          { "name": "palette", "description": "?" },
-          { "name": "perspective", "description": "A propriedade CSS `perspective` determina a distância entre o plano z=0 e o usuário, a fim de dar perspectiva a um elemento posicionado em 3D." },
-          { "name": "perspective-origin", "description": "A propriedade CSS `perspective-origin` determina a posição para a qual o observador está olhando. Ela é usada como ponto de fuga pela propriedade `perspective`." },
-          { "name": "pointer-events", "description": "define se um elemento reage ou não a eventos de ponteiro" },
-          { "name": "print-color-adjust", "description": "define o que, se houver algo, o agente do usuário pode fazer para otimizar a aparência do elemento no dispositivo de saída." },
-          { "name": "resize", "description": "A resize propriedade define se (e como) um elemento pode ser redimensionado pelo usuário. Observação: essa resize propriedade não se aplica a elementos em linha nem a elementos de bloco onde `overflow='visible'`. Portanto, certifique-se de que `overflow` esteja definido como 'scroll', 'auto' ou 'hidden'." },
-          { "name": "rotate", "description": "Essa rotate propriedade permite rotacionar elementos" },
-          { "name": "scale", "description": "A propriedade CSS `scale` permite especificar transformações de escala individualmente e independentemente da propriedade `transform`. Isso se adapta melhor ao uso típico de interfaces de usuário e evita a necessidade de lembrar a ordem exata das funções de transformação a serem especificadas no valor de `transform`." },
-          { "name": "scroll-behavior", "description": "Essa scroll-behaviorpropriedade especifica se a posição de rolagem deve ser animada suavemente, em vez de um salto abrupto, quando o usuário clica em um link dentro de uma caixa rolável." },
-          { "name": "shape-image-threshold", "description": "?" },
-          { "name": "shape-margin", "description": "?" },
-          { "name": "shape-outside", "description": "?" },
-          { "name": "shape-rendering", "description": "?" },
-          { "name": "stop-color", "description": "?" },
-          { "name": "stop-opacity", "description": "?" },
-          { "name": "stroke", "description": "?" },
-          { "name": "stroke-dasharray", "description": "?" },
-          { "name": "stroke-dashoffset", "description": "?" },
-          { "name": "stroke-linecap", "description": "?" },
-          { "name": "stroke-linejoin", "description": "?" },
-          { "name": "stroke-miterlimit", "description": "?" },
-          { "name": "stroke-opacity", "description": "?" },
-          { "name": "stroke-width", "description": "?" },
-          { "name": "table-layout", "description": "?" },
-          { "name": "top", "description": "?" },
-          { "name": "touch-action", "description": "?" },
-          { "name": "translate", "description": "?" },
-          { "name": "user-select", "description": "?" },
-          { "name": "vertical-align", "description": "?" },
-          { "name": "view-transition-", "description": "?" },
-          { "name": "visibility", "description": "?" },
-          { "name": "white-space", "description": "?" },
-          { "name": "white-space-col", "description": "?" },
-          { "name": "widows", "description": "?" },
-          { "name": "width", "description": "?" },
-          { "name": "will-change", "description": "?" },
-          { "name": "word-break", "description": "?" },
-          { "name": "word-spacing", "description": "?" },
-          { "name": "writing-mode", "description": "?" },
-          { "name": "z-index", "description": "?" },
-          { "name": "zoom", "description": "?" }
+          {
+            "name": "backface-visibility",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility",
+            "description": "A propriedade CSS `backface-visibility` define se a parte de trás de um elemento fica visível quando ele está virado para o usuário. Essa propriedade não tem efeito em transformações 2D, que não possuem perspectiva."
+          },
+          {
+            "name": "backdrop-filter",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter",
+            "description": "permite aplicar efeitos gráficos, como desfoque ou mudança de cor, à área atrás de um elemento",
+            "image": "https://via.placeholder.com/250x100.png?text=Exemplo"
+          },
+          {
+            "name": "appearance",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/appearance",
+            "description": "A appearance propriedade permite exibir elementos em seu estilo nativo do sistema operacional, com base no tema do sistema, bem como remover qualquer estilo nativo da plataforma com o nonevalor definido"
+          },
+          {
+            "name": "all",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/all",
+            "description": "redefine todas¹ exceto, unicode-bidi, direction e custom properties²"
+          },
+          {
+            "name": "accent-color",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color",
+            "description": "especifica a cor, interface, input¹"
+          },
+          {
+            "name": "content",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/content",
+            "description": "usada com os pseudo-elementos ::before ::after para inserir conteúdo gerado"
+          },
+          {
+            "name": "content-visibility",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility",
+            "description": "controla se um elemento renderiza ou não seu conteúdo, além de impor um conjunto robusto de restrições, permitindo que os agentes do usuário omitam grandes partes do trabalho de layout e renderização até que seja necessário. Isso permite que o agente do usuário ignore o trabalho de renderização de um elemento (incluindo layout e pintura) até que seja necessário "
+          },
+          {
+            "name": "container-type",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/container-type",
+            "description": "usada para definir o tipo de contexto de um container que pode ser consultado com container queries (@container)"
+          },
+          {
+            "name": "container-name",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/container-name",
+            "description": "serve para atribuir um nome a um elemento que foi definido como “container”. esse nome permite que você faça consultas específicas com @container em vez de depender apenas do ancestral mais próximo com contençãoserve para atribuir um nome a um elemento que foi definido como “container”. esse nome permite que você faça con"
+          },
+          {
+            "name": "container",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/container",
+            "description": "container-name, container-type"
+          },
+          {
+            "name": "contain",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/contain",
+            "description": "indica que um elemento e seu conteúdo são, tanto quanto possível, independentes do restante da árvore do documento"
+          },
+          {
+            "name": "color-scheme",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme",
+            "description": "indica qual esquema de cores do sistema operacional um elemento deve usar para ser renderizado"
+          },
+          {
+            "name": "color",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/color",
+            "description": "define a cor"
+          },
+          {
+            "name": "clip-path",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path",
+            "description": "permite recortar um elemento em uma forma básica ou em uma fonte SVG"
+          },
+          {
+            "name": "clear",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/clear",
+            "description": "especifica se um elemento pode ter elementos flutuantes ao seu lado ou se devem ser movidos para abaixo dele (clear). Essa propriedade se aplica à elementos flutuantes ou não flutuantesespecifica se um elemento pode ter elementos flutuantes ao seu lado "
+          },
+          {
+            "name": "caret-color",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/caret-color",
+            "description": "A propriedade CSS define a cor do cursor de inserção , também conhecido como cursor de entrada de texto"
+          },
+          {
+            "name": "caption-side",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side",
+            "description": "especifica o posicionamento da legenda da tabela"
+          },
+          {
+            "name": "box-sizing",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing",
+            "description": "define como a largura e a altura de um elemento são calculadas: se devem incluir preenchimento e bordas, ou não"
+          },
+          {
+            "name": "box-shadow",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow",
+            "description": "atribui uma ou mais sombras a um elemento"
+          },
+          {
+            "name": "box-decoration-break",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break",
+            "description": "especifica como o plano de fundo, o preenchimento, a borda, a imagem da borda, a sombra da caixa, a margem e o caminho de recorte de um elemento são aplicados quando a caixa do elemento é fragmentada"
+          },
+          {
+            "name": "bottom",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
+            "description": "afeta a posição, vertical de um elemento posicionado¹ ela não tem efeito sobre, elementos não posicionados²"
+          },
+          {
+            "name": "cursor",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/cursor",
+            "description": "especifica o cursor do mouse a ser exibido ao apontar para um elemento"
+          },
+          {
+            "name": "display",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/display",
+            "description": "define se um elemento é tratado como um bloco ou uma caixa embutida e o layout usado para seus filhos, como layout de fluxo , grade ou flexível"
+          },
+          {
+            "name": "empty-cells",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells",
+            "description": "define se as bordas das células vazias em uma tabela devem ou não ser exibidas"
+          },
+          {
+            "name": "filter",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/filter",
+            "description": "define efeitos visuais (como desfoque e saturação) para um elemento (geralmente <img>)"
+          },
+          {
+            "name": "float",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/float",
+            "description": "Essa floatpropriedade especifica se um elemento deve flutuar para a esquerda, para a direita ou não flutuar. Nota: Elementos com posicionamento absoluto ignoram a float propriedade! Observação: Elementos adjacentes a um elemento flutuante irão contorná-lo. Para evitar isso, use a propriedade `clear` ou o truque `clearfix`"
+          },
+          {
+            "name": "forced-color-adjust",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/forced-color-adjust",
+            "description": "permite que os autores desativem o modo de cores forçadas para determinados elementos. Isso restaura o controle desses valores para o CSS"
+          },
+          {
+            "name": "height",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/height",
+            "description": "Define a altura"
+          },
+          {
+            "name": "image-orientation",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/image-orientation",
+            "description": "especifica uma correção independente do layout para a orientação de uma imagem."
+          },
+          {
+            "name": "image-rendering",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering",
+            "description": "Essa image-renderingpropriedade especifica o tipo de algoritmo a ser usado para o redimensionamento da imagem"
+          },
+          {
+            "name": "isolation",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/isolation",
+            "description": "Essa isolationpropriedade define se um elemento deve criar um novo conteúdo de empilhamento. Nota: Essa isolationpropriedade é útil quando usada com background-blend-mode ou mix-blend-mode."
+          },
+          {
+            "name": "kerning",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/kerning",
+            "description": "A propriedade CSS font-kerning controla o o uso da informação de kerning, que é, o controle de como as letras serão espaçadas. A informação de kerning é armazenada na fonte, e se a fonte é well-kerned, essa caracteristica permite que o espaçamento entre caracteres seja muito parecido, independente dos caracteres"
+          },
+          {
+            "name": "mix-blend-mode",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode",
+            "description": "Essa mix-blend-modepropriedade especifica como o conteúdo de um elemento deve se mesclar com o fundo do seu elemento pai direto."
+          },
+          {
+            "name": "opacity",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/opacity",
+            "description": "Essa opacitypropriedade define o nível de opacidade de um elemento. O nível de opacidade descreve o nível de transparência, onde 1 é totalmente opaco, 0,5 é 50% transparente e 0 é completamente transparente. Observação: ao usar a opacitypropriedade para adicionar transparência ao fundo de um elemento, todos os seus elementos filhos também se tornam transparentes. Isso pode dificultar a leitura do texto dentro de um elemento totalmente transparente. Se você não quiser aplicar opacidade aos elementos filhos, use valores de cor RGBA "
+          },
+          {
+            "name": "order",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/order",
+            "description": "Essa orderpropriedade especifica a ordem visual de um item flexível ou de um item de grade em um contêiner flexível ou de grade. Observação: Se o elemento não for um item flexível ou um item de grade, a orderpropriedade não terá efeito. Nota sobre acessibilidade: A order propriedade permite a reordenação visual, mas não altera a ordem lógica dos elementos no DOM. Isso afetará os usuários que navegam pelo site com tecnologias assistivas, como leitores de tela, pois o conteúdo será lido em uma ordem diferente da apresentada visualmente"
+          },
+          {
+            "name": "orphans",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/orphans",
+            "description": "Essa orphanspropriedade especifica o número mínimo de linhas que devem ser deixadas na parte inferior de uma página ou coluna"
+          },
+          {
+            "name": "overflow",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/overflow",
+            "description": "?"
+          },
+          {
+            "name": "overflow-x",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x",
+            "description": "?"
+          },
+          {
+            "name": "overflow-y",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y",
+            "description": "?"
+          },
+          {
+            "name": "page",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/page",
+            "description": "A propriedade CSS `page` é usada para especificar a página nomeada, um tipo específico de página definido pela regra `@page`."
+          },
+          {
+            "name": "paint-order",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/paint-order",
+            "description": "A propriedade CSS paint-order permite controlar a ordem em que o preenchimento e o contorno (e os marcadores de pintura) do conteúdo de texto e das formas são desenhados."
+          },
+          {
+            "name": "palette",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/palette",
+            "description": "?"
+          },
+          {
+            "name": "perspective",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/perspective",
+            "description": "A propriedade CSS `perspective` determina a distância entre o plano z=0 e o usuário, a fim de dar perspectiva a um elemento posicionado em 3D."
+          },
+          {
+            "name": "perspective-origin",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin",
+            "description": "A propriedade CSS `perspective-origin` determina a posição para a qual o observador está olhando. Ela é usada como ponto de fuga pela propriedade `perspective`."
+          },
+          {
+            "name": "pointer-events",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events",
+            "description": "define se um elemento reage ou não a eventos de ponteiro"
+          },
+          {
+            "name": "print-color-adjust",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/print-color-adjust",
+            "description": "define o que, se houver algo, o agente do usuário pode fazer para otimizar a aparência do elemento no dispositivo de saída."
+          },
+          {
+            "name": "resize",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/resize",
+            "description": "A resize propriedade define se (e como) um elemento pode ser redimensionado pelo usuário. Observação: essa resize propriedade não se aplica a elementos em linha nem a elementos de bloco onde `overflow='visible'`. Portanto, certifique-se de que `overflow` esteja definido como 'scroll', 'auto' ou 'hidden'."
+          },
+          {
+            "name": "rotate",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/rotate",
+            "description": "Essa rotate propriedade permite rotacionar elementos"
+          },
+          {
+            "name": "scale",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/scale",
+            "description": "A propriedade CSS `scale` permite especificar transformações de escala individualmente e independentemente da propriedade `transform`. Isso se adapta melhor ao uso típico de interfaces de usuário e evita a necessidade de lembrar a ordem exata das funções de transformação a serem especificadas no valor de `transform`."
+          },
+          {
+            "name": "scroll-behavior",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior",
+            "description": "Essa scroll-behaviorpropriedade especifica se a posição de rolagem deve ser animada suavemente, em vez de um salto abrupto, quando o usuário clica em um link dentro de uma caixa rolável."
+          },
+          {
+            "name": "shape-image-threshold",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/shape-image-threshold",
+            "description": "?"
+          },
+          {
+            "name": "shape-margin",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/shape-margin",
+            "description": "?"
+          },
+          {
+            "name": "shape-outside",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside",
+            "description": "?"
+          },
+          {
+            "name": "shape-rendering",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/shape-rendering",
+            "description": "?"
+          },
+          {
+            "name": "stop-color",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stop-color",
+            "description": "?"
+          },
+          {
+            "name": "stop-opacity",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stop-opacity",
+            "description": "?"
+          },
+          {
+            "name": "stroke",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stroke",
+            "description": "?"
+          },
+          {
+            "name": "stroke-dasharray",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stroke-dasharray",
+            "description": "?"
+          },
+          {
+            "name": "stroke-dashoffset",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stroke-dashoffset",
+            "description": "?"
+          },
+          {
+            "name": "stroke-linecap",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stroke-linecap",
+            "description": "?"
+          },
+          {
+            "name": "stroke-linejoin",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stroke-linejoin",
+            "description": "?"
+          },
+          {
+            "name": "stroke-miterlimit",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stroke-miterlimit",
+            "description": "?"
+          },
+          {
+            "name": "stroke-opacity",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stroke-opacity",
+            "description": "?"
+          },
+          {
+            "name": "stroke-width",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/stroke-width",
+            "description": "?"
+          },
+          {
+            "name": "table-layout",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout",
+            "description": "?"
+          },
+          {
+            "name": "top",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/top",
+            "description": "?"
+          },
+          {
+            "name": "touch-action",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action",
+            "description": "?"
+          },
+          {
+            "name": "translate",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/translate",
+            "description": "?"
+          },
+          {
+            "name": "user-select",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/user-select",
+            "description": "?"
+          },
+          {
+            "name": "vertical-align",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align",
+            "description": "?"
+          },
+          {
+            "name": "view-transition-",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/view-transition-",
+            "description": "?"
+          },
+          {
+            "name": "visibility",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/visibility",
+            "description": "?"
+          },
+          {
+            "name": "white-space",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/white-space",
+            "description": "?"
+          },
+          {
+            "name": "white-space-col",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/white-space-col",
+            "description": "?"
+          },
+          {
+            "name": "widows",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/widows",
+            "description": "?"
+          },
+          {
+            "name": "width",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/width",
+            "description": "?"
+          },
+          {
+            "name": "will-change",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/will-change",
+            "description": "?"
+          },
+          {
+            "name": "word-break",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/word-break",
+            "description": "?"
+          },
+          {
+            "name": "word-spacing",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing",
+            "description": "?"
+          },
+          {
+            "name": "writing-mode",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode",
+            "description": "?"
+          },
+          {
+            "name": "z-index",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/z-index",
+            "description": "?"
+          },
+          {
+            "name": "zoom",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/zoom",
+            "description": "?"
+          },
+
         ]
       },
       /*{
@@ -405,31 +735,111 @@
       {
         category: "Background e Imagem",
         tags: [
-          { name: "object-fit", description: "Essa object-fitpropriedade é usada para especificar como uma imagem (<img>) ou um vídeo (<video>) deve ser redimensionado para se ajustar ao seu contêiner. Essa propriedade instrui o conteúdo a preencher o contêiner de diversas maneiras, como 'preservar a proporção' ou 'esticar-se verticalmente e ocupar o máximo de espaço possível'." },
-          { name: "object-position", description: "Essa object-positionpropriedade é usada em conjunto com object-fit para especificar como uma <img> ou <video> deve ser posicionada com coordenadas x/y dentro de sua 'própria caixa de conteúdo'." },
-          { name: "background-size", description: "especifica o tamanho das imagens¹ existem quatro sintaxes diferentes que voce pode usar com essa propriedade²" },
-          { name: "background-repeat", description: "define se e como uma imagem de fundo será repetida¹ por padrão uma imagem de fundo é repetida tanto²" },
-          { name: "background-position", description: "define a posição inicial de uma imagem de fundo¹ podendo usar coordenadas, porcentagens ou palavras-chave²" },
-          { name: "background-position-y", description: "define especificamente a posição vertical (eixo Y) da imagem de fundo¹ em relação à área de posicionamento²" },
-          { name: "background-position-x", description: "define especificamente a posição horizontal (eixo X) da imagem de fundo¹ em relação à área de posicionamento²" },
-          { name: "background-origin", description: "determina a área de posicionamento do fundo¹ se ele começa na borda, no preenchimento ou no conteúdo²" },
-          { name: "background-color", description: "define a cor de fundo de um elemento¹ que será renderizada atrás de qualquer imagem que for aplicada²" },
-          { name: "background-clip", description: "define se o fundo (cor ou imagem) deve se estender até a borda, o preenchimento ou apenas o conteúdo¹" },
-          { name: "background-blend-mode", description: "especifica como a imagem de fundo deve se misturar com as camadas inferiores¹ como cores ou outras imagens²" },
-          { name: "background-attachment", description: "define se a imagem de fundo permanece fixa na janela de visualização¹ ou se rola junto com o conteúdo²" },
-          { name: "background", description: "propriedade abreviada (shorthand) que permite definir todos os valores de fundo¹ em uma única declaração²" },
+          {
+            "name": "object-fit",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit",
+            "description": "Essa object-fitpropriedade é usada para especificar como uma imagem (<img>) ou um vídeo (<video>) deve ser redimensionado para se ajustar ao seu contêiner. Essa propriedade instrui o conteúdo a preencher o contêiner de diversas maneiras, como 'preservar a proporção' ou 'esticar-se verticalmente e ocupar o máximo de espaço possível'."
+          },
+          {
+            "name": "object-position",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/object-position",
+            "description": "Essa object-positionpropriedade é usada em conjunto com object-fit para especificar como uma <img> ou <video> deve ser posicionada com coordenadas x/y dentro de sua 'própria caixa de conteúdo'."
+          },
+          {
+            "name": "background-size",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-size",
+            "description": "especifica o tamanho das imagens¹ existem quatro sintaxes diferentes que voce pode usar com essa propriedade²"
+          },
+          {
+            "name": "background-repeat",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat",
+            "description": "define se e como uma imagem de fundo será repetida¹ por padrão uma imagem de fundo é repetida tanto²"
+          },
+          {
+            "name": "background-position",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-position",
+            "description": "define a posição inicial de uma imagem de fundo¹ podendo usar coordenadas, porcentagens ou palavras-chave²"
+          },
+          {
+            "name": "background-position-y",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-y",
+            "description": "define especificamente a posição vertical (eixo Y) da imagem de fundo¹ em relação à área de posicionamento²"
+          },
+          {
+            "name": "background-position-x",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-x",
+            "description": "define especificamente a posição horizontal (eixo X) da imagem de fundo¹ em relação à área de posicionamento²"
+          },
+          {
+            "name": "background-origin",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin",
+            "description": "determina a área de posicionamento do fundo¹ se ele começa na borda, no preenchimento ou no conteúdo²"
+          },
+          {
+            "name": "background-color",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-color",
+            "description": "define a cor de fundo de um elemento¹ que será renderizada atrás de qualquer imagem que for aplicada²"
+          },
+          {
+            "name": "background-clip",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip",
+            "description": "define se o fundo (cor ou imagem) deve se estender até a borda, o preenchimento ou apenas o conteúdo¹"
+          },
+          {
+            "name": "background-blend-mode",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode",
+            "description": "especifica como a imagem de fundo deve se misturar com as camadas inferiores¹ como cores ou outras imagens²"
+          },
+          {
+            "name": "background-attachment",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment",
+            "description": "define se a imagem de fundo permanece fixa na janela de visualização¹ ou se rola junto com o conteúdo²"
+          },
+          {
+            "name": "background",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/background",
+            "description": "propriedade abreviada (shorthand) que permite definir todos os valores de fundo¹ em uma única declaração²"
+          },
         ]
       },
       {
         category: "Flexbox",
         tags: [
-          { name: "flex", description: "propriedade abreviada que define o crescimento, encolhimento e o tamanho base dos itens flexíveis de uma só vez" },
-          { name: "flex-basis", description: "define o tamanho inicial padrão de um item antes que o espaço restante no container seja distribuído" },
-          { name: "flex-direction", description: "estabelece o eixo principal e a direção em que os itens flexíveis são posicionados dentro do container" },
-          { name: "flex-flow", description: "uma forma abreviada para definir simultaneamente as propriedades flex-direction e flex-wrap em uma única linha" },
-          { name: "flex-grow", description: "define a capacidade de um item crescer e ocupar o espaço disponível no container em relação aos outros itens" },
-          { name: "flex-shrink", description: "determina a capacidade de um item diminuir de tamanho caso o espaço do container seja insuficiente para todos" },
-          { name: "flex-wrap", description: "define se os itens devem ser forçados em uma única linha ou se podem quebrar para várias linhas caso necessário" },
+          {
+            "name": "flex",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/flex",
+            "description": "propriedade abreviada que define o crescimento, encolhimento e o tamanho base dos itens flexíveis de uma só vez"
+          },
+          {
+            "name": "flex-basis",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis",
+            "description": "define o tamanho inicial padrão de um item antes que o espaço restante no container seja distribuído"
+          },
+          {
+            "name": "flex-direction",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction",
+            "description": "estabelece o eixo principal e a direção em que os itens flexíveis são posicionados dentro do container"
+          },
+          {
+            "name": "flex-flow",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow",
+            "description": "uma forma abreviada para definir simultaneamente as propriedades flex-direction e flex-wrap em uma única linha"
+          },
+          {
+            "name": "flex-grow",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow",
+            "description": "define a capacidade de um item crescer e ocupar o espaço disponível no container em relação aos outros itens"
+          },
+          {
+            "name": "flex-shrink",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink",
+            "description": "determina a capacidade de um item diminuir de tamanho caso o espaço do container seja insuficiente para todos"
+          },
+          {
+            "name": "flex-wrap",
+            "url": "https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap",
+            "description": "define se os itens devem ser forçados em uma única linha ou se podem quebrar para várias linhas caso necessário"
+          }
         ]
       },
       {
@@ -5224,4 +5634,5 @@ public class Employee : IEmployee
   </script>
 </body>
 <!--https://translate.google.com/translate?hl=pt-BR&sl=en&tl=pt&u=SUA_URL_AQUI-->
+
 </html>
