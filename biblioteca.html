@@ -231,6 +231,7 @@
       <div onclick="selectLibrary('HTML')">Biblioteca HTML</div>
       <div onclick="selectLibrary('Java')">Biblioteca Java</div>
       <div onclick="selectLibrary('Did')">Didatica</div>
+      <div onclick="selectLibrary('Fac')">Faculdade</div>
       <div onclick="selectLibrary('Cod')">Codigo</div>
 
     </div>
@@ -1445,6 +1446,16 @@
           { name: "?", url: "?", description: "?" },
           { name: "?", url: "?", description: "?" },
           { name: "?", url: "?", description: "?" },
+          // { name: "?", url: "?", description: "?" },
+        ]
+      },
+    ];
+
+    const Fac = [ // DIDATICA FACULDADE
+
+      {
+        category: "Atual",
+        tags: [
           // { name: "?", url: "?", description: "?" },
         ]
       },
@@ -5502,6 +5513,7 @@ public class Employee : IEmployee
       'JS': dataJS,
       'Java': dataJava,
       'Did': Did,
+      "Fac": Fac,
       'Cod': Cod,
     };
 
@@ -5530,6 +5542,7 @@ public class Employee : IEmployee
         'HTML': 'Biblioteca HTML',
         'Java': 'Biblioteca Java',
         'Did': 'Didatica',
+        'Fac': 'Didatica',
         'Cod': 'Codigo',
       };
 
