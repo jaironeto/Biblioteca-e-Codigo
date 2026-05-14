@@ -5615,6 +5615,8 @@ public class Employee : IEmployee
           content.appendChild(tagDiv);
 
           tagDiv.addEventListener("click", (e) => {
+            // Não fecha se clicar dentro da descrição (área branca)
+            if (e.target.closest('.description')) return;
             e.stopPropagation();
             tagDiv.classList.toggle("active");
           });
